@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./components/Input/Input";
-import "./Teste.scss";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
     return (
@@ -8,6 +8,7 @@ function App() {
             <Input label2="Pesquise Aqui" />
             <button>Clicar</button>
             <Input label2="Não pesquise Aqui" />
+            <ProductCard />
         </div>
     );
 }
