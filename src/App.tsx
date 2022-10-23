@@ -1,14 +1,10 @@
 import React from "react";
-import Input from "./components/Input/Input";
-import ProductCard from "./components/ProductCard/ProductCard";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
     return (
         <div className="App">
-            <Input label2="Pesquise Aqui" />
-            <button>Clicar</button>
-            <Input label2="Não pesquise Aqui" />
-            <ProductCard />
+            <NavBar />
         </div>
     );
 }
