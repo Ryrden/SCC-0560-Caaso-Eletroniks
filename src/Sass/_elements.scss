@@ -1,17 +1,12 @@
 /* CSS RESET */
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: $font;
-
-    &::selection{
-        background-color: $red;
-        color: white;
-    }
 }
 
-
-html , body{
+html,
+body {
     height: 100vh;
     width: 100%;
 }
