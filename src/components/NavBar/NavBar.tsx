@@ -11,6 +11,7 @@ import AccessibilityBar from "../AccessibilityBar/AccessibilityBar";
 import logo from "@/assets/imgs/logo.svg";
 import "./NavBar.scss";
 import "@/Sass/_variables.scss";
+import MenuBar from "../MenuBar/MenuBar";
 
 const Search = styled("div")(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
@@ -38,7 +39,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: "inherit",
     "& .MuiInputBase-input": {
         // vertical padding + font size from searchIcon
-        
+
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create("width"),
         width: "100%"
@@ -170,7 +171,7 @@ const NavBar = () => {
                         />
 
                         <SearchIconWrapper>
-                            <SearchIcon/>
+                            <SearchIcon />
                         </SearchIconWrapper>
                     </Search>
 
@@ -214,6 +215,7 @@ const NavBar = () => {
                     </div>
                 </Toolbar>
             </AppBar>
+            <MenuBar />
             {renderMobileMenu}
             {renderMenu}
         </Box>
