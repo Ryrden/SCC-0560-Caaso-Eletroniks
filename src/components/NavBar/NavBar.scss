@@ -6,20 +6,6 @@
     padding: 1rem 5rem;
     box-sizing: border-box;
 
-    #search-bar {
-        width: 50%;
-        display: flex;
-        flex-direction: row-reverse;
-
-        #input-bar {
-            width: 39em;
-        }
-
-        .navbar-search-icon {
-            color: rgb(120, 120, 120);
-        }
-    }
-
     .navbar-icon {
         color: $yellow;
     }
