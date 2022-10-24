@@ -13,43 +13,40 @@ import "./NavBar.scss";
 import "@/Sass/_variables.scss";
 
 const Search = styled("div")(({ theme }) => ({
-    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
         backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
         marginLeft: theme.spacing(3),
         width: "auto",
     },
+    display: "flex",
+    padding: "5px",
+    alignItems: "center",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
     pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: "inline-flex",
+    color: "#C0C0C0",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: "inherit",
     "& .MuiInputBase-input": {
-        padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
+        
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create("width"),
-        width: "100%",
-        [theme.breakpoints.up("md")]: {
-            width: "20ch",
-        },
+        width: "100%"
     },
+    [theme.breakpoints.down("md")]: {
+        width: "auto"
+    },
+    width: "500px"
 }));
 
 const NavBar = () => {
@@ -162,21 +159,19 @@ const NavBar = () => {
                         component="div"
                         sx={{ display: { xs: "none", sm: "block" } }}
                     >
-                        <img src={logo} alt="Caaso Eletroniks" />
+                        <img src={logo} alt="Logo da Empresa Caaso Eletroniks" />
                     </Typography>
 
-                    <Search id="search-bar">
-                        <SearchIconWrapper>
-                            <SearchIcon
-                                className="navbar-search-icon"
-                            />
-                        </SearchIconWrapper>
-
+                    <Search>
                         <StyledInputBase
                             id="input-bar"
                             placeholder="Pesquise por produtos aqui..."
                             inputProps={{ "aria-label": "search" }}
                         />
+
+                        <SearchIconWrapper>
+                            <SearchIcon/>
+                        </SearchIconWrapper>
                     </Search>
 
                     <div>
