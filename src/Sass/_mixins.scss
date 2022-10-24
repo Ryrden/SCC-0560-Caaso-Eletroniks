@@ -1,0 +1,32 @@
+@mixin buttonStyle($type) {
+    border-radius: 2px;
+    font-size: 20px;
+    padding: 13px 75px;
+    font-family: $font-raleway;
+    font-weight: lighter;
+
+    @if $type =="primary" {
+        color: white;
+        background-color: red;
+        border-color: red;
+        border: none;
+
+        &:hover {
+            background-color: #CF6173;
+            transition: all 0.3s ease-in-out;
+            border-color: #CF6173;
+        }
+    }
+
+    @else if $type =="secondary" {
+        color: black;
+        background-color: white;
+        border-color: #980b15;
+        border: solid gray 2px;
+
+        &:hover {
+            background-color: gray;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}

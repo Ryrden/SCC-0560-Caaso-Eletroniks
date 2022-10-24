@@ -1,0 +1,10 @@
+@import "@/Sass/app.scss";
+
+.button {
+    &.primary{
+        @include buttonStyle("primary");
+    }
+    &.secondary{
+        @include buttonStyle("secondary");
+    }
+}
