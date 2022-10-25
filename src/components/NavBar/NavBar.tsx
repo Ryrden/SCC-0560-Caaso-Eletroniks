@@ -21,10 +21,10 @@ const Search = styled("div")(({ theme }) => ({
     },
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(3),
         width: "auto",
     },
     display: "flex",
+    justifyContent: "space-between",
     padding: "5px",
     alignItems: "center",
 }));
@@ -40,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
         // vertical padding + font size from searchIcon
 
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        paddingLeft: "0.5em",
         transition: theme.transitions.create("width"),
         width: "100%"
     },
