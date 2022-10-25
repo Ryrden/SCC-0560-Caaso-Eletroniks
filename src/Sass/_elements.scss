@@ -3,10 +3,14 @@
     padding: 0;
     margin: 0;
     font-family: $font-monterrat;
+    box-sizing: border-box;
+    //font-size: 62.5%;
+    outline: none;
 }
 
 html,
 body {
     height: 100vh;
     width: 100%;
+    
 }
