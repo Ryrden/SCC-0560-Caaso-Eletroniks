@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@/components/Button/Button";
+import ButtonSocialMedia from "@/components/Button/ButtonSocialMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@/components/Input/Input";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -14,6 +15,7 @@ import Divider from "@mui/material/Divider";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import ProductCard from "@/components/ProductCard/ProductCard";
+import grey from "@mui/material/colors/grey";
 
 export default function SignIn() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,18 +29,6 @@ export default function SignIn() {
 
     return (
         <Container component="main" maxWidth="xs" color="#131313">
-
-            <ProductCard 
-                productId={"1"} 
-                productImgSource={""} title={"sadasdas"} 
-                pricing={{
-                    fullPrice: "R$ 1.000,00",
-                    hasPromotion: true,
-                    promotionalPrice: "R$ 1.000,00",
-                    promotionWithPaymentMethod: "via pix"
-                }} 
-                freeShipping={true} />
-
             <CssBaseline />
             <GenericCard>
                 <Box id="box"
@@ -48,8 +38,8 @@ export default function SignIn() {
                         alignItems: "center",
                     }}
                 >
-                    <Typography component="h1" variant="h3" color={"#FFFFFF"}>
-                            Entrar
+                    <Typography component="h1" fontWeight={"bold"} variant="h3" color={"#FFFFFF"}>
+                        Entrar
                     </Typography>
                     <Box
                         component="form"
@@ -82,25 +72,22 @@ export default function SignIn() {
                         </Button>
                         <Grid container >
                             <Grid item xs={12} display="flex" justifyContent="flex-end" marginTop={"15px"}>
-                                <Link href="#" variant="body2" color={"#FFFFFF"} text-decoration={"none"}>
-                                        Esqueceu a senha?
+                                <Link href="#" variant="body2" color={"#FFFFFF"} text-decoration={"none"} underline="none">
+                                    Esqueceu a senha?
                                 </Link>
-                            </Grid>    
+                            </Grid> 
+                            <Grid item xs={12}>
+                                <Divider>
+                                    <Typography color={"#FFFFFF"}>
+                                        OU
+                                    </Typography>
+                                </Divider> 
+                            </Grid>   
                         </Grid>
                         <Grid container color={"#FFFFFF"} display="flex" justifySelf={"center"} justifyItems={"center"}>
-                            <Grid item xs={12} color={"#FFFFFF"}>
-                                <Divider>
-                                        OU
-                                </Divider> 
-                            </Grid>
-                            <Grid item xs={6}>
-                                <FacebookIcon/>
-                                    Continuar com
-                                      
-                            </Grid>
-                            <Grid item xs={6}>
-                                <GoogleIcon/>
-                                    Google  
+                            <Grid item xs={12} display={"inline-flex"} gap={"10px"} marginTop={"18px"}>
+                                <Button variant="outlined" fullWidth startIcon={<GoogleIcon/>}>Google</Button>
+                                <Button variant="outlined" fullWidth startIcon={<FacebookIcon/>}>facebook</Button>
                             </Grid>
                         </Grid>
                     </Box>

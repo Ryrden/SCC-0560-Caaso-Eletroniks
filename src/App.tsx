@@ -20,7 +20,8 @@ const theme = createTheme({
         },
         background: {
             default: "#131313",
-        }
+        },
+        divider: "#565656"
     },
 });
 
