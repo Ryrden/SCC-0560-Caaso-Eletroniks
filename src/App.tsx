@@ -2,18 +2,37 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
-import Footer from "@/components/Footer/Footer";
-import NavBar from "@/components/NavBar/NavBar";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#FCA90D",
+        },
+        secondary: {
+            main: "#270039",
+        },
+        success: {
+            main: "#18F27E",
+        },
+        info: {
+            main: "#F7F7F7",
+        },
+        background: {
+            default: "#131313",
+        }
+    },
+});
 
 function App() {
     return (
         <div className="App">
-            <Routes>
-                <NavBar />
-                <Route path="/" element={<Home />} />
-                <Footer />
-                <Route path="/login" element={<Login />} />
-            </Routes>
+            <ThemeProvider theme={theme}>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </ThemeProvider>
         </div>
     );
 }
