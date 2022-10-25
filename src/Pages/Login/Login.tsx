@@ -13,6 +13,9 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider, withStyles } from "@mui/material/styles";
 import GenericCard from "@/components/GenericCard/GenericCard";
+import Divider from "@mui/material/Divider";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GoogleIcon from '@mui/icons-material/Google';
 
 const theme = createTheme();
 
@@ -64,19 +67,35 @@ export default function SignIn() {
                                 control={
                                     <Checkbox value="remember" style={{ color: "#FFFFFF" }} />
                                 }
-                                style={{ color: "#FFFFFF" }}
+                                style={{ color: "#FFFFFF",  margin: "5px 0px"}}
                                 label="Lembre de mim"
                             />
                             <Button
-                                btntype="secondary"
+                                btntype="primary"
                             >
-                                Sign In
+                                Entrar
                             </Button>
                             <Grid container >
-                                <Grid item xs display="flex" justifyContent="flex-end" marginTop={"15px"}>
+                                <Grid item xs={12} display="flex" justifyContent="flex-end" marginTop={"15px"}>
                                     <Link href="#" variant="body2" color={"#FFFFFF"} text-decoration={"none"}>
                                         Esqueceu a senha?
                                     </Link>
+                                </Grid>    
+                            </Grid>
+                            <Grid container color={"#FFFFFF"} display="flex" justifySelf={"center"} justifyItems={"center"}>
+                                <Grid item xs={12} color={"#FFFFFF"}>
+                                    <Divider>
+                                        OU
+                                    </Divider> 
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <FacebookIcon/>
+                                    Continuar com
+                                      
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <GoogleIcon/>
+                                    Google  
                                 </Grid>
                             </Grid>
                         </Box>
