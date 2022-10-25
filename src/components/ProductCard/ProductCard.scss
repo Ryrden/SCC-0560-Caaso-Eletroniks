@@ -1,0 +1,14 @@
+@import "@/Sass/app.scss";
+
+.product-card {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
