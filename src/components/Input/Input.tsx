@@ -19,9 +19,10 @@ const Input = ({ size = "small", required = false, type = "text", ...props }: In
                 label={props.label}
                 type={type}
                 variant="filled"
+                color="secondary"
                 size={size}
                 name={props.name}
-                InputProps={{ disableUnderline: true }}
+                InputProps={{ disableUnderline: true } }
             />
         </div>
     );
