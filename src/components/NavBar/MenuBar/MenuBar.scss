@@ -4,4 +4,19 @@
     background-color: $yellow;
     font-family: $font-raleway;
     font-weight: bold;
+
+
+    .dpt-option {
+
+        //select all minus the last child
+        &:not(:last-child) {
+            padding-right: 7.5em;
+            border-right: 1px solid black;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
 }
