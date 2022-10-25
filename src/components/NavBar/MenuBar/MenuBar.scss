@@ -1,31 +1,22 @@
 @import "@/Sass/app.scss";
 
 #menubar-container {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.5rem 5rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     background-color: $yellow;
+    font-family: $font-raleway;
+    font-weight: bold;
 
-    .department-option {
-        font-family: $font-raleway;
-        font-weight: bold;
-        display: flex;
 
-        align-items: center;
+    .dpt-option {
 
-        &:not(:last-child)::after {
-            content: "";
-            display: inline-block;
-            //put vertical slight bar between each department
-            width: 1px;
-            height: 1.5em;
-            background-color: $black;
-            margin: 0 5em;
+        //select all minus the last child
+        &:not(:last-child) {
+            padding-right: 7.5em;
+            border-right: 1px solid black;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
+
     }
 }
