@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
+
 import "./Footer.scss";
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
         <footer>
             <div className="footer-gradient"></div>
             <Box
-                sx={{ display: "grid", gridTemplateColumns: "2fr 1fr" }}
+                sx={{ display: "grid", gridTemplateColumns: "2fr 1fr"}}
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 5, sm: 10 }}
                 bgcolor="text.secondary"
