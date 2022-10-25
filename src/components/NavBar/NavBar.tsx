@@ -7,11 +7,11 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AccessibilityBar from "../AccessibilityBar/AccessibilityBar";
+import AccessibilityBar from "./AccessibilityBar/AccessibilityBar";
 import logo from "@/assets/imgs/logo.svg";
 import "./NavBar.scss";
 import "@/Sass/_variables.scss";
-import MenuBar from "../MenuBar/MenuBar";
+import MenuBar from "./MenuBar/MenuBar";
 
 const Search = styled("div")(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
@@ -152,7 +152,7 @@ const NavBar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AccessibilityBar />
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Toolbar id="navbar-container">
                     <Typography
                         variant="h6"
