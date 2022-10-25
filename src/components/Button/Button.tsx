@@ -1,16 +1,15 @@
 import React from "react";
 import "@/components/Button/Button.scss";
+import Button, { ButtonProps } from "@mui/material/Button";
 
-interface ButtonPropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonPropTypes extends ButtonProps {
     children?: React.ReactNode,
-    btntype: "primary" | "secondary",
 }
 
-const Button:React.FC<ButtonPropTypes> = (props: ButtonPropTypes) => {
-    const buttonType = props.btntype;
+const CButton:React.FC<ButtonPropTypes> = ({variant = "contained", ...props}: ButtonPropTypes) => {
     return (
-        <button className={`button ${buttonType}`} {...props}>{props.children}</button>
+        <Button variant={variant} fullWidth {...props}>{props.children}</Button>
     );
 };
 
-export default Button;
+export default CButton;

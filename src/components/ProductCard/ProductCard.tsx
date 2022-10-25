@@ -1,10 +1,11 @@
-import { IconButton, Typography } from "@mui/material";
+import { IconButton, Typography, useTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import Button from "../Button/Button";
 import GenericCard from "../GenericCard/GenericCard";
 import "./ProductCard.scss";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+import { grey } from "@mui/material/colors";
 
 interface Pricing {
     hasPromotion: boolean
@@ -22,6 +23,9 @@ interface ProductCardTypes {
 }
 
 const ProductCard = (props: ProductCardTypes) => {
+
+    const theme = useTheme();
+
     return (
         <Box className="product-card" boxShadow={3}>
             <GenericCard>
@@ -43,7 +47,7 @@ const ProductCard = (props: ProductCardTypes) => {
                     <Box>
                         <Typography
                             variant="body1"
-                            color={"#FFFFFF"}
+                            color={grey[600]}
                             style={{textDecoration: props.pricing.hasPromotion ? "line-through" : "none"}}>
                             {props.pricing.fullPrice}
                         </Typography>
@@ -70,7 +74,7 @@ const ProductCard = (props: ProductCardTypes) => {
                             ? 
                             <Typography
                                 variant="caption"
-                                color={"#FFFFFF"}>
+                                color={theme.palette.success.main}>
                             Frete grátis
                             </Typography> 
                             : null}
@@ -79,13 +83,13 @@ const ProductCard = (props: ProductCardTypes) => {
 
                         <Box display={"flex"}>
                             <Box width={"100%"}>
-                                <Button btntype="primary">
+                                <Button>
                                   Ver detalhes
                                 </Button>
                             </Box>
                             <Box width={"min-content"}>
-                                <IconButton>
-                                    <AddShoppingCartOutlinedIcon style={{ color: "#FCA90D" }} />
+                                <IconButton color="primary">
+                                    <AddShoppingCartOutlinedIcon />
                                 </IconButton>
                             </Box>
                         </Box>
