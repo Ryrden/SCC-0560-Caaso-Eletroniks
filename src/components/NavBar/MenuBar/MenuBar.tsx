@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import React from "react";
 
 const MenuBar = () => {
@@ -17,7 +17,8 @@ const MenuBar = () => {
                     fontWeight="bold"
                     justifyContent="space-between"
                     direction="row"
-                    p="0.5rem 5rem">
+                    p="0.5rem 5rem"
+                    divider={<Divider orientation="vertical" flexItem />}>
                     <Box className="dpt-option">Lançamentos</Box>
                     <Box className="dpt-option">Computadores</Box>
                     <Box className="dpt-option">Periféricos</Box>
