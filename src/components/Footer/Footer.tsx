@@ -4,9 +4,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
-
-import "./Footer.scss";
-import { useTheme } from "@mui/material";
+import { TextField, Typography, useTheme } from "@mui/material";
 
 export default function Footer() {
     const theme = useTheme();
@@ -19,34 +17,41 @@ export default function Footer() {
                     background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
                 }} />
             <Box
-                sx={{ display: "grid", gridTemplateColumns: "2fr 1fr" }}
-                px={{ xs: 3, sm: 10 }}
-                py={{ xs: 5, sm: 10 }}
+                sx={{
+                    display: "inline-grid", gridTemplateColumns: "2fr 1fr"
+                }}
+                // px={{ xs: 3, sm: 10 }}
+                /* py={{ xs: 5, sm: 10 }}
+                pl={{ xs: 3, sm: 10 }} */
+                width={"100%"}
                 bgcolor="text.secondary"
                 color="white"
             >
-                <Container maxWidth="xl">
+                <Container sx={{
+                    backgroundColor: "black",
+                    padding: { xs: "3 5", sm: 10 }
+                }}>
                     <Grid container spacing={5}>
-                        <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Help</Box>
+                        <Grid item xs={12} sm={4} >
+                            <Box borderBottom={3}>Departamento</Box>
                             <Box>
                                 <Link href="/" color="inherit">
-                                    Contact
+                                    Computadores
                                 </Link>
                             </Box>
                             <Box>
                                 <Link href="/" color="inherit">
-                                    Support
+                                    Perifericos
                                 </Link>
                             </Box>
                             <Box>
                                 <Link href="/" color="inherit">
-                                    Privacy
+                                    Hardware
                                 </Link>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Account</Box>
+                            <Box borderBottom={3}>Account</Box>
                             <Box>
                                 <Link href="/" color="inherit">
                                     Login
@@ -59,7 +64,7 @@ export default function Footer() {
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Messages</Box>
+                            <Box borderBottom={3}>Messages</Box>
                             <Box>
                                 <Link href="/" color="inherit">
                                     Backup
@@ -77,16 +82,24 @@ export default function Footer() {
                             </Box>
                         </Grid>
                     </Grid>
-                    <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-                        Material UI Workshop &reg; {new Date().getFullYear()}
-                    </Box>
                 </Container>
-                <Container maxWidth="xl">
-                    <Box sx={{ bgcolor: "text.primary" }}>
-                        aaaaaaaaaa
+                <Container sx={{
+                    backgroundColor: "white",
+                    padding: { xs: "3 5", sm: 10 }
+                }}>
+                    <Box textAlign="center" bgcolor="white">
+                        <Typography variant="h5" color="black" align="center">
+                            Entre em Contato Conosco
+                        </Typography>
+                        <TextField id="outlined-basic" label="Email" variant="outlined" />
+
                     </Box>
+
                 </Container>
             </Box>
+            {/* <Box textAlign="center" color="white" bgcolor="black" pb={{ xs: 5, sm: 3 }}>
+                Alguns Direitos Reservados &copy; {new Date().getFullYear()}
+            </Box> */}
             <Container
                 sx={{
                     minWidth: "100%",
