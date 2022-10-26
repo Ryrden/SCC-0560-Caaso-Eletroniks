@@ -6,13 +6,20 @@ import Link from "@mui/material/Link";
 
 
 import "./Footer.scss";
+import { useTheme } from "@mui/material";
 
 export default function Footer() {
+    const theme = useTheme();
     return (
         <footer>
-            <div className="footer-gradient"></div>
+            <Container
+                sx={{
+                    minWidth: "100%",
+                    height: "40px",
+                    background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
+                }} />
             <Box
-                sx={{ display: "grid", gridTemplateColumns: "2fr 1fr"}}
+                sx={{ display: "grid", gridTemplateColumns: "2fr 1fr" }}
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 5, sm: 10 }}
                 bgcolor="text.secondary"
@@ -80,7 +87,12 @@ export default function Footer() {
                     </Box>
                 </Container>
             </Box>
-            <div className="footer-gradient"></div>
+            <Container
+                sx={{
+                    minWidth: "100%",
+                    height: "40px",
+                    background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
+                }} />
         </footer>
     );
 }
