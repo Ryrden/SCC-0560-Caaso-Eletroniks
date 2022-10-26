@@ -4,7 +4,14 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
-import { TextField, Typography, useTheme } from "@mui/material";
+import footerBackground from "@/assets/imgs/footerBackground.svg";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
+import { Button, TextField, Typography, useTheme } from "@mui/material";
 
 export default function Footer() {
     const theme = useTheme();
@@ -33,66 +40,162 @@ export default function Footer() {
                 }}>
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
-                            <Box borderBottom={3}>Departamento</Box>
-                            <Box>
+                            <Box mb={5}>
+                                <Typography variant="h6" sx={{
+                                    textDecoration: "underline",
+                                    textUnderlineOffset: "0px",
+                                    textDecorationColor: "yellow"
+                                }}>
+                                    Departamento
+                                </Typography>
+                            </Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
                                     Computadores
                                 </Link>
                             </Box>
-                            <Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
                                     Perifericos
                                 </Link>
                             </Box>
-                            <Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
                                     Hardware
                                 </Link>
                             </Box>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box borderBottom={3}>Account</Box>
-                            <Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
-                                    Login
-                                </Link>
-                            </Box>
-                            <Box>
-                                <Link href="/" color="inherit">
-                                    Register
+                                    Eletrônicos
                                 </Link>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Box borderBottom={3}>Messages</Box>
-                            <Box>
+                            <Box mb={5}>
+                                <Typography variant="h6" sx={{
+                                    textDecoration: "underline",
+                                    textUnderlineOffset: "0px",
+                                    textDecorationColor: "yellow"
+                                }}>
+                                    Institucional
+                                </Typography>
+                            </Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
-                                    Backup
+                                    O CAASO Eletroniks
                                 </Link>
                             </Box>
-                            <Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
-                                    History
+                                    Formas de pagamento e envio
                                 </Link>
                             </Box>
-                            <Box>
+                            <Box mb={4}>
                                 <Link href="/" color="inherit">
-                                    Roll
+                                    Garantia, trocas e devoluções
+                                </Link>
+                            </Box>
+                            <Box mb={4}>
+                                <Link href="/" color="inherit">
+                                    Política de privacidade
+                                </Link>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <Box mb={5}>
+                                <Typography variant="h6" sx={{
+                                    textDecoration: "underline",
+                                    textUnderlineOffset: "0px",
+                                    textDecorationColor: "yellow"
+                                }}>
+                                    Meu Perfil
+                                </Typography>
+                            </Box>
+                            <Box mb={4}>
+                                <Link href="/" color="inherit">
+                                    Meus Dados
+                                </Link>
+                            </Box>
+                            <Box mb={4}>
+                                <Link href="/" color="inherit">
+                                    Meus pedidos
+                                </Link>
+                            </Box>
+                            <Box mb={4}>
+                                <Link href="/" color="inherit">
+                                    Sair
                                 </Link>
                             </Box>
                         </Grid>
                     </Grid>
                 </Container>
                 <Container sx={{
-                    backgroundColor: "white",
+                    backgroundImage: `url(${footerBackground})`,
                     padding: { xs: "3 5", sm: 10 }
                 }}>
-                    <Box textAlign="center" bgcolor="white">
-                        <Typography variant="h5" color="black" align="center">
+                    <Box>
+                        <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
                             Entre em Contato Conosco
                         </Typography>
-                        <TextField id="outlined-basic" label="Email" variant="outlined" />
-
+                        <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
+                            <TextField id="outlined" label="Email" variant="outlined" sx={{
+                                backgroundColor: "white"
+                            }} />
+                            <Button variant="contained">Enviar</Button>
+                        </Box>
+                        <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
+                            Mídias
+                        </Typography>
+                        <Grid container spacing={4} justifyContent="center">
+                            <Grid item sm={6}>
+                                <Box display="flex" alignItems="center">
+                                    <WhatsAppIcon sx={{ color: "black" }} />
+                                    <Typography variant="h6" sx={{
+                                        textDecoration: "underline",
+                                        color: "black",
+                                        marginLeft: "0.2em"
+                                    }}>
+                                        Whatsapp
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item sm={6}>
+                                <Box display="flex" alignItems="center">
+                                    <FacebookIcon sx={{ color: "black" }} />
+                                    <Typography variant="h6" sx={{
+                                        textDecoration: "underline",
+                                        color: "black",
+                                        marginLeft: "0.2em"
+                                    }}>
+                                        Facebook
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item sm={6}>
+                                <Box display="flex" alignItems="center">
+                                    <InstagramIcon sx={{ color: "black" }} />
+                                    <Typography variant="h6" sx={{
+                                        textDecoration: "underline",
+                                        color: "black",
+                                        marginLeft: "0.2em"
+                                    }}>
+                                        Instagram
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item sm={6}>
+                                <Box display="flex" alignItems="center">
+                                    <GitHubIcon sx={{ color: "black" }} />
+                                    <Typography variant="h6" sx={{
+                                        textDecoration: "underline",
+                                        color: "black",
+                                        marginLeft: "0.2em"
+                                    }}>
+                                        Github
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Box>
 
                 </Container>
