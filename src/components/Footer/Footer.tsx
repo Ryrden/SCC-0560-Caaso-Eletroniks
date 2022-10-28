@@ -25,18 +25,20 @@ export default function Footer() {
                 }} />
             <Box
                 sx={{
-                    display: "inline-grid", gridTemplateColumns: "2fr 1fr"
+                    display: "grid",
+                    gridAutoFlow: { xs: "row", md: "column" },
+                    gridTemplateColumns: { md: "2fr 1fr" },
+                    textAlign: { xs: "center", md: "center" },
                 }}
                 // px={{ xs: 3, sm: 10 }}
                 /* py={{ xs: 5, sm: 10 }}
                 pl={{ xs: 3, sm: 10 }} */
                 width={"100%"}
-                bgcolor="text.secondary"
                 color="white"
             >
                 <Container sx={{
                     backgroundColor: "black",
-                    padding: { xs: "3 5", sm: 10 },
+                    padding: { xs: 10 },
                 }}>
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
@@ -132,7 +134,7 @@ export default function Footer() {
 
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
-                    padding: { xs: "3 5", sm: 10 },
+                    padding: { xs: 10 },
                 }}>
                     <Box>
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
