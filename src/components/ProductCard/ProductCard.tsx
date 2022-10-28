@@ -14,7 +14,7 @@ interface Pricing {
     promotionWithPaymentMethod?: string
 }
 
-interface ProductCardTypes {
+export interface ProductCardTypes {
     productId: string
     productImgSource: string
     title: string
