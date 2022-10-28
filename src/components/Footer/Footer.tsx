@@ -36,7 +36,7 @@ export default function Footer() {
             >
                 <Container sx={{
                     backgroundColor: "black",
-                    padding: { xs: "3 5", sm: 10 }
+                    padding: { xs: "3 5", sm: 10 },
                 }}>
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
@@ -129,25 +129,34 @@ export default function Footer() {
                         </Grid>
                     </Grid>
                 </Container>
+
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
-                    padding: { xs: "3 5", sm: 10 }
+                    padding: { xs: "3 5", sm: 10 },
                 }}>
                     <Box>
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
                             Entre em Contato Conosco
                         </Typography>
-                        <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
-                            <TextField id="outlined" label="Email" variant="outlined" sx={{
-                                backgroundColor: "white"
-                            }} />
-                            <Button variant="contained">Enviar</Button>
-                        </Box>
+
+                        <Grid container display="flex" alignItems="center" justifyContent="center" mb={2}>
+                            <Grid item lg={8}>
+                                <TextField id="outlined" label="Email" variant="outlined" sx={{
+                                    backgroundColor: "white"
+                                }} />
+                            </Grid>
+
+                            <Grid item lg={4}>
+                                <Button variant="contained">Enviar</Button>
+                            </Grid>
+                        </Grid>
+
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
                             Mídias
                         </Typography>
+
                         <Grid container spacing={4} justifyContent="center">
-                            <Grid item sm={6}>
+                            <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
                                     <WhatsAppIcon sx={{ color: "black" }} />
                                     <Typography variant="h6" sx={{
@@ -159,7 +168,7 @@ export default function Footer() {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            <Grid item sm={6}>
+                            <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
                                     <FacebookIcon sx={{ color: "black" }} />
                                     <Typography variant="h6" sx={{
@@ -171,7 +180,7 @@ export default function Footer() {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            <Grid item sm={6}>
+                            <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
                                     <InstagramIcon sx={{ color: "black" }} />
                                     <Typography variant="h6" sx={{
@@ -183,7 +192,7 @@ export default function Footer() {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            <Grid item sm={6}>
+                            <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
                                     <GitHubIcon sx={{ color: "black" }} />
                                     <Typography variant="h6" sx={{
@@ -199,6 +208,7 @@ export default function Footer() {
                     </Box>
 
                 </Container>
+
             </Box>
             {/* <Box textAlign="center" color="white" bgcolor="black" pb={{ xs: 5, sm: 3 }}>
                 Alguns Direitos Reservados &copy; {new Date().getFullYear()}
