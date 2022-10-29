@@ -38,7 +38,7 @@ export default function Footer() {
                     display: "grid",
                     gridAutoFlow: { xs: "row", md: "column" },
                     gridTemplateColumns: { md: "2fr 1fr" },
-                    textAlign: { xs: "center" },
+                    textAlign: { xs: "center", md: "start" },
                 }}
                 // px={{ xs: 3, sm: 10 }}
                 /* py={{ xs: 5, sm: 10 }}
@@ -145,6 +145,7 @@ export default function Footer() {
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
                     padding: { xs: 10 },
+                    textAlign: { xs: "center", md: "start" },
                 }}>
                     <Box>
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
@@ -235,14 +236,16 @@ export default function Footer() {
                 boxSizing: "border-box",
                 textAlign: { xs: "center", md: "left" },
             }}>
-                <Typography variant="h6" fontWeight="bold" mb={2} >
+                <Typography variant="h6" fontWeight="bold" mb={2} ml={{xs: 0, md: 7}}>
                     Pagamento Via
                 </Typography>
                 <Container sx={{
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
                     alignItems: "center",
+                    minWidth: "100%",
                     justifyContent: "space-between",
+                    paddingX: { xs: 0, md: 10 },
                 }}>
                     <Box sx={{
                         display: "flex",
