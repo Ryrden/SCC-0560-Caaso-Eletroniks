@@ -152,7 +152,7 @@ const NavBar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AccessibilityBar />
-            <AppBar position="sticky">
+            <AppBar position="static">
                 <Toolbar id="navbar-container">
                     <Typography
                         variant="h6"

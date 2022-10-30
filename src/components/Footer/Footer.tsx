@@ -10,9 +10,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PixIcon from "@mui/icons-material/Pix";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import MoneyIcon from "@mui/icons-material/Money";
 
 import siteSeguro from "@/assets/imgs/siteSeguro.svg";
 import googleSiteSeguro from "@/assets/imgs/googleSiteSeguro.svg";
@@ -40,9 +37,6 @@ export default function Footer() {
                     gridTemplateColumns: { md: "2fr 1fr" },
                     textAlign: { xs: "center", md: "start" },
                 }}
-                // px={{ xs: 3, sm: 10 }}
-                /* py={{ xs: 5, sm: 10 }}
-                pl={{ xs: 3, sm: 10 }} */
                 width={"100%"}
                 color="white"
             >

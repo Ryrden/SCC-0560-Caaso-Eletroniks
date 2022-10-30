@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@/components/Button/Button";
-import ButtonSocialMedia from "@/components/Button/ButtonSocialMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@/components/Input/Input";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -14,8 +13,6 @@ import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
-import ProductCard from "@/components/ProductCard/ProductCard";
-import grey from "@mui/material/colors/grey";
 
 export default function SignIn() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
