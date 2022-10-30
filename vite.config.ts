@@ -9,5 +9,6 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
+    base: "https://Ryrden.github.io/SCC-0560-Caaso-Eletroniks/",
     plugins: [react()]
 });
