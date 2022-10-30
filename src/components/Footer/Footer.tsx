@@ -10,9 +10,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PixIcon from "@mui/icons-material/Pix";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import MoneyIcon from "@mui/icons-material/Money";
 
 import siteSeguro from "@/assets/imgs/siteSeguro.svg";
 import googleSiteSeguro from "@/assets/imgs/googleSiteSeguro.svg";
@@ -40,9 +37,6 @@ export default function Footer() {
                     gridTemplateColumns: { md: "2fr 1fr" },
                     textAlign: { xs: "center", md: "start" },
                 }}
-                // px={{ xs: 3, sm: 10 }}
-                /* py={{ xs: 5, sm: 10 }}
-                pl={{ xs: 3, sm: 10 }} */
                 width={"100%"}
                 color="white"
             >
@@ -53,11 +47,7 @@ export default function Footer() {
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Departamento
                                 </Typography>
                             </Box>
@@ -84,11 +74,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Institucional
                                 </Typography>
                             </Box>
@@ -115,11 +101,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Meu Perfil
                                 </Typography>
                             </Box>
@@ -236,7 +218,7 @@ export default function Footer() {
                 boxSizing: "border-box",
                 textAlign: { xs: "center", md: "left" },
             }}>
-                <Typography variant="h6" fontWeight="bold" mb={2} ml={{xs: 0, md: 7}}>
+                <Typography variant="h6" fontWeight="bold" mb={2} ml={{ xs: 0, md: 7 }}>
                     Pagamento Via
                 </Typography>
                 <Container sx={{
@@ -291,9 +273,6 @@ export default function Footer() {
                     </Typography>
                 </Box>
             </Container>
-            {/* <Box textAlign="center" color="white" bgcolor="black" pb={{ xs: 5, sm: 3 }}>
-                    Alguns Direitos Reservados &copy; {new Date().getFullYear()}
-                </Box> */}
         </footer>
     );
 }
