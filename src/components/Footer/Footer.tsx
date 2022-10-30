@@ -53,11 +53,7 @@ export default function Footer() {
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Departamento
                                 </Typography>
                             </Box>
@@ -84,11 +80,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Institucional
                                 </Typography>
                             </Box>
@@ -115,11 +107,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Meu Perfil
                                 </Typography>
                             </Box>
@@ -236,7 +224,7 @@ export default function Footer() {
                 boxSizing: "border-box",
                 textAlign: { xs: "center", md: "left" },
             }}>
-                <Typography variant="h6" fontWeight="bold" mb={2} ml={{xs: 0, md: 7}}>
+                <Typography variant="h6" fontWeight="bold" mb={2} ml={{ xs: 0, md: 7 }}>
                     Pagamento Via
                 </Typography>
                 <Container sx={{
@@ -291,9 +279,6 @@ export default function Footer() {
                     </Typography>
                 </Box>
             </Container>
-            {/* <Box textAlign="center" color="white" bgcolor="black" pb={{ xs: 5, sm: 3 }}>
-                    Alguns Direitos Reservados &copy; {new Date().getFullYear()}
-                </Box> */}
         </footer>
     );
 }
