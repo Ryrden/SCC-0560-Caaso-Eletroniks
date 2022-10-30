@@ -7,13 +7,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#FCA90D",
+            main: "#FCA90D", //Amarelo Caaso
         },
         secondary: {
-            main: "#270039",
+            main: "#270039", //Roxo Chique
         },
         success: {
-            main: "#18F27E",
+            main: "#18F27E", //Verde Claro
         },
         info: {
             main: "#F7F7F7",
