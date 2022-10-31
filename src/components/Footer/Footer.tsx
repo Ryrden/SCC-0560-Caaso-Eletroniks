@@ -27,7 +27,7 @@ export default function Footer() {
             <Container
                 sx={{
                     minWidth: "100%",
-                    height: "40px",
+                    height: "25px",
                     background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
                 }} />
             <Box
@@ -126,8 +126,12 @@ export default function Footer() {
 
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
-                    padding: { xs: 10 },
-                    textAlign: { xs: "center", md: "start" },
+                    backgroundSize: "cover",
+                    paddingTop:10,
+                    paddingBottom:10,
+                    paddingLeft: {xs: 2, lg: 10},
+                    paddingRight: {xs: 2, lg: 10},
+                    textAlign: { xs: "center", md: "start" }
                 }}>
                     <Box>
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
@@ -135,13 +139,18 @@ export default function Footer() {
                         </Typography>
 
                         <Grid container display="flex" alignItems="center" justifyContent="center" mb={2}>
-                            <Grid item lg={8}>
+                            <Grid item lg={8}
+                                sx={{
+                                    width: {xs: "70%"}
+                                }}
+                            >
                                 <TextField id="outlined" label="Email" variant="outlined" sx={{
-                                    backgroundColor: "white"
+                                    backgroundColor: "white",
+                                    width: "95%"
                                 }} />
                             </Grid>
 
-                            <Grid item lg={4}>
+                            <Grid item lg={4} mt={2} >
                                 <Button variant="contained">Enviar</Button>
                             </Grid>
                         </Grid>
@@ -219,7 +228,7 @@ export default function Footer() {
             <Container
                 sx={{
                     minWidth: "100%",
-                    height: "40px",
+                    height: "25px",
                     background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
                 }} />
             <Container sx={{
