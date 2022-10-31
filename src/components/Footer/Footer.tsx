@@ -153,50 +153,62 @@ export default function Footer() {
                         <Grid container spacing={4} justifyContent="center">
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <WhatsAppIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Whatsapp
-                                    </Typography>
+                                    <Link href="/">
+                                        <WhatsAppIcon sx={{ color: "black"}} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Whatsapp
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <FacebookIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Facebook
-                                    </Typography>
+                                    <Link href="/">
+                                        <FacebookIcon sx={{ color: "black" }} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Facebook
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <InstagramIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Instagram
-                                    </Typography>
+                                    <Link href="/">
+                                        <InstagramIcon sx={{ color: "black" }} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Instagram
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <GitHubIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Github
-                                    </Typography>
+                                    <Link href="/">
+                                        <GitHubIcon sx={{ color: "black"}} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Github
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                         </Grid>
