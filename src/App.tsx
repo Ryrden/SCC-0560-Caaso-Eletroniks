@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
+import Cadastro from "@/Pages/Cadastro/Cadastro";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -32,6 +33,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
                 </Routes>
             </ThemeProvider>
         </div>
