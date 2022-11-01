@@ -26,7 +26,7 @@ export default function SignIn() {
 
     return (
         <Container component="main" maxWidth="xs" color="#131313">
-            <CssBaseline />
+            <CssBaseline/>
             <GenericCard>
                 <Box id="box"
                     sx={{
