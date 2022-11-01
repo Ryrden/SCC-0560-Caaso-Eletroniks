@@ -42,15 +42,15 @@ export default function Registration() {
                         width={"100%"}
                         padding={"30px"}
                     >
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={6} pr={1}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Nome Completo"
                                     name={"name"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={6} pl={1} justifyContent={"start"}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Data de Nascimento"
                                     name={"date"}
@@ -58,11 +58,10 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-
                         </Grid>
 
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={6} pr={1}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="CPF"
                                     name={"cpf"}
@@ -70,7 +69,7 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={6} pl={1}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Telefone Celular"
                                     name={"telefone"}
@@ -80,8 +79,8 @@ export default function Registration() {
                             </Grid>
                         </Grid>
 
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={12}>
+                        <Grid container>
+                            <Grid item md={12} marginBottom={"20px"}>
                                 <TextField
                                     label="E-mail"
                                     name={"email"}
@@ -91,8 +90,8 @@ export default function Registration() {
                             </Grid>
                         </Grid>
 
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={6} pr={1}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Crie sua Senha"
                                     type="password"
@@ -100,7 +99,7 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={6} pl={1}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Confirme sua Senha"
                                     type="password"
@@ -117,7 +116,7 @@ export default function Registration() {
                             Endereço
                         </Typography>
 
-                        <Grid container marginBottom={"20px"}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
                             <Grid item md={12}>
                                 <TextField
                                     label="Rua"
@@ -127,8 +126,8 @@ export default function Registration() {
                             </Grid>
                         </Grid>
 
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={6} pr={1}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="CEP"
                                     type="number"
@@ -136,7 +135,7 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={6} pl={1}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Número"
                                     type="number"
@@ -146,22 +145,22 @@ export default function Registration() {
                             </Grid>
                         </Grid>
 
-                        <Grid container marginBottom={"20px"}>
-                            <Grid item md={4} pr={1}>
+                        <Grid container gap={"20px"} marginBottom={"20px"}>
+                            <Grid item md={3.2}>
                                 <TextField
                                     label="Cidade"
                                     name={"cidade"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={2} pl={1} pr={1}>
+                            <Grid item md={1.7}>
                                 <TextField
                                     label="Estado"
                                     name={"uf"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={6} pl={1}>
+                            <Grid item md={5.6}>
                                 <TextField
                                     label="Complemento"
                                     name={"complemento"}
