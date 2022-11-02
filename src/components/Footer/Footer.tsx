@@ -19,6 +19,8 @@ import cartoes from "@/assets/imgs/cartoes.svg";
 import cc from "@/assets/imgs/cc.svg";
 
 import { Button, TextField, Typography, useTheme } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 export default function Footer() {
     const theme = useTheme();
@@ -127,10 +129,10 @@ export default function Footer() {
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
                     backgroundSize: "cover",
-                    paddingTop:10,
-                    paddingBottom:10,
-                    paddingLeft: {xs: 2, lg: 10},
-                    paddingRight: {xs: 2, lg: 10},
+                    paddingTop: 10,
+                    paddingBottom: 10,
+                    paddingLeft: { xs: 2, lg: 10 },
+                    paddingRight: { xs: 2, lg: 10 },
                     textAlign: { xs: "center", md: "start" }
                 }}>
                     <Box>
@@ -141,16 +143,29 @@ export default function Footer() {
                         <Grid container display="flex" alignItems="center" justifyContent="center" mb={2}>
                             <Grid item lg={8}
                                 sx={{
-                                    width: {xs: "70%"}
+                                    width: { xs: "70%" }
                                 }}
                             >
-                                <TextField id="outlined" label="Email" variant="outlined" sx={{
-                                    backgroundColor: "white",
-                                    width: "95%"
-                                }} />
+                                <TextField
+                                    id="outlined"
+                                    label=""
+                                    variant="outlined"
+                                    placeholder="seu@email.com"
+                                    size="small"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <MailOutlineIcon color="primary" />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                    sx={{
+                                        backgroundColor: "white",
+                                        width: "100%",
+                                    }} />
                             </Grid>
 
-                            <Grid item lg={4} mt={2} >
+                            <Grid item lg={4} >
                                 <Button variant="contained">Enviar</Button>
                             </Grid>
                         </Grid>
@@ -161,9 +176,9 @@ export default function Footer() {
 
                         <Grid container spacing={4} justifyContent="center">
                             <Grid item md={6}>
-                                <Box display="flex" alignItems="center">
-                                    <Link href="/">
-                                        <WhatsAppIcon sx={{ color: "black"}} />
+                                <Link href="/">
+                                    <Box display="flex" alignItems="center">
+                                        <WhatsAppIcon sx={{ color: "black" }} />
                                         <Typography variant="h6" sx={{
                                             textDecoration: "underline",
                                             color: "black",
@@ -172,12 +187,12 @@ export default function Footer() {
                                         }}>
                                             Whatsapp
                                         </Typography>
-                                    </Link>
-                                </Box>
+                                    </Box>
+                                </Link>
                             </Grid>
                             <Grid item md={6}>
-                                <Box display="flex" alignItems="center">
-                                    <Link href="/">
+                                <Link href="/">
+                                    <Box display="flex" alignItems="center">
                                         <FacebookIcon sx={{ color: "black" }} />
                                         <Typography variant="h6" sx={{
                                             textDecoration: "underline",
@@ -187,12 +202,12 @@ export default function Footer() {
                                         }}>
                                             Facebook
                                         </Typography>
-                                    </Link>
-                                </Box>
+                                    </Box>
+                                </Link>
                             </Grid>
                             <Grid item md={6}>
-                                <Box display="flex" alignItems="center">
-                                    <Link href="/">
+                                <Link href="/">
+                                    <Box display="flex" alignItems="center">
                                         <InstagramIcon sx={{ color: "black" }} />
                                         <Typography variant="h6" sx={{
                                             textDecoration: "underline",
@@ -202,13 +217,13 @@ export default function Footer() {
                                         }}>
                                             Instagram
                                         </Typography>
-                                    </Link>
-                                </Box>
+                                    </Box>
+                                </Link>
                             </Grid>
                             <Grid item md={6}>
-                                <Box display="flex" alignItems="center">
-                                    <Link href="/">
-                                        <GitHubIcon sx={{ color: "black"}} />
+                                <Link href="https://github.com/Ryrden/SCC-0560-Caaso-Eletroniks">
+                                    <Box display="flex" alignItems="center">
+                                        <GitHubIcon sx={{ color: "black" }} />
                                         <Typography variant="h6" sx={{
                                             textDecoration: "underline",
                                             color: "black",
@@ -217,14 +232,14 @@ export default function Footer() {
                                         }}>
                                             Github
                                         </Typography>
-                                    </Link>
-                                </Box>
-                            </Grid>
-                        </Grid>
-                    </Box>
+                                    </Box>
+                                </Link>
+                            </Grid >
+                        </Grid >
+                    </Box >
 
-                </Container>
-            </Box>
+                </Container >
+            </Box >
             <Container
                 sx={{
                     minWidth: "100%",
@@ -294,6 +309,6 @@ export default function Footer() {
                     </Typography>
                 </Box>
             </Container>
-        </footer>
+        </footer >
     );
 }

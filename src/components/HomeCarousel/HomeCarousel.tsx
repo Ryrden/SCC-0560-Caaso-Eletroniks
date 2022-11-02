@@ -1,10 +1,11 @@
 import React from "react";
-import {useKeenSlider} from "keen-slider/react";
+import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForward from "@mui/icons-material/ArrowForward";
 
-import {getMaxKeenSlider} from "../../utils/getMaxKeenSlider";
+import { getMaxKeenSlider } from "../../utils/getMaxKeenSlider";
 import { Box, colors, Typography, useTheme } from "@mui/material";
 import CarouselImage from "@/assets/imgs/carousel-image-2.jpg";
 import CButton from "../Button/Button";
@@ -48,7 +49,7 @@ const HomeCarousel: React.FunctionComponent = () => {
                 </div>
             </div>
             {loaded && instanceRef.current && (
-                <Box sx={{visibility: {xs: "hidden", md: "visible"}}}>
+                <Box sx={{ visibility: { xs: "hidden", md: "visible" } }}>
                     <Arrow
                         left onClick={(e) => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
 
@@ -104,13 +105,13 @@ function Arrow(props: {
             top={"50%"}
             right={!props.left ? "10%" : "none"}
             left={props.left ? "10%" : "none"}
-            style={{cursor: props.disabled ? "not-allowed" : "pointer"}}
+            style={{ cursor: props.disabled ? "not-allowed" : "pointer" }}
         >
             {props.left && (
-                <ArrowBackIcon style={{color}} fontSize={"large"} />
+                <ArrowBackIcon style={{ color }} fontSize={"large"} />
             )}
             {!props.left && (
-                <ArrowForwardIcon style={{color}} fontSize={"large"} />
+                <ArrowForwardIcon style={{ color }} fontSize={"large"} />
             )}
         </Box>
     );
@@ -125,15 +126,16 @@ const Banner: React.FunctionComponent<BannerPropTypes> = props => {
         justifyContent={"center"}
         alignItems={"center"}
         style={{
-            backgroundImage: `url(${props.src})`, 
-            backgroundRepeat: "no-repeat", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center"}}>
-        <Box sx={{maxWidth: {xs: "80%", md: "60%", lg: "40%"}}}>
-            <Typography variant="h2" color={colors.grey.A100} marginBottom={"50px"} sx={{ typography: { xs: "h4", sm: "h3", md: "h2"} }}>
+            backgroundImage: `url(${props.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+        }}>
+        <Box sx={{ maxWidth: { xs: "80%", md: "60%", lg: "40%" } }}>
+            <Typography variant="h2" color={colors.grey.A100} marginBottom={"50px"} sx={{ typography: { xs: "h4", sm: "h3", md: "h2" } }}>
                 {props.text}
             </Typography>
-            <CButton endIcon={<ArrowForwardIcon />} fullWidth={false}>Ver mais</CButton>
+            <CButton endIcon={<ArrowForward />} fullWidth={false}>Ver mais</CButton>
         </Box>
 
     </Box>;
