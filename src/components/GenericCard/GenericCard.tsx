@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import "./GenericCard.scss";
 
@@ -7,7 +8,7 @@ interface GenericCardTypes {
 
 const GenericCard = (props: GenericCardTypes) => {
     return (
-        <div className="card">{props.children}</div>
+        <Box className="card" position="relative">{props.children}</Box>
     );
 };
 
