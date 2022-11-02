@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <div>
-            <Box style={{backgroundImage: `url(${BackgroundImage}), linear-gradient(${theme.palette.secondary.main}, transparent)`}}>
+            <Box style={{backgroundImage: `url(${BackgroundImage}), linear-gradient(${theme.palette.secondary.main}, transparent)`, backgroundAttachment: "fixed"}}>
 
                 <CssBaseline />
                 <NavBar />

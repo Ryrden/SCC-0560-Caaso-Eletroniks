@@ -2,19 +2,21 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
+import Cadastro from "@/Pages/Cadastro/Cadastro";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Checkout from "@/Pages/Checkout/Checkout";
+import Cart from "./Pages/Cart/Cart";
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#FCA90D",
+            main: "#FCA90D", //Amarelo Caaso
         },
         secondary: {
-            main: "#270039",
+            main: "#270039", //Roxo Chique
         },
         success: {
-            main: "#18F27E",
+            main: "#18F27E", //Verde Claro
         },
         info: {
             main: "#F7F7F7",
@@ -34,6 +36,8 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
+                    <Route path="/carrinho" element={<Cart />} />
                 </Routes>
             </ThemeProvider>
         </div>

@@ -10,9 +10,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PixIcon from "@mui/icons-material/Pix";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import MoneyIcon from "@mui/icons-material/Money";
 
 import siteSeguro from "@/assets/imgs/siteSeguro.svg";
 import googleSiteSeguro from "@/assets/imgs/googleSiteSeguro.svg";
@@ -30,7 +27,7 @@ export default function Footer() {
             <Container
                 sx={{
                     minWidth: "100%",
-                    height: "40px",
+                    height: "25px",
                     background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
                 }} />
             <Box
@@ -40,9 +37,6 @@ export default function Footer() {
                     gridTemplateColumns: { md: "2fr 1fr" },
                     textAlign: { xs: "center", md: "start" },
                 }}
-                // px={{ xs: 3, sm: 10 }}
-                /* py={{ xs: 5, sm: 10 }}
-                pl={{ xs: 3, sm: 10 }} */
                 width={"100%"}
                 color="white"
             >
@@ -53,11 +47,7 @@ export default function Footer() {
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4} >
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Departamento
                                 </Typography>
                             </Box>
@@ -84,11 +74,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Institucional
                                 </Typography>
                             </Box>
@@ -115,11 +101,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
-                                <Typography variant="h6" sx={{
-                                    textDecoration: "underline",
-                                    textUnderlineOffset: "0px",
-                                    textDecorationColor: "yellow"
-                                }}>
+                                <Typography component="span" variant="h6" borderBottom={3} borderColor={"primary.main"}>
                                     Meu Perfil
                                 </Typography>
                             </Box>
@@ -144,8 +126,12 @@ export default function Footer() {
 
                 <Container sx={{
                     backgroundImage: `url(${footerBackground})`,
-                    padding: { xs: 10 },
-                    textAlign: { xs: "center", md: "start" },
+                    backgroundSize: "cover",
+                    paddingTop:10,
+                    paddingBottom:10,
+                    paddingLeft: {xs: 2, lg: 10},
+                    paddingRight: {xs: 2, lg: 10},
+                    textAlign: { xs: "center", md: "start" }
                 }}>
                     <Box>
                         <Typography variant="h5" color="black" fontWeight="bold" mb={2}>
@@ -153,13 +139,18 @@ export default function Footer() {
                         </Typography>
 
                         <Grid container display="flex" alignItems="center" justifyContent="center" mb={2}>
-                            <Grid item lg={8}>
+                            <Grid item lg={8}
+                                sx={{
+                                    width: {xs: "70%"}
+                                }}
+                            >
                                 <TextField id="outlined" label="Email" variant="outlined" sx={{
-                                    backgroundColor: "white"
+                                    backgroundColor: "white",
+                                    width: "95%"
                                 }} />
                             </Grid>
 
-                            <Grid item lg={4}>
+                            <Grid item lg={4} mt={2} >
                                 <Button variant="contained">Enviar</Button>
                             </Grid>
                         </Grid>
@@ -171,50 +162,62 @@ export default function Footer() {
                         <Grid container spacing={4} justifyContent="center">
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <WhatsAppIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Whatsapp
-                                    </Typography>
+                                    <Link href="/">
+                                        <WhatsAppIcon sx={{ color: "black"}} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Whatsapp
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <FacebookIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Facebook
-                                    </Typography>
+                                    <Link href="/">
+                                        <FacebookIcon sx={{ color: "black" }} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Facebook
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <InstagramIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Instagram
-                                    </Typography>
+                                    <Link href="/">
+                                        <InstagramIcon sx={{ color: "black" }} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Instagram
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item md={6}>
                                 <Box display="flex" alignItems="center">
-                                    <GitHubIcon sx={{ color: "black" }} />
-                                    <Typography variant="h6" sx={{
-                                        textDecoration: "underline",
-                                        color: "black",
-                                        marginLeft: "0.2em"
-                                    }}>
-                                        Github
-                                    </Typography>
+                                    <Link href="/">
+                                        <GitHubIcon sx={{ color: "black"}} />
+                                        <Typography variant="h6" sx={{
+                                            textDecoration: "underline",
+                                            color: "black",
+                                            marginLeft: "0.2em",
+                                            display: "inline"
+                                        }}>
+                                            Github
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
                         </Grid>
@@ -225,7 +228,7 @@ export default function Footer() {
             <Container
                 sx={{
                     minWidth: "100%",
-                    height: "40px",
+                    height: "25px",
                     background: `linear-gradient(90deg, #FFFFFF -0.35%, ${theme.palette.primary.main} -0.34%, #3B1A47 100%);`
                 }} />
             <Container sx={{
@@ -236,7 +239,7 @@ export default function Footer() {
                 boxSizing: "border-box",
                 textAlign: { xs: "center", md: "left" },
             }}>
-                <Typography variant="h6" fontWeight="bold" mb={2} ml={{xs: 0, md: 7}}>
+                <Typography variant="h6" fontWeight="bold" mb={2} ml={{ xs: 0, md: 7 }}>
                     Pagamento Via
                 </Typography>
                 <Container sx={{
@@ -291,9 +294,6 @@ export default function Footer() {
                     </Typography>
                 </Box>
             </Container>
-            {/* <Box textAlign="center" color="white" bgcolor="black" pb={{ xs: 5, sm: 3 }}>
-                    Alguns Direitos Reservados &copy; {new Date().getFullYear()}
-                </Box> */}
         </footer>
     );
 }
