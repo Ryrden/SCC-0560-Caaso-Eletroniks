@@ -6,6 +6,8 @@ import GenericCard from "../GenericCard/GenericCard";
 import "./ProductCard.scss";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
+import ArrowForward from "@mui/icons-material/ArrowForward";
 
 interface Pricing {
     hasPromotion: boolean
@@ -81,15 +83,28 @@ const ProductCard = (props: ProductCardTypes) => {
 
                         <Box paddingY={"12.5px"} />
 
-                        <Box display={"flex"}>
-                            <Box width={"100%"}>
-                                <Button>
-                                    Ver detalhes
-                                </Button>
+                        <Box display="flex" alignItems="center">
+                            <Box width="100%">
+                                <Link to="/carrinho" style={{ textDecoration: "none" }}>
+                                    <Button endIcon={<ArrowForward />}>
+                                        Ver detalhes
+                                    </Button>
+                                </Link>
                             </Box>
-                            <Box width={"min-content"}>
-                                <IconButton color="primary">
-                                    <AddShoppingCartOutlinedIcon />
+                            <Box
+                                ml={1}
+                                width="min-content"
+                                sx={{
+                                    borderColor: theme.palette.primary.main,
+                                    borderStyle: "solid",
+                                    borderWidth: "0.1em",
+                                    borderRadius: "10%",
+                                }}
+                                display="flex"
+                                alignItems="center"
+                                padding="0.1em"                            >
+                                <IconButton size="small" color="primary">
+                                    <AddShoppingCartOutlinedIcon fontSize="small" />
                                 </IconButton>
                             </Box>
                         </Box>

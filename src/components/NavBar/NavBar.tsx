@@ -12,6 +12,7 @@ import logo from "@/assets/imgs/logo.svg";
 import "./NavBar.scss";
 import "@/Sass/_variables.scss";
 import MenuBar from "./MenuBar/MenuBar";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
@@ -154,15 +155,16 @@ const NavBar = () => {
             <AccessibilityBar />
             <AppBar position="static">
                 <Toolbar id="navbar-container">
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: "none", sm: "block" } }}
-                    >
-                        <img src={logo} alt="Logo da Empresa Caaso Eletroniks" />
-                    </Typography>
-
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: "none", sm: "block" } }}
+                        >
+                            <img src={logo} alt="Logo da Empresa Caaso Eletroniks" />
+                        </Typography>
+                    </Link>
                     <Search>
                         <StyledInputBase
                             id="input-bar"
