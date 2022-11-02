@@ -5,12 +5,10 @@ import TextField from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
 import Divider from "@mui/material/Divider";
 import { Box, CssBaseline, Grid, Typography, useTheme } from "@mui/material";
-import { STATUS, useSegmentState } from "@/hooks/useSegmentState";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
-import { ProductCardTypes } from "@/components/ProductCard/ProductCard";
 
 const currencies = [
     {
