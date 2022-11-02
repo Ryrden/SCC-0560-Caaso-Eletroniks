@@ -9,5 +9,6 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
+    base: "/SCC-0560-Caaso-Eletroniks",
     plugins: [react()]
 });
