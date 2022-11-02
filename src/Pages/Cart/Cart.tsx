@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, colors, CssBaseline, Divider, Grid, Typography } from "@mui/material";
+import { Box, Breadcrumbs, colors, CssBaseline, Divider, Grid, Typography } from "@mui/material";
 import CartItem from "@/components/CartItem/CartItem";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import TextField from "@/components/Input/Input";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { getAsCurrency } from "@/utils/getAsCurrency";
 import { cartItemsFromApi } from "./cartItems";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 interface CartItemFromApi {
     productName: string
@@ -50,12 +51,40 @@ function Cart() {
         navigate("/");
     }
 
+    const breadcrumbs = [
+        {
+            to: "/",
+            label: "Página Inicial",
+            current: false
+        },
+        {
+            to: "/",
+            label: "Computadores",
+            current: false
+        },
+        {
+            to: "/",
+            label: "PC Gamer Concórdia AMD Ryzen",
+            current: false
+        },
+        {
+            to: "/carrinho",
+            label: "Carrinho",
+            current: true
+        },
+    ];
+
     return <div>
         <CssBaseline />
 
         <NavBar />
 
         <Box marginX={"auto"} marginY={"100px"} paddingX={"30px"} sx={{width: {xs: "100%", sm: "80%", md: "90%", lg: "1100px"}}}>
+            <Box marginBottom={"50px"}>
+                <Breadcrumb
+                    navigators={breadcrumbs}
+                />
+            </Box>
             {missingCartItems() ? 
                 <Grid
                     container
