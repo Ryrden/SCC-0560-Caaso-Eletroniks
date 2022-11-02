@@ -4,6 +4,7 @@ import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
 import Cadastro from "@/Pages/Cadastro/Cadastro";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Cart from "./Pages/Cart/Cart";
 
 const theme = createTheme({
     palette: {
@@ -34,6 +35,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/cadastro" element={<Cadastro />} />
+                    <Route path="/carrinho" element={<Cart />} />
                 </Routes>
             </ThemeProvider>
         </div>
