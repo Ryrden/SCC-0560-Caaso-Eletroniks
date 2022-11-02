@@ -1,69 +1,40 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import TextField from "@/components/Input/Input";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@/components/Button/Button";
-import Link from "@mui/material/Link";
-import Checkbox from "@mui/material/Checkbox";
 import Divider from "@mui/material/Divider";
-import ProductCard, { ProductCardTypes } from "@/components/ProductCard/ProductCard";
-import { Box, colors, CssBaseline, Grid, Typography, useTheme } from "@mui/material";
-import CButton from "@/components/Button/Button";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import HomeCarousel from "@/components/HomeCarousel/HomeCarousel";
-import ProductCardSkeleton from "@/components/ProductCard/ProductCardSkeleton";
+import { Box, CssBaseline, Grid, Typography, useTheme } from "@mui/material";
 import { STATUS, useSegmentState } from "@/hooks/useSegmentState";
-import BackgroundImage from "@/assets/imgs/home-bg.png";
 import GenericCard from "@/components/GenericCard/GenericCard";
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import PixIcon from '@mui/icons-material/Pix';
-import ReceiptIcon from '@mui/icons-material/Receipt';
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import PixIcon from "@mui/icons-material/Pix";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import { ProductCardTypes } from "@/components/ProductCard/ProductCard";
 
 const currencies = [
     {
-      value: 'USD',
-      label: '$',
+        value: "USD",
+        label: "$",
     },
     {
-      value: 'EUR',
-      label: '€',
+        value: "EUR",
+        label: "€",
     },
     {
-      value: 'BTC',
-      label: '฿',
+        value: "BTC",
+        label: "฿",
     },
     {
-      value: 'JPY',
-      label: '¥',
+        value: "JPY",
+        label: "¥",
     },
-  ];
+];
 
 
-const Pagamento = () => {
+const Checkout = () => {
 
     const theme = useTheme();
-
-    const segmentState = useSegmentState<ProductCardTypes[]>({data: [], status: STATUS.PENDING});
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get("email"),
-            password: data.get("password"),
-        });
-    };
-
-    const [currency, setCurrency] = React.useState('EUR');
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrency(event.target.value);
-    };
-
-    function onSeeMore() {
-        console.log("redirect");
-    }
 
     return (
         <div>
@@ -77,20 +48,21 @@ const Pagamento = () => {
                     paddingX={"30px"}
                     paddingTop={"46px"}
                     paddingBottom={"90px"}
-                    sx={{   
+                    sx={{
                         display: "grid",
                         gridAutoFlow: { xs: "row", md: "column" },
-                        gridTemplateColumns: { md: "1fr 2fr" }}}
+                        gridTemplateColumns: { md: "1fr 2fr" }
+                    }}
                 >
-                    <Grid container 
+                    <Grid container
                         gap={"33px"}
                         width={"100%"}
                         height={"50%"}
-                        sx={{justifyContent: 'center'}}
+                        sx={{ justifyContent: "center" }}
                         marginTop={"50%"}
                     >
                         <Box id="box-FormaPagamento"
-                            style={{backgroundColor: `${theme.palette.background.default}`}}
+                            style={{ backgroundColor: `${theme.palette.background.default}` }}
                             sx={{
                                 border: 2,
                                 borderColor: "#1F1F1F",
@@ -113,26 +85,26 @@ const Pagamento = () => {
                                 width={"100%"}
                                 padding={"30px"}
                             >
-                                <Button sx={{ mb: '20px'}} startIcon={<CreditCardIcon />}>
+                                <Button sx={{ mb: "20px" }} startIcon={<CreditCardIcon />}>
                                     Cartão de Crédito
                                 </Button>
-                                <Button sx={{ mb: '20px'}} startIcon={<PixIcon />}>
+                                <Button sx={{ mb: "20px" }} startIcon={<PixIcon />}>
                                     Pix
                                 </Button>
-                                <Button sx={{ mb: '20px'}} startIcon={<ReceiptIcon />}>
+                                <Button sx={{ mb: "20px" }} startIcon={<ReceiptIcon />}>
                                     Boleto Bancário
                                 </Button>
                             </Box>
                         </Box>
                     </Grid>
 
-                    <Grid container 
+                    <Grid container
                         gap={"33px"}
                         width={"100%"}
                         height={"100%"}
-                        sx={{justifyContent: 'center'}}
+                        sx={{ justifyContent: "center" }}
                         marginTop={"48px"}
-                    >    
+                    >
                         <GenericCard>
                             <Box id="box-DadosCartão"
                                 width={"100%"}
@@ -154,42 +126,41 @@ const Pagamento = () => {
                                 </Typography>
                                 <Box
                                     component="form"
-                                    onSubmit={handleSubmit}
                                     sx={{
-                                        display: 'grid',
-                                        gridTemplateColumns: 'repeat(2, 1fr)',
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(2, 1fr)",
                                         gap: 2,
-                                        gridTemplateRows: 'auto',
+                                        gridTemplateRows: "auto",
                                         gridTemplateAreas: `"nome nome"
                                         "cpf data-nasc"`,
                                     }}
                                 >
-                                    <Box sx={{ gridArea: 'nome'}}>
+                                    <Box sx={{ gridArea: "nome" }}>
                                         <TextField
                                             required
                                             label="Nome impresso no cartão"
                                             name={"nome"}
                                         />
                                     </Box>
-                                    
-                                    <Box sx={{ gridArea: 'cpf'}}>
+
+                                    <Box sx={{ gridArea: "cpf" }}>
                                         <TextField
                                             required
                                             label="CPF"
                                             name={"cpf"}
-                                        />       
+                                        />
                                     </Box>
 
-                                    <Box sx={{ gridArea: 'data-nasc'}}>
+                                    <Box sx={{ gridArea: "data-nasc" }}>
                                         <TextField
                                             required
                                             label="Data de nascimento"
                                             name={"data-nasc"}
-                                        />       
+                                        />
                                     </Box>
                                 </Box>
                             </Box>
-                            
+
                             <Box
                                 width={"100%"}
                                 padding={"30px"}
@@ -216,18 +187,17 @@ const Pagamento = () => {
                                 </Typography>
                                 <Box
                                     component="form"
-                                    onSubmit={handleSubmit}
                                     sx={{
-                                        display: 'grid',
-                                        gridTemplateColumns: 'repeat(2, 1fr)',
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(2, 1fr)",
                                         gap: 2,
-                                        gridTemplateRows: 'auto',
+                                        gridTemplateRows: "auto",
                                         gridTemplateAreas: `"num-cartao num-cartao"
                                         "data-val cvv"
                                         "forma-pagam forma-pagam"`,
                                     }}
                                 >
-                                    <Box sx={{ gridArea: 'num-cartao' }}>
+                                    <Box sx={{ gridArea: "num-cartao" }}>
                                         <TextField
                                             required
                                             label="Número do cartão"
@@ -235,7 +205,7 @@ const Pagamento = () => {
                                         />
                                     </Box>
 
-                                    <Box sx={{ gridArea: 'data-val' }}>
+                                    <Box sx={{ gridArea: "data-val" }}>
                                         <TextField
                                             required
                                             label="Data de Validade"
@@ -243,7 +213,7 @@ const Pagamento = () => {
                                         />
                                     </Box>
 
-                                    <Box sx={{ gridArea: 'cvv' }}>
+                                    <Box sx={{ gridArea: "cvv" }}>
                                         <TextField
                                             required
                                             label="CVV"
@@ -251,7 +221,7 @@ const Pagamento = () => {
                                         />
                                     </Box>
 
-                                    <Box sx={{ gridArea: 'forma-pagam' }}>
+                                    <Box sx={{ gridArea: "forma-pagam" }}>
                                         <TextField
                                             type="select"
                                             label="Forma de Pagamento"
@@ -259,15 +229,15 @@ const Pagamento = () => {
                                         />
                                     </Box>
                                 </Box>
-    
+
                             </Box>
-                            
+
                             <Box
                                 width={"100%"}
                                 padding={"30px"}
                             >
                                 <Button>
-                                    Entrar
+                                    Finalizar Pagamento
                                 </Button>
                             </Box>
                         </GenericCard>
@@ -281,4 +251,4 @@ const Pagamento = () => {
     );
 };
 
-export default Pagamento;
+export default Checkout;

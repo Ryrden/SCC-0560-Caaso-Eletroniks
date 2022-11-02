@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
-import Pagamento from "@/Pages/Pagamento/Pagamento";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Checkout from "@/Pages/Checkout/Checkout";
 
 const theme = createTheme({
     palette: {
@@ -33,7 +33,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/pagamento" element={<Pagamento />} />
+                    <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </ThemeProvider>
         </div>
