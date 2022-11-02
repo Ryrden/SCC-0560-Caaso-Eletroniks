@@ -12,6 +12,7 @@ import logo from "@/assets/imgs/logo.svg";
 import "./NavBar.scss";
 import "@/Sass/_variables.scss";
 import MenuBar from "./MenuBar/MenuBar";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
@@ -76,26 +77,6 @@ const NavBar = () => {
     };
 
     const menuId = "primary-search-account-menu";
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-        </Menu>
-    );
 
     const mobileMenuId = "primary-search-account-menu-mobile";
     const renderMobileMenu = (
@@ -116,23 +97,11 @@ const NavBar = () => {
         >
             <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
+                    <Badge color="error">
+                        <ShoppingCartIcon />
                     </Badge>
                 </IconButton>
-                <p>Messages</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton
-                    size="large"
-                    aria-label="show 17 new notifications"
-                    color="inherit"
-                >
-                    <Badge badgeContent={17} color="error">
-                        <NotificationsIcon />
-                    </Badge>
-                </IconButton>
-                <p>Notifications</p>
+                <p>Carrinho</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -144,7 +113,7 @@ const NavBar = () => {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Profile</p>
+                <p>Perfil</p>
             </MenuItem>
         </Menu>
     );
@@ -154,15 +123,16 @@ const NavBar = () => {
             <AccessibilityBar />
             <AppBar position="static">
                 <Toolbar id="navbar-container">
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: "none", sm: "block" } }}
-                    >
-                        <img src={logo} alt="Logo da Empresa Caaso Eletroniks" />
-                    </Typography>
-
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: "none", sm: "block" } }}
+                        >
+                            <img src={logo} alt="Logo da Empresa Caaso Eletroniks" />
+                        </Typography>
+                    </Link>
                     <Search>
                         <StyledInputBase
                             id="input-bar"
@@ -178,15 +148,17 @@ const NavBar = () => {
                     <div>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                            <IconButton
-                                size="large"
-                                edge="end"
-                                aria-label="shopping cart"
-                                color="inherit"
-                                className="navbar-icon"
-                            >
-                                <ShoppingCartIcon />
-                            </IconButton>
+                            <Link to="/carrinho" style={{ textDecoration: "none" }}>
+                                <IconButton
+                                    size="large"
+                                    edge="end"
+                                    aria-label="shopping cart"
+                                    color="inherit"
+                                    className="navbar-icon"
+                                >
+                                    <ShoppingCartIcon />
+                                </IconButton>
+                            </Link>
 
                             <IconButton
                                 size="large"
@@ -217,7 +189,6 @@ const NavBar = () => {
             </AppBar>
             <MenuBar />
             {renderMobileMenu}
-            {renderMenu}
         </Box>
     );
 };
