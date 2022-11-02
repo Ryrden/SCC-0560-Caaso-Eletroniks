@@ -15,7 +15,7 @@ interface Pricing {
 }
 
 export interface ProductCardTypes {
-    productId: string
+    id: number
     productImgSource: string
     title: string
     pricing: Pricing
@@ -29,11 +29,11 @@ const ProductCard = (props: ProductCardTypes) => {
     return (
         <Box className="product-card" boxShadow={3}>
             <GenericCard>
-                <Box
+                <img
                     className="product-card__image"
                     width={"100%"}
                     height={"185px"}
-                    style={{backgroundImage: `url(${props.productImgSource})`}} />
+                    src={props.productImgSource} />
 
                 <Box paddingY={"18px"} paddingX={"10px"}>
                     <Typography
@@ -48,7 +48,7 @@ const ProductCard = (props: ProductCardTypes) => {
                         <Typography
                             variant="body1"
                             color={grey[600]}
-                            style={{textDecoration: props.pricing.hasPromotion ? "line-through" : "none"}}>
+                            style={{ textDecoration: props.pricing.hasPromotion ? "line-through" : "none" }}>
                             {props.pricing.fullPrice}
                         </Typography>
 
@@ -69,22 +69,22 @@ const ProductCard = (props: ProductCardTypes) => {
                         </> : null}
 
                         <Box paddingY={"10px"} />
-                          
-                        {props.freeShipping 
-                            ? 
+
+                        {props.freeShipping
+                            ?
                             <Typography
                                 variant="caption"
                                 color={theme.palette.success.main}>
-                            Frete grátis
-                            </Typography> 
+                                Frete grátis
+                            </Typography>
                             : null}
-                        
+
                         <Box paddingY={"12.5px"} />
 
                         <Box display={"flex"}>
                             <Box width={"100%"}>
                                 <Button>
-                                  Ver detalhes
+                                    Ver detalhes
                                 </Button>
                             </Box>
                             <Box width={"min-content"}>

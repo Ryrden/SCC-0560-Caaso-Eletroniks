@@ -6,24 +6,24 @@ export enum STATUS {
     FAILURE,
     SUCCEEDED
 }
-  
+
 type SegmentStateType<T> = {
-  data: T | null | undefined
-  error: string | null | undefined
-  clear: () => void
-  setStatus: (_: STATUS) => void
-  setData: (data: T) => void
-  setError: (_: string) => void
-  hasError: boolean
-  hasSucceeded: boolean
-  isPending: boolean
-  isIdle: boolean
+    data: T | null | undefined
+    error: string | null | undefined
+    clear: () => void
+    setStatus: (_: STATUS) => void
+    setData: (data: T) => void
+    setError: (_: string) => void
+    hasError: boolean
+    hasSucceeded: boolean
+    isPending: boolean
+    isIdle: boolean
 }
 
 interface InitialState<T> {
-  status?: STATUS
-  error?: string | null
-  data?: T | null
+    status?: STATUS
+    error?: string | null
+    data?: T | null
 }
 
 export function useSegmentState<T = unknown>(
