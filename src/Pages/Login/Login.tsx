@@ -19,7 +19,7 @@ export default function SignIn() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
-            email: data.get("email"),
+            email: data.get("account"),
             password: data.get("password"),
         });
     };
@@ -28,7 +28,7 @@ export default function SignIn() {
         <Container component="main" maxWidth="xs" color="#131313">
             <CssBaseline/>
             <GenericCard>
-                <Box id="box"
+                <Box
                     sx={{
                         display: "flex",
                         flexDirection: "column",
@@ -48,6 +48,7 @@ export default function SignIn() {
                         <TextField
                             label="CPF ou Email"
                             name={"account"}
+                            required={true}
                         />
                         <Box
                             padding={"9px"}
@@ -56,6 +57,7 @@ export default function SignIn() {
                             label="Senha"
                             type="password"
                             name={"password"}
+                            required={true}
                         />
                         <FormControlLabel
                             control={
