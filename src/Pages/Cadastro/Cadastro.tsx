@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
+import CButton from "@/components/Button/Button";
 
 export default function Registration() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,19 +23,15 @@ export default function Registration() {
     };
 
     return (
-        <Container maxWidth="xs" color="#131313">
+        <>
             <CssBaseline />
-            <GenericCard>
-                <Box id="box"
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    <Typography component="h1" fontWeight={"bold"} variant="h4" color={"#FFFFFF"} mt={2}>
-                        Cadastrar-se
-                    </Typography>
+            <Box id="box"
+                sx={{width: {xs: "90%", sm: "70%", md: "40%"}}}
+                marginX={"auto"}
+            >
+                <GenericCard>
+
+
                     <Box
                         component="form"
                         onSubmit={handleSubmit}
@@ -42,72 +39,76 @@ export default function Registration() {
                         width={"100%"}
                         padding={"30px"}
                     >
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
-                                <TextField
+                        <Typography component="h1" fontWeight={"bold"} variant="h4" color={"#FFFFFF"} marginBottom={"40px"} mt={2}>
+                            Cadastrar-se
+                        </Typography>
+                        <Box display={"flex"} gap={"20px"} marginBottom={"20px"} sx={{ flexDirection: {xs: "column", sm: "row"} }}>
+                            <Box width={"100%"}>
+                                <TextField  
                                     label="Nome Completo"
                                     name={"name"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={5.6}>
+                            </Box>
+                            <Box width={"100%"}>
+                                {/* TODO: use date picker from mui-x */}
                                 <TextField
                                     label="Data de Nascimento"
                                     name={"date"}
                                     type={"date"}
                                     required={true}
                                 />
-                            </Grid>
-                        </Grid>
+                            </Box>
+                        </Box>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+                        <Box display={"flex"} gap={"20px"} marginBottom={"20px"}>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="CPF"
                                     name={"cpf"}
                                     type={"number"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={5.6}>
+                            </Box>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Telefone Celular"
                                     name={"telefone"}
                                     type={"telefone"}
                                     required={true}
                                 />
-                            </Grid>
-                        </Grid>
+                            </Box>
+                        </Box>
 
-                        <Grid container>
-                            <Grid item md={12} marginBottom={"20px"}>
-                                <TextField
-                                    label="E-mail"
-                                    name={"email"}
-                                    type={"email"}
-                                    required={true}
-                                />
-                            </Grid>
-                        </Grid>
+                        <Box width={"100%"} marginBottom={"20px"}>
+                            <TextField
+                                label="E-mail"
+                                name={"email"}
+                                type={"email"}
+                                required={true}
+                            />
+                        </Box>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+
+
+                        <Box display={"flex"} gap={"20px"} marginBottom={"20px"} sx={{ flexDirection: {xs: "column", lg: "row"} }}>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Crie sua Senha"
                                     type="password"
                                     name={"senha"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={5.6}>
+                            </Box>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Confirme sua Senha"
                                     type="password"
                                     name={"senhaConfirmacao"}
                                     required={true}
                                 />
-                            </Grid>
-                        </Grid>
+                            </Box>
+                        </Box>
 
                         <Divider>
                         </Divider>
@@ -116,58 +117,59 @@ export default function Registration() {
                             Endereço
                         </Typography>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={12}>
-                                <TextField
-                                    label="Rua"
-                                    name={"rua"}
-                                    required={true}
-                                />
-                            </Grid>
-                        </Grid>
+                        <Box width={"100%"} marginBottom={"20px"}>
+                            <TextField
+                                label="Rua"
+                                name={"rua"}
+                                required={true}
+                            />
+                        </Box>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+
+                        <Box display={"flex"} gap={"20px"} marginBottom={"20px"}>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="CEP"
                                     type="number"
                                     name={"cep"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={5.6}>
+                            </Box>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Número"
                                     type="number"
                                     name={"numero"}
                                     required={true}
                                 />
-                            </Grid>
-                        </Grid>
+                            </Box>
+                        </Box>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={3.2}>
+
+
+
+                        <Box display={"flex"} gap={"20px"} marginBottom={"20px"} sx={{ flexDirection: {xs: "column", sm: "row"} }} >
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Cidade"
                                     name={"cidade"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={1.7}>
+                            </Box>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Estado"
                                     name={"uf"}
                                     required={true}
                                 />
-                            </Grid>
-                            <Grid item md={5.6}>
+                            </Box>
+                            <Box width={"100%"}>
                                 <TextField
                                     label="Complemento"
                                     name={"complemento"}
                                 />
-                            </Grid>
-                        </Grid>
-
+                            </Box>
+                        </Box>
 
                         <Box
                             sx={{
@@ -185,13 +187,14 @@ export default function Registration() {
                             />
                         </Box>
 
-                        <Button>
+                        <CButton size="large">
                             Realizar Cadastro
-                        </Button>
+                        </CButton>
 
                     </Box>
-                </Box>
-            </GenericCard>
-        </Container>
+                </GenericCard>
+            </Box>
+
+        </>
     );
 }
