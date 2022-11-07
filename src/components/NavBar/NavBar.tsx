@@ -148,7 +148,7 @@ const NavBar = () => {
                     <div>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                            <Link to="/carrinho" style={{ textDecoration: "none" }}>
+                            <Link to="/checkout" style={{ textDecoration: "none" }}>
                                 <IconButton
                                     size="large"
                                     edge="end"

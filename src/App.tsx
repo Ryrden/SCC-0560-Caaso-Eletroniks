@@ -2,9 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
 import Login from "@/Pages/Login/Login";
-import Cadastro from "@/Pages/Cadastro/Cadastro";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Cart from "./Pages/Cart/Cart";
+import SignIn from "@/Pages/SignIn/SignIn";
 
 const theme = createTheme({
     palette: {
@@ -34,8 +34,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/cadastro" element={<Cadastro />} />
-                    <Route path="/carrinho" element={<Cart />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/checkout" element={<Cart />} />
                 </Routes>
             </ThemeProvider>
         </div>
