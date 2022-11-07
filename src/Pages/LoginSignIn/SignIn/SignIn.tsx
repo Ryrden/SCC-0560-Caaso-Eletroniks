@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
 import Button from "@/components/Button/Button";
+import SimpleNavbar from "../SimpleNavbar";
 
 const SignIn = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -33,6 +34,7 @@ const SignIn = () => {
 
     return (
         <>
+            <SimpleNavbar />
             <CssBaseline />
             <Box id="box"
                 sx={{ width: { xs: "90%", sm: "70%", md: "40%" } }}
