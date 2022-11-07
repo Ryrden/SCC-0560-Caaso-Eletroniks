@@ -40,7 +40,7 @@ function Cart() {
     }
 
     function getTotal(): number {
-        return cartItems.reduce((accumulator, {quantity, unitPrice}) => {
+        return cartItems.reduce((accumulator, { quantity, unitPrice }) => {
             return accumulator + (quantity * unitPrice);
         }, 0);
     }
@@ -68,7 +68,7 @@ function Cart() {
             current: false
         },
         {
-            to: "/carrinho",
+            to: "/checkout",
             label: "Carrinho",
             current: true
         },
@@ -79,13 +79,13 @@ function Cart() {
 
         <NavBar />
 
-        <Box marginX={"auto"} marginY={"100px"} paddingX={"30px"} sx={{width: {xs: "100%", sm: "80%", md: "90%", lg: "1100px"}}}>
+        <Box marginX={"auto"} marginY={"100px"} paddingX={"30px"} sx={{ width: { xs: "100%", sm: "80%", md: "90%", lg: "1100px" } }}>
             <Box marginBottom={"50px"}>
                 <Breadcrumb
                     navigators={breadcrumbs}
                 />
             </Box>
-            {missingCartItems() ? 
+            {missingCartItems() ?
                 <Grid
                     container
                     direction="column"
@@ -103,20 +103,20 @@ function Cart() {
                         <CButton variant={"outlined"} size={"small"} onClick={continueShopping}>Quero continuar comprando</CButton>
                     </Box>
                 </Grid>
-                : <Box display={"flex"} gap={"40px"} sx={{flexDirection: {xs: "column-reverse", md: "row"}}}>
+                : <Box display={"flex"} gap={"40px"} sx={{ flexDirection: { xs: "column-reverse", md: "row" } }}>
 
                     <Box width={"100%"} display={"flex"} flexDirection={"column"} gap={"35px"}>
                         {cartItems.map(cartItem => {
-                            return <CartItem key={cartItem.productId} 
-                                onQuantityChanged={(newQuantity) => handleValueChange(cartItem.productId, newQuantity)} 
+                            return <CartItem key={cartItem.productId}
+                                onQuantityChanged={(newQuantity) => handleValueChange(cartItem.productId, newQuantity)}
                                 {...cartItem} />;
                         })}
                     </Box>
 
                     <Box width={"100%"}>
-                        <Box width={"100%"} borderRadius={"10px"} sx={{position: {md: "sticky"}}} top={"20px"}>
+                        <Box width={"100%"} borderRadius={"10px"} sx={{ position: { md: "sticky" } }} top={"20px"}>
                             <GenericCard>
-                                <Box  paddingX={"30px"} paddingTop={"30px"} paddingBottom={"50px"}>
+                                <Box paddingX={"30px"} paddingTop={"30px"} paddingBottom={"50px"}>
                                     <Typography
                                         variant="h4"
                                         color={"#FFFFFF"}
@@ -127,7 +127,7 @@ function Cart() {
                                     <Typography
                                         variant="caption"
                                         color={colors.green.A200}>
-                            Você economiza R$ 1.000,00 comprando a vista
+                                        Você economiza R$ 1.000,00 comprando a vista
                                     </Typography>
 
                                     <Box display={"flex"} gap={"10px"} marginTop={"60px"} marginBottom={"30px"} alignItems="center">
@@ -151,16 +151,16 @@ function Cart() {
                                     </Box>
 
                                 </Box>
-                        
+
                             </GenericCard>
                         </Box>
 
                     </Box>
                 </Box>
             }
-            
 
-            
+
+
         </Box>
 
         <Footer />

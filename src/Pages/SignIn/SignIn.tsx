@@ -11,7 +11,7 @@ import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
 import Button from "@/components/Button/Button";
 
-export default function Registration() {
+const SignIn = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -33,9 +33,9 @@ export default function Registration() {
 
     return (
         <>
-            <CssBaseline/>
+            <CssBaseline />
             <Box id="box"
-                sx={{width: {xs: "90%", sm: "70%", md: "40%"}}}
+                sx={{ width: { xs: "90%", sm: "70%", md: "40%" } }}
                 marginX={"auto"}
                 component="form"
                 onSubmit={handleSubmit}
@@ -202,4 +202,6 @@ export default function Registration() {
 
         </>
     );
-}
+};
+
+export default SignIn;
