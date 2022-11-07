@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "@/Pages/Home/Home";
-import Login from "@/Pages/Login/Login";
+import Login from "@/Pages/LoginSignIn/Login/Login";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Cart from "./Pages/Cart/Cart";
-import SignIn from "@/Pages/SignIn/SignIn";
+import SignIn from "@/Pages/LoginSignIn/SignIn/SignIn";
 
 const theme = createTheme({
     palette: {
