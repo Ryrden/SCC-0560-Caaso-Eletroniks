@@ -1,6 +1,6 @@
 import imagemPc from "@/assets/imgs/pcExemplo.svg";
 import { ProductModel } from "@/models/ProductModel";
-
+//Teste
 export const productsList: ProductModel[] = [
     {
         id: 1,
