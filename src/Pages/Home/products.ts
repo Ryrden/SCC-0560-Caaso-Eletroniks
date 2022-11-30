@@ -22,6 +22,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -42,6 +43,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -62,6 +64,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -82,6 +85,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -102,6 +106,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -123,6 +128,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -143,6 +149,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
@@ -163,6 +170,7 @@ export const productsList: ProductModel[] = [
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Concórdia AMD Ryzen 5 3400G 8GB 1TB Radeon RX Vega 11 Windows 10",
+        alt: "Computador bonito",
         specifications: {
             processor: "AMD Ryzen 5 3400G",
             ramMemory: "8GB",
