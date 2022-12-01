@@ -6,6 +6,8 @@ import Cadastro from "@/Pages/Cadastro/Cadastro";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Checkout from "@/Pages/Checkout/Checkout";
 import Cart from "./Pages/Cart/Cart";
+import Success from "@/Pages/Success/Success";
+
 
 const theme = createTheme({
     palette: {
@@ -16,13 +18,13 @@ const theme = createTheme({
             main: "#270039", //Roxo Chique
         },
         success: {
-            main: "#18F27E", //Verde Claro
+            main: "#048B43", //Verde Claro
         },
         info: {
-            main: "#F7F7F7",
+            main: "#F7F7F7", // Branco
         },
         background: {
-            default: "#131313",
+            default: "#131313", // Preto
         },
         divider: "#565656"
     },
@@ -38,6 +40,7 @@ function App() {
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/cadastro" element={<Cadastro />} />
                     <Route path="/carrinho" element={<Cart />} />
+                    <Route path="/success" element={<Success />} />
                 </Routes>
             </ThemeProvider>
         </div>
