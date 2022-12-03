@@ -85,7 +85,7 @@ const ProductCard = (props: ProductCardTypes) => {
 
                         <Box display="flex" alignItems="center">
                             <Box width="100%">
-                                <Link to="/carrinho" style={{ textDecoration: "none" }}>
+                                <Link to="/checkout" style={{ textDecoration: "none" }}>
                                     <Button endIcon={<ArrowForward />}>
                                         Ver detalhes
                                     </Button>

@@ -1,40 +1,49 @@
 import React from "react";
-import Button from "@/components/Button/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@/components/Input/Input";
+import DateField from "@/components/Input/DateInput";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
+import DesktopDatePicker from "@mui/x-date-pickers/DesktopDatePicker";
+import Button from "@/components/Button/Button";
+import SimpleNavbar from "../SimpleNavbar";
 
-export default function Registration() {
+const SignIn = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
+            name: data.get("name"),
+            birthDate: data.get("date"),
+            cpf: data.get("cpf"),
+            telefone: data.get("telefone"),
             email: data.get("email"),
             password: data.get("password"),
+            cep: data.get("cep"),
+            street: data.get("street"),
+            number: data.get("number"),
+            city: data.get("city"),
+            state: data.get("uf"),
+            complement: data.get("complement"),
         });
     };
 
     return (
-        <Container maxWidth="xs" color="#131313">
+        <>
+            <SimpleNavbar />
             <CssBaseline />
-            <GenericCard>
-                <Box id="box"
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    <Typography component="h1" fontWeight={"bold"} variant="h4" color={"#FFFFFF"} mt={2}>
-                        Cadastrar-se
-                    </Typography>
+            <Box id="box"
+                sx={{ width: { xs: "90%", sm: "70%", md: "40%" } }}
+                marginX={"auto"}
+                component="form"
+                onSubmit={handleSubmit}
+            >
+                <GenericCard>
                     <Box
                         component="form"
                         onSubmit={handleSubmit}
@@ -42,26 +51,28 @@ export default function Registration() {
                         width={"100%"}
                         padding={"30px"}
                     >
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+                        <Typography component="h1" fontWeight={"bold"} variant="h4" color={"#FFFFFF"} marginBottom={"40px"} textAlign={"center"}>
+                            Cadastrar-se
+                        </Typography>
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={12} sm={6}>
                                 <TextField
                                     label="Nome Completo"
                                     name={"name"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={5.6}>
-                                <TextField
+                            <Grid item xs={12} sm={6}>
+                                <DateField
                                     label="Data de Nascimento"
                                     name={"date"}
-                                    type={"date"}
                                     required={true}
                                 />
                             </Grid>
                         </Grid>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={12} sm={6}>
                                 <TextField
                                     label="CPF"
                                     name={"cpf"}
@@ -69,7 +80,7 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={5.6}>
+                            <Grid item xs={12} sm={6}>
                                 <TextField
                                     label="Telefone Celular"
                                     name={"telefone"}
@@ -80,7 +91,7 @@ export default function Registration() {
                         </Grid>
 
                         <Grid container>
-                            <Grid item md={12} marginBottom={"20px"}>
+                            <Grid item xs={12} md={12} marginBottom={"20px"}>
                                 <TextField
                                     label="E-mail"
                                     name={"email"}
@@ -90,8 +101,8 @@ export default function Registration() {
                             </Grid>
                         </Grid>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={6}>
                                 <TextField
                                     label="Crie sua Senha"
                                     type="password"
@@ -99,7 +110,7 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={5.6}>
+                            <Grid item xs={6}>
                                 <TextField
                                     label="Confirme sua Senha"
                                     type="password"
@@ -116,18 +127,8 @@ export default function Registration() {
                             Endereço
                         </Typography>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={12}>
-                                <TextField
-                                    label="Rua"
-                                    name={"rua"}
-                                    required={true}
-                                />
-                            </Grid>
-                        </Grid>
-
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={5.6}>
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={12} md={12}>
                                 <TextField
                                     label="CEP"
                                     type="number"
@@ -135,39 +136,48 @@ export default function Registration() {
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={5.6}>
+                        </Grid>
+
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={12} sm={8}>
+                                <TextField
+                                    label="Rua"
+                                    name={"street"}
+                                    required={true}
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
                                 <TextField
                                     label="Número"
                                     type="number"
-                                    name={"numero"}
+                                    name={"number"}
                                     required={true}
                                 />
                             </Grid>
                         </Grid>
 
-                        <Grid container gap={"20px"} marginBottom={"20px"}>
-                            <Grid item md={3.2}>
+                        <Grid container spacing={3} marginBottom={"20px"}>
+                            <Grid item xs={12} md={4}>
                                 <TextField
                                     label="Cidade"
-                                    name={"cidade"}
+                                    name={"city"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={1.7}>
+                            <Grid item xs={12} md={4}>
                                 <TextField
                                     label="Estado"
                                     name={"uf"}
                                     required={true}
                                 />
                             </Grid>
-                            <Grid item md={5.6}>
+                            <Grid item xs={12} md={4}>
                                 <TextField
                                     label="Complemento"
-                                    name={"complemento"}
+                                    name={"complement"}
                                 />
                             </Grid>
                         </Grid>
-
 
                         <Box
                             sx={{
@@ -185,13 +195,16 @@ export default function Registration() {
                             />
                         </Box>
 
-                        <Button>
+                        <Button size="large">
                             Realizar Cadastro
                         </Button>
 
                     </Box>
-                </Box>
-            </GenericCard>
-        </Container>
+                </GenericCard>
+            </Box>
+
+        </>
     );
-}
+};
+
+export default SignIn;

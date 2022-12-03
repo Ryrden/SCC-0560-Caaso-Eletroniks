@@ -3,8 +3,6 @@ import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem, Menu } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccessibilityBar from "./AccessibilityBar/AccessibilityBar";
@@ -30,7 +28,7 @@ const Search = styled("div")(({ theme }) => ({
     alignItems: "center",
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
+const SearchIconWrapper = styled("div")(() => ({
     pointerEvents: "none",
     display: "inline-flex",
     color: "#C0C0C0",
@@ -148,7 +146,7 @@ const NavBar = () => {
                     <div>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                            <Link to="/carrinho" style={{ textDecoration: "none" }}>
+                            <Link to="/checkout" style={{ textDecoration: "none" }}>
                                 <IconButton
                                     size="large"
                                     edge="end"
