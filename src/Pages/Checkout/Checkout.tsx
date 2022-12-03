@@ -70,12 +70,12 @@ const Checkout = () => {
     const [alignment, setAlignment] = React.useState('cartao');
   
     const handleChange2 = (
-        event: any,
+        event: React.MouseEvent<HTMLElement>,
         newAlignment: string,
     ) => {
         setAlignment(newAlignment);
     };
-
+    
     const [dataValue, setDataValue] = React.useState("");
     const [dataValid, setDataValid] = React.useState(true);
     const handleDataValidation = (e: any) => {
@@ -150,23 +150,48 @@ const Checkout = () => {
                                 {/* //TODO: Colocar efeito de clicado depois */}
                                 <ToggleButtonGroup
                                     orientation="vertical"
-                                    sx={{ backgroundColor: `${theme.palette.primary.main}`, width: "90%", marginX: "5%", marginY: "30%"}}
+                                    sx={{
+                                        backgroundColor: `${theme.palette.success.main}`,
+                                        color: `${theme.palette.background.default}`,
+                                        width: "90%",
+                                        marginX: "5%",
+                                        marginY: "30%",
+                                    }}
                                     value={alignment}
                                     exclusive
                                     onChange={handleChange2}
                                     aria-label="Platform"
                                 >
-                                    <ToggleButton value="cartao" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                    
+                                    <ToggleButton
+                                        value="cartao"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
                                         <ReceiptIcon />
                                         Cartão de Crédito 
                                     </ToggleButton>
                                     
-                                    <ToggleButton value="pix" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                    <ToggleButton
+                                        value="pix"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
                                         <PixIcon />
                                         Pix
                                     </ToggleButton>
                                     
-                                    <ToggleButton value="boleto" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                    <ToggleButton
+                                        value="boleto"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
                                         <ReceiptIcon />
                                         Boleto Bancário
                                     </ToggleButton>
