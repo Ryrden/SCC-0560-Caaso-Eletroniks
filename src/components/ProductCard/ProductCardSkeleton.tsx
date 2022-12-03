@@ -19,14 +19,14 @@ const ProductCardSkeleton = () => {
                     <Box>
                         <Skeleton variant="rectangular" width={"35%"} />
 
-                        <Box paddingY={"1px"}/>
+                        <Box paddingY={"1px"} />
 
                         <Skeleton variant="rectangular" width={"40%"} />
 
                         <Box paddingY={"10px"} />
-                          
+
                         <Skeleton variant="rectangular" width={"20%"} />
-                        
+
                         <Box paddingY={"12.5px"} />
 
                         <Skeleton variant="rectangular" height={"35px"} />

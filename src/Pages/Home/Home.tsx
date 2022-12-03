@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
-import ProductCard, { ProductCardTypes } from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import { Box, colors, CssBaseline, Grid, Typography, useTheme } from "@mui/material";
 import CButton from "@/components/Button/Button";
-import { productsList } from "./products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HomeCarousel from "@/components/HomeCarousel/HomeCarousel";
 import ProductCardSkeleton from "@/components/ProductCard/ProductCardSkeleton";
 import { STATUS, useSegmentState } from "@/hooks/useSegmentState";
 import BackgroundImage from "@/assets/imgs/home-bg.png";
 
+import { productsList } from "./products";
+import { ProductModel } from "@/models/ProductModel";
+
 const Home = () => {
 
     const theme = useTheme();
 
-    const segmentState = useSegmentState<ProductCardTypes[]>({ data: [], status: STATUS.PENDING });
+    const segmentState = useSegmentState<ProductModel[]>({ data: [], status: STATUS.PENDING });
 
     function initProductsList() {
         segmentState.setStatus(STATUS.PENDING);
@@ -65,10 +67,14 @@ const Home = () => {
                         sx={{ justifyContent: { xs: "center" } }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
-                        {segmentState.hasSucceeded ? segmentState.data?.map((product, index) => {
+                        {segmentState.hasSucceeded ? segmentState.data?.map((product) => {
                             return <ProductCard
-                                key={index}
-                                {...product}
+                                key={product.id}
+                                id={product.id}
+                                productImgSource={product.imgSource}
+                                title={product.title}
+                                pricing={product.pricing}
+                                freeShipping={product.freeShipping}
                             />;
                         }) : null}
                         {segmentState.isPending ? [1, 2, 3, 4].map((_, index) => {
@@ -112,7 +118,11 @@ const Home = () => {
                         {segmentState.hasSucceeded ? segmentState.data?.map((product, index) => {
                             return <ProductCard
                                 key={index}
-                                {...product}
+                                id={product.id}
+                                productImgSource={product.imgSource}
+                                title={product.title}
+                                pricing={product.pricing}
+                                freeShipping={product.freeShipping}
                             />;
                         }) : null}
                         {segmentState.isPending ? [1, 2, 3, 4].map((_, index) => {

@@ -6,6 +6,8 @@ import GenericCard from "../GenericCard/GenericCard";
 import "./ProductCard.scss";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
+import ArrowForward from "@mui/icons-material/ArrowForward";
 
 interface Pricing {
     hasPromotion: boolean
@@ -15,7 +17,7 @@ interface Pricing {
 }
 
 export interface ProductCardTypes {
-    productId: string
+    id: number
     productImgSource: string
     title: string
     pricing: Pricing
@@ -29,11 +31,11 @@ const ProductCard = (props: ProductCardTypes) => {
     return (
         <Box className="product-card" boxShadow={3}>
             <GenericCard>
-                <Box
+                <img
                     className="product-card__image"
                     width={"100%"}
                     height={"185px"}
-                    style={{backgroundImage: `url(${props.productImgSource})`}} />
+                    src={props.productImgSource} />
 
                 <Box paddingY={"18px"} paddingX={"10px"}>
                     <Typography
@@ -48,7 +50,7 @@ const ProductCard = (props: ProductCardTypes) => {
                         <Typography
                             variant="body1"
                             color={grey[600]}
-                            style={{textDecoration: props.pricing.hasPromotion ? "line-through" : "none"}}>
+                            style={{ textDecoration: props.pricing.hasPromotion ? "line-through" : "none" }}>
                             {props.pricing.fullPrice}
                         </Typography>
 
@@ -69,27 +71,40 @@ const ProductCard = (props: ProductCardTypes) => {
                         </> : null}
 
                         <Box paddingY={"10px"} />
-                          
-                        {props.freeShipping 
-                            ? 
+
+                        {props.freeShipping
+                            ?
                             <Typography
                                 variant="caption"
                                 color={theme.palette.success.main}>
-                            Frete grátis
-                            </Typography> 
+                                Frete grátis
+                            </Typography>
                             : null}
-                        
+
                         <Box paddingY={"12.5px"} />
 
-                        <Box display={"flex"}>
-                            <Box width={"100%"}>
-                                <Button>
-                                  Ver detalhes
-                                </Button>
+                        <Box display="flex" alignItems="center">
+                            <Box width="100%">
+                                <Link to="/checkout" style={{ textDecoration: "none" }}>
+                                    <Button endIcon={<ArrowForward />}>
+                                        Ver detalhes
+                                    </Button>
+                                </Link>
                             </Box>
-                            <Box width={"min-content"}>
-                                <IconButton color="primary">
-                                    <AddShoppingCartOutlinedIcon />
+                            <Box
+                                ml={1}
+                                width="min-content"
+                                sx={{
+                                    borderColor: theme.palette.primary.main,
+                                    borderStyle: "solid",
+                                    borderWidth: "0.1em",
+                                    borderRadius: "10%",
+                                }}
+                                display="flex"
+                                alignItems="center"
+                                padding="0.1em"                            >
+                                <IconButton size="small" color="primary">
+                                    <AddShoppingCartOutlinedIcon fontSize="small" />
                                 </IconButton>
                             </Box>
                         </Box>

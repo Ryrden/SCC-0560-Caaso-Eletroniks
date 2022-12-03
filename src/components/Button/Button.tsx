@@ -1,5 +1,4 @@
 import React from "react";
-import "@/components/Button/Button.scss";
 import Button, { ButtonProps } from "@mui/material/Button";
 
 interface ButtonPropTypes extends ButtonProps {
