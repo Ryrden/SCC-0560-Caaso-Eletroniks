@@ -1,7 +1,6 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@/components/Input/Input";
-import DateField from "@/components/Input/DateInput";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
@@ -9,7 +8,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
-import DesktopDatePicker from "@mui/x-date-pickers/DesktopDatePicker";
 import Button from "@/components/Button/Button";
 import SimpleNavbar from "../SimpleNavbar";
 
@@ -63,10 +61,12 @@ const SignIn = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <DateField
+                                <TextField
                                     label="Data de Nascimento"
                                     name={"date"}
                                     required={true}
+                                    type={"date"}
+                                    focused
                                 />
                             </Grid>
                         </Grid>

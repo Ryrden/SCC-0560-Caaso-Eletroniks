@@ -9,7 +9,11 @@ import GenericCard from "@/components/GenericCard/GenericCard";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Success from "../Success/Success";
 
+    
 const currencies = [
     {
         value: "1x",
@@ -59,8 +63,17 @@ const Checkout = () => {
 
     const [currency, setCurrency] = React.useState("BRL");
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: any) => {
         setCurrency(event.target.value);
+    };
+
+    const [alignment, setAlignment] = React.useState('cartao');
+  
+    const handleChange2 = (
+        event: any,
+        newAlignment: string,
+    ) => {
+        setAlignment(newAlignment);
     };
 
     const [dataValue, setDataValue] = React.useState("");
@@ -112,7 +125,7 @@ const Checkout = () => {
                         marginTop={"50%"}
                     >
                         <Box id="box-FormaPagamento"
-                            style={{ backgroundColor: `${theme.palette.background.default}` }}
+                            style={{ backgroundColor: "#292929"}}
                             sx={{
                                 border: 2,
                                 borderColor: "#1F1F1F",
@@ -133,18 +146,33 @@ const Checkout = () => {
                             </Typography>
                             <Box
                                 width={"100%"}
-                                padding={"30px"}
                             >
                                 {/* //TODO: Colocar efeito de clicado depois */}
-                                <Button sx={{ mb: "20px" }} startIcon={<CreditCardIcon />}>
-                                    Cartão de Crédito
-                                </Button>
-                                <Button sx={{ mb: "20px" }} startIcon={<PixIcon />}>
-                                    Pix
-                                </Button>
-                                <Button sx={{ mb: "20px" }} startIcon={<ReceiptIcon />}>
-                                    Boleto Bancário
-                                </Button>
+                                <ToggleButtonGroup
+                                    orientation="vertical"
+                                    sx={{ backgroundColor: `${theme.palette.primary.main}`, width: "90%", marginX: "5%", marginY: "30%"}}
+                                    value={alignment}
+                                    exclusive
+                                    onChange={handleChange2}
+                                    aria-label="Platform"
+                                >
+                                    <ToggleButton value="cartao" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                        <ReceiptIcon />
+                                        Cartão de Crédito 
+                                    </ToggleButton>
+                                    
+                                    <ToggleButton value="pix" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                        <PixIcon />
+                                        Pix
+                                    </ToggleButton>
+                                    
+                                    <ToggleButton value="boleto" sx={{ backgroundColor: `${theme.palette.secondary.main}`, color: "rgb(235, 235, 235)"}}>
+                                        <ReceiptIcon />
+                                        Boleto Bancário
+                                    </ToggleButton>
+
+                                </ToggleButtonGroup>
+
                             </Box>
                         </Box>
                     </Grid>

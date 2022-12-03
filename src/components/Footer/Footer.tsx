@@ -100,6 +100,11 @@ export default function Footer() {
                                     Política de privacidade
                                 </Link>
                             </Box>
+                            <Box mb={4}>
+                                <Link href="/" color="inherit">
+                                    Ajuda
+                                </Link>
+                            </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box mb={5}>
