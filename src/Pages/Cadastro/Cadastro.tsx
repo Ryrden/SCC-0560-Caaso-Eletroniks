@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
+import DesktopDatePicker from "@mui/x-date-pickers/DesktopDatePicker";
 
 export default function Registration() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

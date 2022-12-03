@@ -15,7 +15,7 @@ const Home = () => {
 
     const theme = useTheme();
 
-    const segmentState = useSegmentState<ProductCardTypes[]>({data: [], status: STATUS.PENDING});
+    const segmentState = useSegmentState<ProductCardTypes[]>({ data: [], status: STATUS.PENDING });
 
     function initProductsList() {
         segmentState.setStatus(STATUS.PENDING);
@@ -35,34 +35,34 @@ const Home = () => {
 
     return (
         <div>
-            <Box style={{backgroundImage: `url(${BackgroundImage}), linear-gradient(${theme.palette.secondary.main}, transparent)`, backgroundAttachment: "fixed"}}>
+            <Box style={{ backgroundImage: `url(${BackgroundImage}), linear-gradient(${theme.palette.secondary.main}, transparent)`, backgroundAttachment: "fixed" }}>
 
                 <CssBaseline />
                 <NavBar />
-            
+
                 <HomeCarousel />
 
                 <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"30px"} paddingTop={"46px"} paddingBottom={"90px"}>
                     <Grid
                         container
-                        sx={{justifyContent: {xs: "center", lg: "left"}}}
+                        sx={{ justifyContent: { xs: "center", lg: "left" } }}
                     >
-                        <Box borderBottom={5} borderColor={"primary.main"} style={{width: "fit-content"}}>
-                            <Typography 
+                        <Box borderBottom={5} borderColor={"primary.main"} style={{ width: "fit-content" }}>
+                            <Typography
                                 variant="h4"
                                 color={colors.grey.A100}
 
-                                fontWeight={"bold"} 
-                                sx={{ typography: { xs: "h6", sm: "h5", md: "h4"} }}>
-                            Em promoção
+                                fontWeight={"bold"}
+                                sx={{ typography: { xs: "h6", sm: "h5", md: "h4" } }}>
+                                Em promoção
                             </Typography>
                         </Box>
                     </Grid>
 
-                    <Grid container 
+                    <Grid container
                         gap={"33px"}
                         width={"100%"}
-                        sx={{justifyContent: {xs: "center"}}}
+                        sx={{ justifyContent: { xs: "center" } }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
                         {segmentState.hasSucceeded ? segmentState.data?.map((product, index) => {
@@ -78,9 +78,9 @@ const Home = () => {
                         }) : null}
                     </Grid>
 
-                    <Grid container sx={{justifyContent: {xs: "center", lg: "flex-end"}}}>
+                    <Grid container sx={{ justifyContent: { xs: "center", lg: "flex-end" } }}>
                         <CButton onClick={onSeeMore} endIcon={<ArrowForwardIcon />} fullWidth={false} disabled={segmentState.isPending}>
-                        Ver mais
+                            Ver mais
                         </CButton>
                     </Grid>
 
@@ -89,25 +89,25 @@ const Home = () => {
                 <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"30px"} paddingTop={"46px"} paddingBottom={"90px"}>
                     <Grid
                         container
-                        sx={{justifyContent: {xs: "center", lg: "left"}}}
+                        sx={{ justifyContent: { xs: "center", lg: "left" } }}
                     >
-                        <Box borderBottom={5} borderColor={"primary.main"} style={{width: "fit-content"}}>
-                            <Typography 
+                        <Box borderBottom={5} borderColor={"primary.main"} style={{ width: "fit-content" }}>
+                            <Typography
                                 variant="h4"
                                 color={colors.grey.A100}
 
-                                fontWeight={"bold"} 
-                                sx={{ typography: { xs: "h6", sm: "h5", md: "h4"} }}>
-                            Mais vendidos
+                                fontWeight={"bold"}
+                                sx={{ typography: { xs: "h6", sm: "h5", md: "h4" } }}>
+                                Mais vendidos
                             </Typography>
                         </Box>
                     </Grid>
 
                     <Grid container
-                        gap={"33px"} 
-                        width={"100%"} 
-                        sx={{justifyContent: {xs: "center"}}}
-                        marginTop={"48px"} 
+                        gap={"33px"}
+                        width={"100%"}
+                        sx={{ justifyContent: { xs: "center" } }}
+                        marginTop={"48px"}
                         marginBottom={"40px"}>
                         {segmentState.hasSucceeded ? segmentState.data?.map((product, index) => {
                             return <ProductCard
@@ -122,9 +122,9 @@ const Home = () => {
                         }) : null}
                     </Grid>
 
-                    <Grid container sx={{justifyContent: {xs: "center", lg: "flex-end"}}}>
+                    <Grid container sx={{ justifyContent: { xs: "center", lg: "flex-end" } }}>
                         <CButton onClick={onSeeMore} endIcon={<ArrowForwardIcon />} fullWidth={false} disabled={segmentState.isPending}>
-                        Ver mais
+                            Ver mais
                         </CButton>
                     </Grid>
 
