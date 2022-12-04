@@ -7,6 +7,7 @@ import Checkout from "@/Pages/Checkout/Checkout";
 import Cart from "./Pages/Cart/Cart";
 import Success from "@/Pages/Success/Success";
 import SignIn from "@/Pages/LoginSignIn/Login/Login";
+import ProductPage from "@/Pages/Product/[productId]";
 
 type fontContextType = [
     fontSize: number,
@@ -54,6 +55,7 @@ function App() {
                         <Route path="/success" element={<Success />} />
                         <Route path="/signin" element={<SignIn />} />
                         <Route path="/checkout" element={<Cart />} />
+                        <Route path="/produto/:id" element={<ProductPage />} />
                     </Routes>
                 </FontContext.Provider>
             </ThemeProvider>
