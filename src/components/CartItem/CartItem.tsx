@@ -3,6 +3,7 @@ import { Box, Divider, IconButton, Typography } from "@mui/material";
 import GenericCard from "../GenericCard/GenericCard";
 import AddIcon from "@mui/icons-material/AddCircle";
 import SubtractIcon from "@mui/icons-material/RemoveCircle";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { getAsCurrency } from "@/utils/getAsCurrency";
 
 interface CartItemProps {
@@ -14,10 +15,12 @@ interface CartItemProps {
     productImage: string
     quantity: number
     onQuantityChanged?: (_: number) => void
+    removable?: boolean
 }
 
 function CartItem({
     onQuantityChanged = () => undefined,
+    removable = true,
     ...props}: CartItemProps) {
 
     function incrementQuantity() {
@@ -40,6 +43,10 @@ function CartItem({
         return !((props.quantity - 1) < 0 && (props.quantity - 1) < props.lowerLimit);
     }
 
+    function willBeRemoved(): boolean {
+        return props.quantity == props.lowerLimit + 1;
+    }
+
     return (
         <Box width={"100%"} borderRadius={"10px"} overflow={"hidden"}>
             <GenericCard>
@@ -59,10 +66,10 @@ function CartItem({
 
                         <Divider />
 
-                        <Box 
-                            width={"100%"} 
-                            display={"flex"} 
-                            justifyContent={"space-between"} 
+                        <Box
+                            width={"100%"}
+                            display={"flex"}
+                            justifyContent={"space-between"}
                             gap={"10px"}
                             marginTop={"18px"} >
                             <Box>
@@ -78,7 +85,7 @@ function CartItem({
 
                             <Box display={"flex"} gap={"10px"} alignItems={"center"}>
                                 <IconButton color="primary" onClick={decrementQuantity} disabled={!isDecrementEnabled()}>
-                                    <SubtractIcon />
+                                    {removable && willBeRemoved() ? <DeleteForeverIcon /> : <SubtractIcon />}
                                 </IconButton>
                                 <Typography
                                     variant="body1"
@@ -95,7 +102,7 @@ function CartItem({
                 </Box>
 
 
-                
+
 
             </GenericCard>
         </Box>
