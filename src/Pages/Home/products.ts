@@ -60,11 +60,11 @@ export const productsList: ProductModel[] = [
         pricing: {
             fullPrice: "R$ 4.500,00",
             hasPromotion: true,
-            promotionalPrice: "R$ 1.000,00",
+            promotionalPrice: "R$ 4.000,00",
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Inferno Intel i5 10400F NVIDIA GeForce RTX 3060 8GB SSD 240GB Water Colling",
-        alt: "Computador desktop preto, com a lateral aberta, dentro se vê os componentes, iluminados por LED vermelhos.
+        alt: "Computador desktop preto, com a lateral aberta, dentro se vê os componentes, iluminados por LED vermelhos.",
         specifications: {
             processor: "Intel i5 10400F",
             ramMemory: "8GB",
@@ -100,9 +100,9 @@ export const productsList: ProductModel[] = [
         title: "PC Gamer Colibri Intel I3",
         freeShipping: true,
         pricing: {
-            fullPrice: "R$ 1.000,00",
+            fullPrice: "R$ 2.300,00",
             hasPromotion: true,
-            promotionalPrice: "R$ 1.000,00",
+            promotionalPrice: "R$ 2.000,00",
             promotionWithPaymentMethod: "via pix"
         },
         description: "PC Gamer Colibri Intel I3 10100 NVIDIA GeForce GTX 1660 8GB SSD 240GB Windows 10",
@@ -169,7 +169,7 @@ export const productsList: ProductModel[] = [
             promotionalPrice: "R$ 33.378,00",
             promotionWithPaymentMethod: "via pix"
         },
-        description: Workstation Go 2A Xeonw-2255 NVIDIA RTX 4000 64GB SSD 1TB ",
+        description: "Workstation Go 2A Xeonw-2255 NVIDIA RTX 4000 64GB SSD 1TB ",
         alt: "Computador Desktop preto, com a lateral em vidro, sendo possível ver os componentes, iluminados por LED Branco.",
         specifications: {
             processor: "Xeonw-2255",
