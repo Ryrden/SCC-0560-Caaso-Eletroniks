@@ -22,6 +22,7 @@ export interface ProductCardTypes {
     title: string
     pricing: Pricing
     freeShipping: boolean
+    alt: string
 }
 
 const ProductCard = (props: ProductCardTypes) => {
@@ -35,7 +36,8 @@ const ProductCard = (props: ProductCardTypes) => {
                     className="product-card__image"
                     width={"100%"}
                     height={"185px"}
-                    src={props.productImgSource} />
+                    src={props.productImgSource} 
+                    alt={props.alt}/>
 
                 <Box paddingY={"18px"} paddingX={"10px"}>
                     <Typography
