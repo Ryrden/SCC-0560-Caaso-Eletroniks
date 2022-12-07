@@ -9,6 +9,7 @@ export interface ProductModel {
         promotionalPrice: string;
         promotionWithPaymentMethod: string;
     };
+    alt: string;
     description: string;
     specifications: {
         processor: string;
