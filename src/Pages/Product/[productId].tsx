@@ -1,9 +1,9 @@
 import React from "react";
-import {Box, CssBaseline, Divider, IconButton, Rating, Typography, useTheme} from "@mui/material";
+import { Box, CssBaseline, Divider, IconButton, Rating, Typography, useTheme } from "@mui/material";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import GenericCard from "@/components/GenericCard/GenericCard";
-import {getAsCurrency} from "@/utils/getAsCurrency";
+import { getAsCurrency } from "@/utils/getAsCurrency";
 import CButton from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
@@ -42,18 +42,22 @@ const ProductPage = () => {
                 <Box width={"100%"} borderRadius={"10px"}>
                     <GenericCard>
                         <Box width={"100%"} display={"flex"}
-                            sx={{padding: {xs: "16px", sm: "20px", md: "30px"},
-                                gap: {xs: "10px", sm: "16px", md: "30px"},
-                                flexDirection: {xs: "column", md: "row"},
-                                maxHeight: {md: "600px"}}}>
+                            sx={{
+                                padding: { xs: "16px", sm: "20px", md: "30px" },
+                                gap: { xs: "10px", sm: "16px", md: "30px" },
+                                flexDirection: { xs: "column", md: "row" },
+                                maxHeight: { md: "600px" }
+                            }}>
                             <Box width={"100%"}
-                                sx={{height: {xs: "300px", md: "500px"}}}
+                                sx={{ height: { xs: "300px", md: "500px" } }}
                                 borderRadius={"5px"}
                                 overflow={"hidden"}
-                                style={{ backgroundPosition: "center",
+                                style={{
+                                    backgroundPosition: "center",
                                     backgroundImage: "url(https://picsum.photos/seed/picsum/200/300)",
                                     backgroundSize: "cover",
-                                    backgroundRepeat: "no-repeat"}} />
+                                    backgroundRepeat: "no-repeat"
+                                }} />
 
                             <Box width={"100%"}
                                 display={"flex"}
@@ -75,7 +79,7 @@ const ProductPage = () => {
                                     <Box display={"flex"}
                                         justifyContent={"space-between"}
                                         gap={"5px"}
-                                        sx={{flexDirection: {xs: "column", sm: "row"}}}>
+                                        sx={{ flexDirection: { xs: "column", sm: "row" } }}>
                                         <Box width={"100%"}>
                                             <Typography
                                                 variant="h5"
@@ -91,7 +95,7 @@ const ProductPage = () => {
 
                                         <Divider orientation={"vertical"} flexItem />
 
-                                        <Box sx={{textAlign: {xs: "left", sm: "right"}}} width={"100%"}>
+                                        <Box sx={{ textAlign: { xs: "left", sm: "right" } }} width={"100%"}>
                                             <Typography
                                                 variant="h5"
                                                 color={"#FFFFFF"}>
@@ -111,7 +115,7 @@ const ProductPage = () => {
                                     <CButton size={"large"} startIcon={<AddShoppingCartIcon />}>Comprar</CButton>
                                     <Box display={"flex"} gap={"5px"} alignItems={"center"} marginTop={"20px"}>
                                         <Box width={"100%"}>
-                                            <Input label={"Digite seu CEP"} name={"cep"} size={"small"} />
+                                            <Input label={"Calcule o frete (CEP)"} name={"cep"} size={"small"} />
                                         </Box>
                                         <Box
                                             ml={1}

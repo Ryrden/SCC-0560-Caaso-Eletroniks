@@ -1,4 +1,4 @@
-import imagemPc from "@/assets/imgs/Computers/pcExemplo.svg";
+import imagemPc from "@/assets/imgs/Computers/PC7.jpg";
 import PC1 from "@/assets/imgs/Computers/PC1.jpg";
 import PC2 from "@/assets/imgs/Computers/PC2.jpg";
 import PC3 from "@/assets/imgs/Computers/PC3.jpg";
@@ -55,7 +55,7 @@ export const productsList: ProductModel[] = [
     {
         id: 3,
         imgSource: PC4,
-        title: "PC Gamer Falcon Intel i5",
+        title: "PC Gamer Falcon Intel i5 8GB de RAM",
         freeShipping: true,
         pricing: {
             fullPrice: "R$ 4.500,00",
@@ -94,12 +94,10 @@ export const productsList: ProductModel[] = [
             operatingSystem: "Windows 10"
         }
     },
-<<<<<<< HEAD
-=======
     {
         id: 5,
         imgSource: PC2,
-        title: "PC Gamer Colibri Intel I3",
+        title: "PC Gamer Colibri Intel I3 8GB de RAM",
         freeShipping: true,
         pricing: {
             fullPrice: "R$ 2.300,00",
@@ -142,7 +140,7 @@ export const productsList: ProductModel[] = [
     {
         id: 7,
         imgSource: PC6,
-        title: "PC Gamer Tian AMD Ryzen",
+        title: "PC Gamer Tian AMD Ryzen 8GB de RAM",
         freeShipping: true,
         pricing: {
             fullPrice: "R$ 2.700,00",
@@ -181,5 +179,4 @@ export const productsList: ProductModel[] = [
             operatingSystem: "Windows 10"
         }
     },
->>>>>>> 0a34878090e35c49bbdd43416e9b9fe567ded3be
 ];

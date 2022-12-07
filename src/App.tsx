@@ -55,7 +55,7 @@ function App() {
                         <Route path="/success" element={<Success />} />
                         <Route path="/signin" element={<SignIn />} />
                         <Route path="/checkout" element={<Cart />} />
-                        <Route path="/produto/:id" element={<ProductPage />} />
+                        <Route path="/product/:id" element={<ProductPage />} />
                     </Routes>
                 </FontContext.Provider>
             </ThemeProvider>
