@@ -37,11 +37,13 @@ const Home = () => {
 
     return (
         <div>
-            <Box style={{ backgroundImage: `url(${BackgroundImage}), 
+            <Box style={{
+                backgroundImage: `url(${BackgroundImage}), 
                 linear-gradient(${theme.palette.secondary.main}, transparent)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed" }}>
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed"
+            }}>
 
                 <CssBaseline />
                 <NavBar />
@@ -67,7 +69,7 @@ const Home = () => {
 
                     <Grid container
                         width={"100%"}
-                        sx={{ justifyContent: { xs: "center" }, gap: {xs: "10px", sm: "30px"} }}
+                        sx={{ justifyContent: { xs: "center" }, gap: { xs: "10px", sm: "30px" } }}
                         columns={{ xs: 2, sm: 3, md: 4 }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
@@ -116,7 +118,7 @@ const Home = () => {
 
                     <Grid container
                         width={"100%"}
-                        sx={{ justifyContent: { xs: "center" }, gap: {xs: "10px", sm: "30px"} }}
+                        sx={{ justifyContent: { xs: "center" }, gap: { xs: "10px", sm: "30px" } }}
                         columns={{ xs: 2, sm: 3, md: 4 }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
@@ -124,6 +126,7 @@ const Home = () => {
                             return <ProductCard
                                 key={product.id}
                                 id={product.id}
+                                alt={product.alt}
                                 productImgSource={product.imgSource}
                                 title={product.title}
                                 pricing={product.pricing}
