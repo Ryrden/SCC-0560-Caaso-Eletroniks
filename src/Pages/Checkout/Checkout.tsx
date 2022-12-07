@@ -85,14 +85,6 @@ const Checkout = () => {
         setAlignment(newAlignment);
     };
 
-    const [alignment, setAlignment] = React.useState("cartao");
-
-    const handleChange2 = (
-        event: React.MouseEvent<HTMLElement>,
-        newAlignment: string,
-    ) => {
-        setAlignment(newAlignment);
-    };
 
     const [dataValue, setDataValue] = React.useState("");
     const [dataValid, setDataValid] = React.useState(true);
