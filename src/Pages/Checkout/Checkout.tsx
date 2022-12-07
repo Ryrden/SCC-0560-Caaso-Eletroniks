@@ -13,8 +13,10 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import { useNavigate, useParams } from "react-router";
 
-    
+
+
 const currencies = [
     {
         value: "1x",
@@ -58,6 +60,7 @@ const currencies = [
     },
 ];
 
+
 const Checkout = () => {
 
     const theme = useTheme();
@@ -67,16 +70,30 @@ const Checkout = () => {
     const handleChange = (event: any) => {
         setCurrency(event.target.value);
     };
+    const navigate = useNavigate();
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        navigate("/success");
+    };
 
     const [alignment, setAlignment] = React.useState("cartao");
-  
     const handleChange2 = (
         event: React.MouseEvent<HTMLElement>,
         newAlignment: string,
     ) => {
         setAlignment(newAlignment);
     };
-    
+
+    const [alignment, setAlignment] = React.useState("cartao");
+
+    const handleChange2 = (
+        event: React.MouseEvent<HTMLElement>,
+        newAlignment: string,
+    ) => {
+        setAlignment(newAlignment);
+    };
+
     const [dataValue, setDataValue] = React.useState("");
     const [dataValid, setDataValid] = React.useState(true);
     const handleDataValidation = (e: any) => {
@@ -84,7 +101,7 @@ const Checkout = () => {
         setDataValid(regex.test(e.target.value));
         setDataValue(e.target.value);
     };
-    
+
     const [dataValidadeValue, setDataValidadeValue] = React.useState("");
     const [dataValidadeValid, setDataValidadeValid] = React.useState(true);
     const handleDataValidadeValidation = (e: any) => {
@@ -143,7 +160,7 @@ const Checkout = () => {
                         "pagamento dados-cartao"`,
                     }}
                 >
-                    <Box sx = {{gridArea: "breadcrumb"}}>
+                    <Box sx={{ gridArea: "breadcrumb" }}>
                         <Breadcrumb
                             navigators={breadcrumbs}
                         />
@@ -156,7 +173,7 @@ const Checkout = () => {
                         marginTop={"50%"}
                     >
                         <Box id="box-FormaPagamento"
-                            style={{ backgroundColor: "#292929"}}
+                            style={{ backgroundColor: "#292929" }}
                             sx={{
                                 gridArea: "pagamento",
                                 border: 2,
@@ -194,7 +211,6 @@ const Checkout = () => {
                                     onChange={handleChange2}
                                     aria-label="Platform"
                                 >
-                                    
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
@@ -203,9 +219,9 @@ const Checkout = () => {
                                         }}
                                     >
                                         <ReceiptIcon />
-                                        Cartão de Crédito 
+                                        Cartão de Crédito
                                     </ToggleButton>
-                                    
+
                                     <ToggleButton
                                         value="pix"
                                         sx={{
@@ -216,7 +232,6 @@ const Checkout = () => {
                                         <PixIcon />
                                         Pix
                                     </ToggleButton>
-                                    
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
@@ -228,11 +243,11 @@ const Checkout = () => {
                                         Boleto Bancário
                                     </ToggleButton>
 
-                                </ToggleButtonGroup>
+                                </ToggleButtonGroup >
 
-                            </Box>
-                        </Box>
-                    </Grid>
+                            </Box >
+                        </Box >
+                    </Grid >
 
                     <Grid container
                         gap={"33px"}
@@ -243,7 +258,8 @@ const Checkout = () => {
                     >
                         <GenericCard>
                             <FormControl
-                                component="form">
+                                component="form"
+                                onSubmit={handleSubmit}>
                                 <Box id="box-DadosCartão"
                                     width={"100%"}
                                     padding={"30px"}
@@ -397,13 +413,12 @@ const Checkout = () => {
                                     </Box>
 
                                 </Box>
-
                             </FormControl>
                         </GenericCard>
                     </Grid>
 
-                </Box>
-            </Box>
+                </Box >
+            </Box >
 
             <Footer />
         </div >

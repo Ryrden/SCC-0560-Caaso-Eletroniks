@@ -37,14 +37,20 @@ const Home = () => {
 
     return (
         <div>
-            <Box style={{ backgroundImage: `url(${BackgroundImage}), linear-gradient(${theme.palette.secondary.main}, transparent)`, backgroundAttachment: "fixed" }}>
+            <Box style={{
+                backgroundImage: `url(${BackgroundImage}), 
+                linear-gradient(${theme.palette.secondary.main}, transparent)`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed"
+            }}>
 
                 <CssBaseline />
                 <NavBar />
 
                 <HomeCarousel />
 
-                <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"30px"} paddingTop={"46px"} paddingBottom={"90px"}>
+                <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"20px"} paddingTop={"46px"} paddingBottom={"90px"}>
                     <Grid
                         container
                         sx={{ justifyContent: { xs: "center", lg: "left" } }}
@@ -62,9 +68,9 @@ const Home = () => {
                     </Grid>
 
                     <Grid container
-                        gap={"33px"}
                         width={"100%"}
-                        sx={{ justifyContent: { xs: "center" } }}
+                        sx={{ justifyContent: { xs: "center" }, gap: { xs: "10px", sm: "30px" } }}
+                        columns={{ xs: 2, sm: 3, md: 4 }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
                         {segmentState.hasSucceeded ? segmentState.data?.map((product) => {
@@ -75,9 +81,10 @@ const Home = () => {
                                 title={product.title}
                                 pricing={product.pricing}
                                 freeShipping={product.freeShipping}
+                                alt={product.alt}
                             />;
                         }) : null}
-                        {segmentState.isPending ? [1, 2, 3, 4].map((_, index) => {
+                        {segmentState.isPending ? [1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => {
                             return <ProductCardSkeleton
                                 key={index}
                             />;
@@ -92,7 +99,7 @@ const Home = () => {
 
                 </Box>
 
-                <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"30px"} paddingTop={"46px"} paddingBottom={"90px"}>
+                <Box maxWidth={"1160px"} marginX={"auto"} paddingX={"20px"} paddingTop={"46px"} paddingBottom={"90px"}>
                     <Grid
                         container
                         sx={{ justifyContent: { xs: "center", lg: "left" } }}
@@ -110,15 +117,16 @@ const Home = () => {
                     </Grid>
 
                     <Grid container
-                        gap={"33px"}
                         width={"100%"}
-                        sx={{ justifyContent: { xs: "center" } }}
+                        sx={{ justifyContent: { xs: "center" }, gap: { xs: "10px", sm: "30px" } }}
+                        columns={{ xs: 2, sm: 3, md: 4 }}
                         marginTop={"48px"}
                         marginBottom={"40px"}>
-                        {segmentState.hasSucceeded ? segmentState.data?.map((product, index) => {
+                        {segmentState.hasSucceeded ? segmentState.data?.map((product) => {
                             return <ProductCard
-                                key={index}
+                                key={product.id}
                                 id={product.id}
+                                alt={product.alt}
                                 productImgSource={product.imgSource}
                                 title={product.title}
                                 pricing={product.pricing}
