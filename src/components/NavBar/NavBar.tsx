@@ -117,8 +117,16 @@ const NavBar = () => {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Perfil</p>
+                <Typography
+                    variant="body1"
+                    noWrap
+                    component="div"
+
+                >
+                    Olá, João
+                </Typography>
             </MenuItem>
+
         </Menu>
     );
 
@@ -174,6 +182,14 @@ const NavBar = () => {
                                 className="navbar-icon"
                             >
                                 <AccountCircle />
+                                <Typography
+                                    variant="body1"
+                                    noWrap
+                                    component="div"
+                                    sx={{marginLeft: "10px"}}
+                                >
+                                    Olá, João
+                                </Typography>
                             </IconButton>
                         </Box>
                         <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -191,31 +207,31 @@ const NavBar = () => {
                     </div>
                 </Toolbar>
             </AppBar>
-                    {auth && (
-                        <div>
-                            <Menu
-                                id="menu-navbar"
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: "top",
-                                    horizontal: "right",
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: "top",
-                                    horizontal: "left",
-                                }}
-                                open={Boolean(anchorEl)}
-                                onClose={handleMenuClose}
-                                sx={{ padding: "0"}}
-                            >
-                                <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-                                    <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
-                                </Link>
-                                <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
-                            </Menu>
-                        </div>
-                    )}
+            {auth && (
+                <div>
+                    <Menu
+                        id="menu-navbar"
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                            vertical: "top",
+                            horizontal: "right",
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: "top",
+                            horizontal: "left",
+                        }}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                        sx={{ padding: "0" }}
+                    >
+                        <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+                            <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
+                        </Link>
+                        <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
+                    </Menu>
+                </div>
+            )}
             <MenuBar />
             {renderMobileMenu}
         </Box>
