@@ -14,7 +14,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
-    
+
 const currencies = [
     {
         value: "1x",
@@ -68,15 +68,14 @@ const Checkout = () => {
         setCurrency(event.target.value);
     };
 
-    const [alignment, setAlignment] = React.useState('cartao');
-  
+    const [alignment, setAlignment] = React.useState("cartao");
     const handleChange2 = (
         event: React.MouseEvent<HTMLElement>,
         newAlignment: string,
     ) => {
         setAlignment(newAlignment);
     };
-    
+
     const [dataValue, setDataValue] = React.useState("");
     const [dataValid, setDataValid] = React.useState(true);
     const handleDataValidation = (e: any) => {
@@ -84,7 +83,7 @@ const Checkout = () => {
         setDataValid(regex.test(e.target.value));
         setDataValue(e.target.value);
     };
-    
+
     const [dataValidadeValue, setDataValidadeValue] = React.useState("");
     const [dataValidadeValid, setDataValidadeValid] = React.useState(true);
     const handleDataValidadeValidation = (e: any) => {
@@ -143,7 +142,7 @@ const Checkout = () => {
                         "pagamento dados-cartao"`,
                     }}
                 >
-                    <Box sx = {{gridArea: "breadcrumb"}}>
+                    <Box sx={{ gridArea: "breadcrumb" }}>
                         <Breadcrumb
                             navigators={breadcrumbs}
                         />
@@ -156,7 +155,7 @@ const Checkout = () => {
                         marginTop={"50%"}
                     >
                         <Box id="box-FormaPagamento"
-                            style={{ backgroundColor: "#292929"}}
+                            style={{ backgroundColor: "#292929" }}
                             sx={{
                                 gridArea: "pagamento",
                                 border: 2,
@@ -194,7 +193,7 @@ const Checkout = () => {
                                     onChange={handleChange2}
                                     aria-label="Platform"
                                 >
-                                    
+
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
@@ -203,9 +202,9 @@ const Checkout = () => {
                                         }}
                                     >
                                         <ReceiptIcon />
-                                        Cartão de Crédito 
+                                        Cartão de Crédito
                                     </ToggleButton>
-                                    
+
                                     <ToggleButton
                                         value="pix"
                                         sx={{
@@ -216,7 +215,7 @@ const Checkout = () => {
                                         <PixIcon />
                                         Pix
                                     </ToggleButton>
-                                    
+
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
@@ -397,7 +396,6 @@ const Checkout = () => {
                                     </Box>
 
                                 </Box>
-
                             </FormControl>
                         </GenericCard>
                     </Grid>
