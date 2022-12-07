@@ -9,6 +9,11 @@ import GenericCard from "@/components/GenericCard/GenericCard";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import { useNavigate } from "react-router";
+
 
 const currencies = [
     {
@@ -53,14 +58,29 @@ const currencies = [
     },
 ];
 
+
 const Checkout = () => {
 
     const theme = useTheme();
 
     const [currency, setCurrency] = React.useState("BRL");
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: any) => {
         setCurrency(event.target.value);
+    };
+    const navigate = useNavigate();
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        navigate("/success");
+    };
+
+    const [alignment, setAlignment] = React.useState("cartao");
+    const handleChange2 = (
+        event: React.MouseEvent<HTMLElement>,
+        newAlignment: string,
+    ) => {
+        setAlignment(newAlignment);
     };
 
     const [dataValue, setDataValue] = React.useState("");
@@ -70,7 +90,7 @@ const Checkout = () => {
         setDataValid(regex.test(e.target.value));
         setDataValue(e.target.value);
     };
-    
+
     const [dataValidadeValue, setDataValidadeValue] = React.useState("");
     const [dataValidadeValid, setDataValidadeValid] = React.useState(true);
     const handleDataValidadeValidation = (e: any) => {
@@ -87,6 +107,29 @@ const Checkout = () => {
         setCpfValue(e.target.value);
     };
 
+    const breadcrumbs = [
+        {
+            to: "/",
+            label: "Página Inicial",
+            current: false
+        },
+        {
+            to: "/carrinho",
+            label: "Carrinho",
+            current: false
+        },
+        {
+            to: "/checkout",
+            label: "Pagamento",
+            current: true
+        },
+        {
+            to: "/checkout",
+            label: "Compra Concluída",
+            current: false
+        },
+    ];
+
     return (
         <div>
             <Box>
@@ -101,9 +144,16 @@ const Checkout = () => {
                     sx={{
                         display: "grid",
                         gridAutoFlow: { xs: "row", md: "column" },
-                        gridTemplateColumns: { md: "1fr 2fr" }
+                        gridTemplateColumns: { md: "1fr 2fr" },
+                        gridTemplateAreas: `"breadcrumb breadcrumb"
+                        "pagamento dados-cartao"`,
                     }}
                 >
+                    <Box sx={{ gridArea: "breadcrumb" }}>
+                        <Breadcrumb
+                            navigators={breadcrumbs}
+                        />
+                    </Box>
                     <Grid container
                         gap={"33px"}
                         width={"100%"}
@@ -112,8 +162,9 @@ const Checkout = () => {
                         marginTop={"50%"}
                     >
                         <Box id="box-FormaPagamento"
-                            style={{ backgroundColor: `${theme.palette.background.default}` }}
+                            style={{ backgroundColor: "#292929" }}
                             sx={{
+                                gridArea: "pagamento",
                                 border: 2,
                                 borderColor: "#1F1F1F",
                                 borderRadius: 3,
@@ -133,18 +184,58 @@ const Checkout = () => {
                             </Typography>
                             <Box
                                 width={"100%"}
-                                padding={"30px"}
                             >
                                 {/* //TODO: Colocar efeito de clicado depois */}
-                                <Button sx={{ mb: "20px" }} startIcon={<CreditCardIcon />}>
-                                    Cartão de Crédito
-                                </Button>
-                                <Button sx={{ mb: "20px" }} startIcon={<PixIcon />}>
-                                    Pix
-                                </Button>
-                                <Button sx={{ mb: "20px" }} startIcon={<ReceiptIcon />}>
-                                    Boleto Bancário
-                                </Button>
+                                <ToggleButtonGroup
+                                    orientation="vertical"
+                                    sx={{
+                                        backgroundColor: `${theme.palette.success.main}`,
+                                        color: `${theme.palette.background.default}`,
+                                        width: "90%",
+                                        marginX: "5%",
+                                        marginY: "30%",
+                                    }}
+                                    value={alignment}
+                                    exclusive
+                                    onChange={handleChange2}
+                                    aria-label="Platform"
+                                >
+
+                                    <ToggleButton
+                                        value="cartao"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
+                                        <ReceiptIcon />
+                                        Cartão de Crédito
+                                    </ToggleButton>
+
+                                    <ToggleButton
+                                        value="pix"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
+                                        <PixIcon />
+                                        Pix
+                                    </ToggleButton>
+
+                                    <ToggleButton
+                                        value="boleto"
+                                        sx={{
+                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            color: `${theme.palette.background.default}`,
+                                        }}
+                                    >
+                                        <ReceiptIcon />
+                                        Boleto Bancário
+                                    </ToggleButton>
+
+                                </ToggleButtonGroup>
+
                             </Box>
                         </Box>
                     </Grid>
@@ -158,11 +249,13 @@ const Checkout = () => {
                     >
                         <GenericCard>
                             <FormControl
-                                component="form">
+                                component="form"
+                                onSubmit={handleSubmit}>
                                 <Box id="box-DadosCartão"
                                     width={"100%"}
                                     padding={"30px"}
                                     sx={{
+                                        gridArea: "dados-cartao",
                                         width: 550,
                                         display: "grid",
                                         flexDirection: "column",
@@ -311,7 +404,6 @@ const Checkout = () => {
                                     </Box>
 
                                 </Box>
-
                             </FormControl>
                         </GenericCard>
                     </Grid>
