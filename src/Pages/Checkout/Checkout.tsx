@@ -12,6 +12,7 @@ import ReceiptIcon from "@mui/icons-material/Receipt";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Success from "../Success/Success";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
     
 const currencies = [
@@ -100,6 +101,29 @@ const Checkout = () => {
         setCpfValue(e.target.value);
     };
 
+    const breadcrumbs = [
+        {
+            to: "/",
+            label: "Página Inicial",
+            current: false
+        },
+        {
+            to: "/carrinho",
+            label: "Carrinho",
+            current: false
+        },
+        {
+            to: "/checkout",
+            label: "Pagamento",
+            current: true
+        },
+        {
+            to: "/checkout",
+            label: "Compra Concluída",
+            current: false
+        },
+    ];
+
     return (
         <div>
             <Box>
@@ -114,9 +138,16 @@ const Checkout = () => {
                     sx={{
                         display: "grid",
                         gridAutoFlow: { xs: "row", md: "column" },
-                        gridTemplateColumns: { md: "1fr 2fr" }
+                        gridTemplateColumns: { md: "1fr 2fr" },
+                        gridTemplateAreas: `"breadcrumb breadcrumb"
+                        "pagamento dados-cartao"`,
                     }}
                 >
+                    <Box sx = {{gridArea: "breadcrumb"}}>
+                        <Breadcrumb
+                            navigators={breadcrumbs}
+                        />
+                    </Box>
                     <Grid container
                         gap={"33px"}
                         width={"100%"}
@@ -127,6 +158,7 @@ const Checkout = () => {
                         <Box id="box-FormaPagamento"
                             style={{ backgroundColor: "#292929"}}
                             sx={{
+                                gridArea: "pagamento",
                                 border: 2,
                                 borderColor: "#1F1F1F",
                                 borderRadius: 3,
@@ -216,6 +248,7 @@ const Checkout = () => {
                                     width={"100%"}
                                     padding={"30px"}
                                     sx={{
+                                        gridArea: "dados-cartao",
                                         width: 550,
                                         display: "grid",
                                         flexDirection: "column",
