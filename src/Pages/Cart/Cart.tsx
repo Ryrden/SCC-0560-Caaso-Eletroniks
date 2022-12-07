@@ -51,6 +51,10 @@ function Cart() {
         navigate("/");
     }
 
+    function goCheckout(){
+        navigate("/checkout");
+    }
+
     const breadcrumbs = [
         {
             to: "/",
@@ -147,7 +151,7 @@ function Cart() {
                                     <Box marginTop={"30px"}>
                                         <CButton variant={"outlined"} size={"small"} onClick={continueShopping}>Continuar Comprando</CButton>
                                         <Box paddingY={"9px"} />
-                                        <CButton size={"large"}>Ir para  pagamento</CButton>
+                                        <CButton size={"large"} onClick={goCheckout}>Ir para  pagamento</CButton>
                                     </Box>
 
                                 </Box>
