@@ -11,8 +11,10 @@ import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { useNavigate, useParams } from "react-router";
+
 
 
 const currencies = [
@@ -83,6 +85,7 @@ const Checkout = () => {
         setAlignment(newAlignment);
     };
 
+
     const [dataValue, setDataValue] = React.useState("");
     const [dataValid, setDataValid] = React.useState(true);
     const handleDataValidation = (e: any) => {
@@ -129,8 +132,6 @@ const Checkout = () => {
             current: false
         },
     ];
-
-    const { id = "0" } = useParams();
 
     return (
         <div>
@@ -202,7 +203,6 @@ const Checkout = () => {
                                     onChange={handleChange2}
                                     aria-label="Platform"
                                 >
-
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
@@ -224,7 +224,6 @@ const Checkout = () => {
                                         <PixIcon />
                                         Pix
                                     </ToggleButton>
-
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
@@ -236,11 +235,11 @@ const Checkout = () => {
                                         Boleto Bancário
                                     </ToggleButton>
 
-                                </ToggleButtonGroup>
+                                </ToggleButtonGroup >
 
-                            </Box>
-                        </Box>
-                    </Grid>
+                            </Box >
+                        </Box >
+                    </Grid >
 
                     <Grid container
                         gap={"33px"}
@@ -410,8 +409,8 @@ const Checkout = () => {
                         </GenericCard>
                     </Grid>
 
-                </Box>
-            </Box>
+                </Box >
+            </Box >
 
             <Footer />
         </div >

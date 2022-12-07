@@ -24,7 +24,7 @@ const Input = ({ size = "small", required = false, type = "text", select = false
                 className={"input"}
                 required={required}
                 type={type}
-                variant="filled"
+                variant= "filled"
                 color="secondary"
                 size={size}
                 InputProps={{ disableUnderline: true }}
