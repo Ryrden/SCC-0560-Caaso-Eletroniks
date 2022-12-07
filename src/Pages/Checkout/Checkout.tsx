@@ -11,8 +11,8 @@ import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import { useNavigate } from "react-router";
 
 
 const currencies = [
@@ -58,6 +58,7 @@ const currencies = [
     },
 ];
 
+
 const Checkout = () => {
 
     const theme = useTheme();
@@ -66,6 +67,12 @@ const Checkout = () => {
 
     const handleChange = (event: any) => {
         setCurrency(event.target.value);
+    };
+    const navigate = useNavigate();
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        navigate("/success");
     };
 
     const [alignment, setAlignment] = React.useState("cartao");
@@ -242,7 +249,8 @@ const Checkout = () => {
                     >
                         <GenericCard>
                             <FormControl
-                                component="form">
+                                component="form"
+                                onSubmit={handleSubmit}>
                                 <Box id="box-DadosCartão"
                                     width={"100%"}
                                     padding={"30px"}
