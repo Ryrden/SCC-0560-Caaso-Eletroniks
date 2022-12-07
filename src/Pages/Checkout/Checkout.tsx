@@ -117,7 +117,7 @@ const Checkout = () => {
             current: false
         },
         {
-            to: "/carrinho",
+            to: "/cart",
             label: "Carrinho",
             current: false
         },
