@@ -184,7 +184,7 @@ const ProductPage = () => {
 
                                 <Box>
                                     {/* TODO: checkout ir por ID */}
-                                    <Link to={"/checkout/"} style={{ textDecoration: "none" }}>
+                                    <Link to={"/cart/"} style={{ textDecoration: "none" }}>
                                         <CButton size={"large"} startIcon={<AddShoppingCartIcon />}>Comprar</CButton>
                                     </Link>
                                     <Box display={"flex"} gap={"5px"} alignItems={"center"} marginTop={"20px"}>
