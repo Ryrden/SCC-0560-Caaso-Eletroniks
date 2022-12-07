@@ -99,7 +99,9 @@ const NavBar = () => {
                         <ShoppingCartIcon />
                     </Badge>
                 </IconButton>
-                <p>Carrinho</p>
+                <Link to={"/cart"} style={{ textDecoration: "none", color: "black" }}>
+                    <p>Carrinho</p>
+                </Link>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -146,7 +148,7 @@ const NavBar = () => {
                     <div>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                            <Link to="/checkout" style={{ textDecoration: "none" }}>
+                            <Link to="/cart" style={{ textDecoration: "none" }}>
                                 <IconButton
                                     size="large"
                                     edge="end"

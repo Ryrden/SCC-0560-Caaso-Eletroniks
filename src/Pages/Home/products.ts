@@ -1,11 +1,11 @@
-import imagemPc from "@/assets/imgs/Computers/PC7.jpg";
-import PC1 from "@/assets/imgs/Computers/PC1.jpg";
-import PC2 from "@/assets/imgs/Computers/PC2.jpg";
-import PC3 from "@/assets/imgs/Computers/PC3.jpg";
-import PC4 from "@/assets/imgs/Computers/PC4.jpg";
-import PC5 from "@/assets/imgs/Computers/PC5.jpg";
-import PC6 from "@/assets/imgs/Computers/PC6.jpg";
-import PC7 from "@/assets/imgs/Computers/PC7.jpg";
+import imagemPc from "@/assets/imgs/Computers/PC7.jpeg";
+import PC1 from "@/assets/imgs/Computers/PC1.jpeg";
+import PC2 from "@/assets/imgs/Computers/PC2.jpeg";
+import PC3 from "@/assets/imgs/Computers/PC3.jpeg";
+import PC4 from "@/assets/imgs/Computers/PC4.jpeg";
+import PC5 from "@/assets/imgs/Computers/PC5.jpeg";
+import PC6 from "@/assets/imgs/Computers/PC6.jpeg";
+import PC7 from "@/assets/imgs/Computers/PC7.jpeg";
 
 import { ProductModel } from "@/models/ProductModel";
 //Teste

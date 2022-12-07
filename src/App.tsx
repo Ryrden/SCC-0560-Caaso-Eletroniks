@@ -8,6 +8,7 @@ import Cart from "./Pages/Cart/Cart";
 import Success from "@/Pages/Success/Success";
 import SignIn from "@/Pages/LoginSignIn/SignIn/SignIn";
 import ProductPage from "@/Pages/Product/[productId]";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 type fontContextType = [
     fontSize: number,
@@ -47,16 +48,18 @@ function App() {
         <div className="App">
             <ThemeProvider theme={theme}>
                 <FontContext.Provider value={[fontSize, setFontSize]}>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/checkout" element={<Checkout />} />
-                        <Route path="/carrinho" element={<Cart />} />
-                        <Route path="/success" element={<Success />} />
-                        <Route path="/signin" element={<SignIn />} />
-                        <Route path="/checkout" element={<Cart />} />
-                        <Route path="/product/:id" element={<ProductPage />} />
-                    </Routes>
+                    <ScrollToTop>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/checkout" element={<Checkout />} />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/success" element={<Success />} />
+                            <Route path="/signin" element={<SignIn />} />
+                            <Route path="/checkout" element={<Cart />} />
+                            <Route path="/product/:id" element={<ProductPage />} />
+                        </Routes>
+                    </ScrollToTop>
                 </FontContext.Provider>
             </ThemeProvider>
         </div>
