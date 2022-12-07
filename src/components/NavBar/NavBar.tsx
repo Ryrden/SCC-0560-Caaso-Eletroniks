@@ -188,6 +188,8 @@ const NavBar = () => {
                             </IconButton>
                         </Box>
                     </div>
+                </Toolbar>
+            </AppBar>
                     {auth && (
                         <div>
                             <Menu
@@ -204,14 +206,13 @@ const NavBar = () => {
                                 }}
                                 open={Boolean(anchorEl)}
                                 onClose={handleMenuClose}
+                                sx={{ padding: "0"}}
                             >
                                 <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
                                 <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
                             </Menu>
                         </div>
                     )}
-                </Toolbar>
-            </AppBar>
             <MenuBar />
             {renderMobileMenu}
         </Box>
