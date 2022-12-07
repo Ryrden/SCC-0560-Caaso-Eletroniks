@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Checkout from "@/Pages/Checkout/Checkout";
 import Cart from "./Pages/Cart/Cart";
 import Success from "@/Pages/Success/Success";
-import SignIn from "@/Pages/LoginSignIn/Login/Login";
+import SignIn from "@/Pages/LoginSignIn/SignIn/SignIn";
 import ProductPage from "@/Pages/Product/[productId]";
 
 type fontContextType = [

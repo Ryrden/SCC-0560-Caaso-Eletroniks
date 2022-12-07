@@ -14,8 +14,10 @@ import Divider from "@mui/material/Divider";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import SimpleNavbar from "../SimpleNavbar";
+import { useNavigate } from "react-router";
 
 export default function SignIn() {
+    const navigate = useNavigate();
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -23,6 +25,7 @@ export default function SignIn() {
             email: data.get("account"),
             password: data.get("password"),
         });
+        navigate("/");
     };
 
     return (
@@ -44,7 +47,7 @@ export default function SignIn() {
                         <Box
                             component="form"
                             onSubmit={handleSubmit}
-                            noValidate sx={{ mt: 1 }}
+                            sx={{ mt: 1 }}
                             width={"100%"}
                             padding={"30px"}
                         >
@@ -63,7 +66,7 @@ export default function SignIn() {
                                 control={<Checkbox value="remember" style={{ color: "#FFFFFF" }} />}
                                 style={{ color: "#FFFFFF", margin: "5px 0px" }}
                                 label="Lembre de mim" />
-                            <Button>
+                            <Button type="submit">
                                 Entrar
                             </Button>
                             <Grid container>
