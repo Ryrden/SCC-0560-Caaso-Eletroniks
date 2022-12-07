@@ -74,6 +74,9 @@ const NavBar = () => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+    const [auth, setAuth] = React.useState(true);
+
+
     const menuId = "primary-search-account-menu";
 
     const mobileMenuId = "primary-search-account-menu-mobile";
@@ -185,6 +188,28 @@ const NavBar = () => {
                             </IconButton>
                         </Box>
                     </div>
+                    {auth && (
+                        <div>
+                            <Menu
+                                id="menu-navbar"
+                                anchorEl={anchorEl}
+                                anchorOrigin={{
+                                    vertical: "top",
+                                    horizontal: "right",
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: "top",
+                                    horizontal: "left",
+                                }}
+                                open={Boolean(anchorEl)}
+                                onClose={handleMenuClose}
+                            >
+                                <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
+                            </Menu>
+                        </div>
+                    )}
                 </Toolbar>
             </AppBar>
             <MenuBar />
