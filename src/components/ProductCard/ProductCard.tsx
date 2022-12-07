@@ -87,7 +87,7 @@ const ProductCard = (props: ProductCardTypes) => {
 
                         <Box display="flex" alignItems="center">
                             <Box width="100%">
-                                <Link to={"/product/" + props.id} style={{ textDecoration: "none" }}>
+                                <Link to={"/product/" + (props.id-1)} style={{ textDecoration: "none" }}>
                                     <Button endIcon={<ArrowForward />}>
                                         Ver detalhes
                                     </Button>

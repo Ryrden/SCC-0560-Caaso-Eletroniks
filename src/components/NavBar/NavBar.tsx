@@ -208,7 +208,9 @@ const NavBar = () => {
                                 onClose={handleMenuClose}
                                 sx={{ padding: "0"}}
                             >
-                                <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
+                                <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+                                    <MenuItem onClick={handleMenuClose}>Meu perfil</MenuItem>
+                                </Link>
                                 <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
                             </Menu>
                         </div>
