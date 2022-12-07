@@ -12,7 +12,7 @@ import ReceiptIcon from "@mui/icons-material/Receipt";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 
 const currencies = [
@@ -129,6 +129,8 @@ const Checkout = () => {
             current: false
         },
     ];
+
+    const { id = "0" } = useParams();
 
     return (
         <div>

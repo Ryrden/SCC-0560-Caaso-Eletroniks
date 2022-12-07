@@ -84,7 +84,7 @@ const Home = () => {
                                 alt={product.alt}
                             />;
                         }) : null}
-                        {segmentState.isPending ? [1, 2, 3, 4].map((_, index) => {
+                        {segmentState.isPending ? [1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => {
                             return <ProductCardSkeleton
                                 key={index}
                             />;
