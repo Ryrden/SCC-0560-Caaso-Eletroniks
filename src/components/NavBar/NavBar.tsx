@@ -192,13 +192,13 @@ const NavBar = () => {
                                 id="menu-navbar"
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
+                                    vertical: "top",
+                                    horizontal: "right",
                                 }}
                                 keepMounted
                                 transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
+                                    vertical: "top",
+                                    horizontal: "left",
                                 }}
                                 open={Boolean(anchorEl)}
                                 onClose={handleMenuClose}

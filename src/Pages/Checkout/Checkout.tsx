@@ -68,7 +68,7 @@ const Checkout = () => {
         setCurrency(event.target.value);
     };
 
-    const [alignment, setAlignment] = React.useState('cartao');
+    const [alignment, setAlignment] = React.useState("cartao");
   
     const handleChange2 = (
         event: React.MouseEvent<HTMLElement>,
