@@ -79,6 +79,7 @@ const Home = () => {
                                 title={product.title}
                                 pricing={product.pricing}
                                 freeShipping={product.freeShipping}
+                                alt={product.alt}
                             />;
                         }) : null}
                         {segmentState.isPending ? [1, 2, 3, 4].map((_, index) => {
