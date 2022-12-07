@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem, Menu } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -184,7 +185,7 @@ const NavBar = () => {
                                 onClick={handleMobileMenuOpen}
                                 className="navbar-icon"
                             >
-                                <MoreIcon />
+                                <MenuIcon />
                             </IconButton>
                         </Box>
                     </div>
