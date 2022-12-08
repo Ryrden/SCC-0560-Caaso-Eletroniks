@@ -12,6 +12,7 @@ import Button from "@/components/Button/Button";
 import SimpleNavbar from "../SimpleNavbar";
 import { FormControl } from "@mui/material";
 import { useNavigate } from "react-router";
+import CButton from "@/components/Button/Button";
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -198,9 +199,9 @@ const SignIn = () => {
                                 />
                             </Box>
 
-                            <Button size="large" type="submit">
+                            <CButton size="large" type="submit">
                                 Realizar Cadastro
-                            </Button>
+                            </CButton>
                         </FormControl>
                     </Box>
                 </GenericCard>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Breadcrumbs, colors, CssBaseline, Divider, Grid, Typography } from "@mui/material";
+import { Box, Breadcrumbs, colors, CssBaseline, Divider, Grid, Typography, useTheme } from "@mui/material";
 import CartItem from "@/components/CartItem/CartItem";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import TextField from "@/components/Input/Input";
@@ -22,7 +22,6 @@ interface CartItemFromApi {
 }
 
 function Cart() {
-
     const navigate = useNavigate();
 
     const [cartItems, setCartItems] = useState<CartItemFromApi[]>(cartItemsFromApi);
@@ -51,7 +50,7 @@ function Cart() {
         navigate("/");
     }
 
-    function goCheckout(){
+    function goCheckout() {
         navigate("/checkout");
     }
 
@@ -77,6 +76,8 @@ function Cart() {
             current: true
         },
     ];
+
+    const theme = useTheme();
 
     return <div>
         <CssBaseline />
@@ -130,7 +131,7 @@ function Cart() {
 
                                     <Typography
                                         variant="caption"
-                                        color={colors.green.A200}>
+                                        color={theme.palette.success.main}>
                                         Você economiza R$ 1.000,00 comprando a vista
                                     </Typography>
 
