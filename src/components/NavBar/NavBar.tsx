@@ -1,10 +1,9 @@
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
-import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem, Menu } from "@mui/material";
+import { AppBar, Box, Toolbar, IconButton, Typography, InputBase, Badge, MenuItem, Menu, useTheme } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccessibilityBar from "./AccessibilityBar/AccessibilityBar";
 import logo from "@/assets/imgs/logo.svg";
@@ -15,7 +14,7 @@ import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.info.main, 0.15),
     "&:hover": {
         backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
@@ -51,6 +50,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const NavBar = () => {
+    const theme = useTheme();
+
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -121,7 +122,6 @@ const NavBar = () => {
                     variant="body1"
                     noWrap
                     component="div"
-
                 >
                     Olá, João
                 </Typography>
@@ -134,7 +134,7 @@ const NavBar = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AccessibilityBar />
             <AppBar position="static">
-                <Toolbar id="navbar-container">
+                <Toolbar id="navbar-container" sx={{ background: theme.palette.secondary.main }}>
                     <Link to="/" style={{ textDecoration: "none" }}>
                         <Typography
                             variant="h6"
@@ -165,8 +165,7 @@ const NavBar = () => {
                                     size="large"
                                     edge="end"
                                     aria-label="shopping cart"
-                                    color="inherit"
-                                    className="navbar-icon"
+                                    color={"primary"}
                                 >
                                     <ShoppingCartIcon />
                                 </IconButton>
@@ -179,14 +178,14 @@ const NavBar = () => {
                                 aria-controls={menuId}
                                 aria-haspopup="true"
                                 onClick={handleProfileMenuOpen}
-                                className="navbar-icon"
+                                color={"primary"}
                             >
                                 <AccountCircle />
                                 <Typography
                                     variant="body1"
                                     noWrap
                                     component="div"
-                                    sx={{marginLeft: "10px"}}
+                                    sx={{ marginLeft: "10px" }}
                                 >
                                     Olá, João
                                 </Typography>

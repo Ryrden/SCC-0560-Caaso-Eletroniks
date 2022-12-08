@@ -1,12 +1,7 @@
 @import "@/Sass/app.scss";
 
 #navbar-container {
-    background-color: $purple;
     justify-content: space-between;
     padding: 1rem 5rem;
     box-sizing: border-box;
-
-    .navbar-icon {
-        color: $yellow;
-    }
 }
