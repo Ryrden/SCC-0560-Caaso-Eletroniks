@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@/components/Input/Input";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -73,12 +73,12 @@ export default function SignIn() {
                                 <Grid container>
                                     <Box width="100%" display="flex" justifyContent="space-between">
                                         <Grid item xs={6} marginTop={"15px"}>
-                                            <Link href="/signin" color={"#FFFFFF"} text-decoration={"none"} underline="none">
+                                            <Link to="/signin" style={{ textDecoration: "none", color: "white" }}>
                                                 <Typography variant="body2">Cadastre-se</Typography>
                                             </Link>
                                         </Grid>
                                         <Grid item xs={6} marginTop={"15px"}>
-                                            <Link href="#" color={"#FFFFFF"} text-decoration={"none"} underline="none">
+                                            <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
                                                 <Typography variant="body2" align="right">Esqueceu a senha?</Typography>
                                             </Link>
                                         </Grid>

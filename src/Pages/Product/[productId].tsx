@@ -81,15 +81,13 @@ const ProductPage = () => {
         setProducts(productsList[+id]);
         console.log(products);
 
-        setSpecification(oldSpecification => {
-            return [
-                createData("Processador", productsList[+id].specifications.processor),
-                createData("Sistema Operacional", productsList[+id].specifications.operatingSystem),
-                createData("Memória", productsList[+id].specifications.ramMemory),
-                createData("Capacidade", productsList[+id].specifications.storage),
-                createData("Placa de Video", productsList[+id].specifications.videoCard),
-            ];
-        });
+        setSpecification([
+            createData("Processador", productsList[+id].specifications.processor),
+            createData("Sistema Operacional", productsList[+id].specifications.operatingSystem),
+            createData("Memória", productsList[+id].specifications.ramMemory),
+            createData("Capacidade", productsList[+id].specifications.storage),
+            createData("Placa de Video", productsList[+id].specifications.videoCard),
+        ]);
     }, [id]);
 
     const rows = specification;
