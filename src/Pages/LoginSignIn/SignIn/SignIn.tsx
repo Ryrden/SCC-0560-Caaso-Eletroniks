@@ -8,11 +8,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import GenericCard from "@/components/GenericCard/GenericCard";
 import Divider from "@mui/material/Divider";
-import Button from "@/components/Button/Button";
 import SimpleNavbar from "../SimpleNavbar";
 import { FormControl } from "@mui/material";
 import { useNavigate } from "react-router";
 import CButton from "@/components/Button/Button";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -49,7 +49,7 @@ const SignIn = () => {
         setCpfValid(regex.test(e.target.value));
         setCpfValue(e.target.value);
     };
-    
+
 
     const [telValue, setTelValue] = React.useState("");
     const [telValid, setTelValid] = React.useState(true);
@@ -114,7 +114,7 @@ const SignIn = () => {
                                         required
                                         label="CPF"
                                         name={"cpf"}
-                                        inputProps={{maxlength: "14"}}
+                                        inputProps={{ maxlength: "14" }}
                                         value={cpfValue}
                                         error={!cpfValid}
                                         placeholder={"000.000.000-00"}
@@ -125,7 +125,7 @@ const SignIn = () => {
                                     <TextField
                                         label="Telefone Celular"
                                         name={"telefone"}
-                                        inputProps={{maxlength: "11"}}
+                                        inputProps={{ maxlength: "11" }}
                                         value={telValue}
                                         error={!telValid}
                                         placeholder={"Apenas números"}
@@ -177,7 +177,7 @@ const SignIn = () => {
                                     <TextField
                                         label="CEP"
                                         name={"cep"}
-                                        inputProps={{maxlength: "9"}}
+                                        inputProps={{ maxlength: "9" }}
                                         value={cepValue}
                                         error={!cepValid}
                                         placeholder={"00000-000"}
@@ -243,7 +243,11 @@ const SignIn = () => {
                                     label="Eu concordo"
                                 />
                             </Box>
-
+                            <Box my={2}>
+                                <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+                                    <Typography variant="body2">Já Possui conta? Entrar</Typography>
+                                </Link>
+                            </Box>
                             <CButton size="large" type="submit">
                                 Realizar Cadastro
                             </CButton>

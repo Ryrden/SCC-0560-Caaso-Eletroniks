@@ -4,11 +4,12 @@ import "./GenericCard.scss";
 
 interface GenericCardTypes {
     children?: React.ReactNode,
+    sx?: { [key: string]: any }
 }
 
 const GenericCard = (props: GenericCardTypes) => {
     return (
-        <Box className="card" position="relative">{props.children}</Box>
+        <Box className="card" position="relative" sx={props.sx}>{props.children}</Box>
     );
 };
 
