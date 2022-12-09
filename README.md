@@ -5,10 +5,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/ryrden/SCC-0560-Caaso-Eletroniks)
 ![GitHub language count](https://img.shields.io/github/languages/count/ryrden/SCC-0560-Caaso-Eletroniks)
 ![GitHub forks](https://img.shields.io/github/forks/ryrden/SCC-0560-Caaso-Eletroniks)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/ryrden/SCC-0560-Caaso-Eletroniks)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/ryrden/SCC-0560-Caaso-Eletroniks)
 
-<!---<img src="exemplo-image.png" alt="exemplo imagem">--->
+<img src="https://i.imgur.com/GiOyhSR.png" alt="Imagem da Tela HOME">
 
 > Diretório para o projeto de SCC0560 - Interação Humano-Computador e Experiência do Usuário, ministrada pela professora Kamila Rios da Hora Rodrigues.
 
