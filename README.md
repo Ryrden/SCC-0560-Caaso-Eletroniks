@@ -50,7 +50,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/76923948?v=4" width="100px;" alt="Foto do Ryan Souza no GitHub"/><br>
         <sub>
-          <b>Ryan Souza ([Ryrden](https://github.com/Ryrden))</b>
+          <b>Ryan Souza (Ryrden)</b>
         </sub>
       </a>
     </td>
@@ -72,9 +72,9 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="" width="100px;" alt="Foto de João Lucas no Github"/><br>
+        <img src="https://avatars.githubusercontent.com/u/83319546?v=4" width="100px;" alt="Foto de João Lucas no Github"/><br>
         <sub>
-          <b>João Lucas</b>
+          <b>João Lucas (joaolucasp)</b>
         </sub>
       </a>
     </td>
