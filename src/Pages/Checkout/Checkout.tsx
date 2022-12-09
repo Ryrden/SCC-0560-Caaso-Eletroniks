@@ -188,7 +188,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
-                                            backgroundColor: "#8f5e00",
+                                            backgroundColor: `${theme.palette.terciary.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -199,7 +199,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="pix"
                                         sx={{
-                                            backgroundColor: "#8f5e00",
+                                            backgroundColor: `${theme.palette.terciary.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -209,7 +209,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
-                                            backgroundColor: "#8f5e00",
+                                            backgroundColor: `${theme.palette.terciary.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
