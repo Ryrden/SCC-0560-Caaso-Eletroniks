@@ -8,9 +8,9 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/ryrden/SCC-0560-Caaso-Eletroniks)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/ryrden/SCC-0560-Caaso-Eletroniks)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<!---<img src="exemplo-image.png" alt="exemplo imagem">--->
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Diretório para o projeto de SCC0560 - Interação Humano-Computador e Experiência do Usuário, ministrada pela professora Kamila Rios da Hora Rodrigues.
 
 ## 💻 Pré-requisitos
 
@@ -28,9 +28,9 @@ Execute os seguintes comandos
   
 ```npm run dev```
 
-## 📫 Contribuindo para <nome_do_projeto>
+## 📫 Contribuindo para CAASO Eletroníks
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+Para contribuir com CAASO Eletroníks, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
@@ -48,31 +48,48 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/76923948?v=4" width="100px;" alt="Foto do Ryan Souza no GitHub"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Ryan Souza ([Ryrden](https://github.com/Ryrden))</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://avatars.githubusercontent.com/u/61102108?v=4" width="100px;" alt="Foto de Joel Coelho no GitHub"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Joel Coelho (joelcoelho29)</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <img src="https://avatars.githubusercontent.com/u/91749118?v=4" width="100px;" alt="Foto de Moniely Barboza no GitHub"/><br>
         <sub>
-          <b>Steve Jobs</b>
+          <b>Moniely Barboza (moniely-barboza)</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="" width="100px;" alt="Foto de João Lucas no Github"/><br>
+        <sub>
+          <b>João Lucas</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/48134459?v=4" width="100px;" alt="Foto de Murilo Franchi no GitHub"/><br>
+        <sub>
+          <b>Murilo Franchi (mrlFranchi)</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
 
+  <!---
 ## 😄 Seja um dos contribuidores<br>
 
 Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
@@ -80,5 +97,5 @@ Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contr
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+--->
+[⬆ Voltar ao topo](#CaasoEletroniks)<br>
