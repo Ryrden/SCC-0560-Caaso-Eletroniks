@@ -14,9 +14,12 @@ interface InputType {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
     error?: boolean
     focused?: boolean
+    inputProps?: { [key: string]: any }
+    inputComponent?: React.ForwardRefExoticComponent<any>
+    placeholder?: string
     sx?: { [key: string]: any }
     size?: "small" | "medium"
-};
+}
 
 const Input = ({ size = "small", required = false, type = "text", select = false, ...props }: InputType) => {
 
@@ -26,13 +29,16 @@ const Input = ({ size = "small", required = false, type = "text", select = false
                 className={"input"}
                 required={required}
                 type={type}
-                variant= "filled"
+                variant="filled"
                 color="secondary"
                 size={size}
-                InputProps={{ disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
                 select={select}
                 error={props.error}
                 sx={props.sx}
+                placeholder={props.placeholder}
+                inputComponent={props.inputComponent}
+                inputProps={props.inputProps}
                 {...props}
             >{props.children}</TextField>
         </div>
