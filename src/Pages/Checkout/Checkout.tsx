@@ -2,19 +2,17 @@ import React from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import Input from "@/components/Input/Input";
-import InputMask from "@/components/Input/InputMask";
+import InputMask from "react-input-mask";
 import Button from "@/components/Button/Button";
 import Divider from "@mui/material/Divider";
-import { Box, CssBaseline, FormControl, Grid, MenuItem, Typography, useTheme } from "@mui/material";
+import { Box, CssBaseline, FormControl, Grid, MenuItem, TextField, Typography, useTheme } from "@mui/material";
 import GenericCard from "@/components/GenericCard/GenericCard";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PixIcon from "@mui/icons-material/Pix";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 const currencies = [
     {
@@ -85,46 +83,6 @@ const Checkout = () => {
     };
 
 
-    const [dataValue, setDataValue] = React.useState("");
-    const [dataValid, setDataValid] = React.useState(true);
-    const handleDataValidation = (e: any) => {
-        const regex = new RegExp("(0[1-9]|1[0-9]|2[0-9]|3[0-1])[- | /](0[1-9]|1[0-2])[- | /]([0-9]{4})");
-        setDataValid(regex.test(e.target.value));
-        setDataValue(e.target.value);
-    };
-
-    const [dataValidadeValue, setDataValidadeValue] = React.useState("");
-    const [dataValidadeValid, setDataValidadeValid] = React.useState(true);
-    const handleDataValidadeValidation = (e: any) => {
-        const regex = new RegExp("(0[1-9]|1[0-9]|2[0-9]|3[0-1])[- | /](0[1-9]|1[0-2])[- | /]([0-9]{4})");
-        setDataValidadeValid(regex.test(e.target.value));
-        setDataValidadeValue(e.target.value);
-    };
-
-    const [cpfValue, setCpfValue] = React.useState("");
-    const [cpfValid, setCpfValid] = React.useState(true);
-    const handleCpfValidation = (e: any) => {
-        const regex = new RegExp("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
-        setCpfValid(regex.test(e.target.value));
-        setCpfValue(e.target.value);
-    };
-
-    const [creditCardValue, setCreditCardValue] = React.useState("");
-    const [creditCardValid, setCreditCardValid] = React.useState(true);
-    const handleCreditCardValidation = (e: any) => {
-        const regex = new RegExp("[0-9]{16}");
-        setCreditCardValid(regex.test(e.target.value));
-        setCreditCardValue(e.target.value);
-    };
-
-    const [cvvValue, setCvvValue] = React.useState("");
-    const [cvvValid, setCvvValid] = React.useState(true);
-    const handleCvvValidation = (e: any) => {
-        const regex = new RegExp("[0-9]{3}");
-        setCvvValid(regex.test(e.target.value));
-        setCvvValue(e.target.value);
-    };
-
     const breadcrumbs = [
         {
             to: "/",
@@ -148,6 +106,11 @@ const Checkout = () => {
         },
     ];
 
+    const [cpf, setCpf] = React.useState("000.000.000-00");
+    const [creditCard, setCreditCard] = React.useState("0000 0000 0000 0000");
+    const [cvv, setCvv] = React.useState("000");
+    const [validity, setValidity] = React.useState("00/00");
+
     return (
         <div>
             <Box>
@@ -160,9 +123,9 @@ const Checkout = () => {
                     paddingTop={"46px"}
                     paddingBottom={"90px"}
                     sx={{
-                        display: {sm: "flex", md: "grid"},
+                        display: { sm: "flex", md: "grid" },
                         flexDirection: "row",
-                        alignItems:"center",
+                        alignItems: "center",
                         flexWrap: "wrap",
                         gridTemplateColumns: { md: "1fr 2fr" },
                         gap: 1,
@@ -181,7 +144,7 @@ const Checkout = () => {
                         gap={"30px"}
                         width={"100%"}
                         height={"50%"}
-                        sx={{display:"flex", flexDirection: "row", justifyContent: { xs: "center"}}}
+                        sx={{ display: "flex", flexDirection: "row", justifyContent: { xs: "center" } }}
                     >
                         <Box id="box-FormaPagamento"
                             style={{ backgroundColor: "#292929" }}
@@ -267,14 +230,15 @@ const Checkout = () => {
                         sx={{
                             display: "flex",
                             flexDirection: "row",
-                            justifyContent: {xs: "center"} }}
+                            justifyContent: { xs: "center" }
+                        }}
                         marginTop={"48px"}
                     >
                         <GenericCard>
                             <FormControl
                                 component="form"
                                 onSubmit={handleSubmit}>
-                                
+
                                 <Box id="box-DadosCartão"
                                     padding={"30px"}
                                     sx={{
@@ -307,32 +271,35 @@ const Checkout = () => {
                                             <Input
                                                 required
                                                 label="Nome impresso no cartão"
-                                                name={"nome"}
-                                            />
+                                                name={"nome"} defaultValue={""} />
                                         </Box>
 
                                         <Box sx={{ gridArea: "cpf" }}>
-                                            <Input
-                                                required
-                                                label="CPF"
-                                                name={"cpf"}
-                                                inputProps={{maxlength: "14"}}
-                                                value={cpfValue}
-                                                error={!cpfValid}
-                                                placeholder={"000.000.000-00"}
-                                                onChange={(e) => handleCpfValidation(e)}   
-                                            />
+                                            <InputMask
+                                                mask="999\.999\.999\-99"
+                                                value={cpf}
+                                                disabled={false}
+                                                maskChar=" "
+                                                onChange={(e) => setCpf(e.target.value)}
+                                            >
+                                                {() => <Input
+                                                    label="CPF"
+                                                    placeholder="000.000.000-00"
+                                                    name={"cpf"}
+                                                    defaultValue={""}
+                                                />}
+                                            </InputMask>
+
                                         </Box>
 
                                         <Box sx={{ gridArea: "data-nasc" }}>
                                             <Input
                                                 required
                                                 label="Data de nascimento"
-                                                inputProps={{maxlength: "8"}}
+                                                inputProps={{ maxlength: "8" }}
                                                 name={"data-nasc"}
                                                 focused
-                                                type={"date"}
-                                            />
+                                                type={"date"} defaultValue={""} />
                                         </Box>
                                     </Box>
                                 </Box>
@@ -374,28 +341,40 @@ const Checkout = () => {
                                         }}
                                     >
                                         <Box sx={{ gridArea: "num-cartao" }}>
-                                            <Input
-                                                required
-                                                label="Número do cartão"
-                                                name={"num-cartao"}
-                                                inputProps={{maxlength: "18"}}
-                                                value={creditCardValue}
-                                                error={!creditCardValid}
-                                                placeholder={"Apenas números"}
-                                                type={"text"}                                                                                                  inputProps={{maxlength: "14"}}
-                                                onChange={(e) => handleCreditCardValidation(e)}
-                                            />
+                                            <InputMask
+                                                mask="9999 9999 9999 9999"
+                                                value={creditCard}
+                                                disabled={false}
+                                                maskChar=" "
+                                                onChange={(e) => setCreditCard(e.target.value)}
+                                            >
+                                                {() =>
+                                                    <Input
+                                                        required
+                                                        label="Número do cartão"
+                                                        name={"num-cartao"}
+                                                        placeholder={"Apenas números"}
+                                                        type={"text"}
+                                                        defaultValue={""} />}
+                                            </InputMask>
                                         </Box>
 
                                         <Box sx={{ gridArea: "data-val" }}>
-                                            <Input
-                                                required
-                                                label="Data de Validade"
-                                                name={"data-val"}
-                                                inputProps={{maxlength: "8"}}
-                                                focused
-                                                type={"date"}
-                                            />
+                                            <InputMask
+                                                mask="99/99"
+                                                value={validity}
+                                                disabled={false}
+                                                maskChar=" "
+                                                onChange={(e) => setValidity(e.target.value)}
+                                            >
+                                                {() =>
+                                                    <Input
+                                                        required
+                                                        label="Data de Validade"
+                                                        name={"data-val"}
+                                                        type={"text"}
+                                                        defaultValue={""} />}
+                                            </InputMask>
                                         </Box>
 
                                         <Box sx={{ gridArea: "cvv" }}>
@@ -403,12 +382,9 @@ const Checkout = () => {
                                                 required
                                                 label="CVV"
                                                 name={"cvv"}
-                                                value={cvvValue}
-                                                error={!cvvValid}
-                                                placeholder={"000"}                                                                                                  
-                                                inputProps={{maxlength: "3"}}
-                                                onChange={(e) => handleCvvValidation(e)}                                          
-                                            />
+                                                placeholder={"000"}
+                                                inputProps={{ maxlength: "3" }}
+                                                defaultValue={""} />
                                         </Box>
 
                                         <Box sx={{ gridArea: "forma-pagam" }}>
@@ -418,7 +394,8 @@ const Checkout = () => {
                                                 value={currency}
                                                 onChange={handleChange}
                                                 label="Forma de Pagamento"
-                                                name={"forma-pagam"}                                           >
+                                                name={"forma-pagam"}
+                                                defaultValue={""}>
                                                 {currencies.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
                                                         {option.label}
