@@ -110,6 +110,7 @@ const Checkout = () => {
     const [creditCard, setCreditCard] = React.useState("");
     const [cvv, setCvv] = React.useState("");
     const [validity, setValidity] = React.useState("");
+    const [birth, setBirth] = React.useState("");
 
     return (
         <div>
@@ -243,8 +244,6 @@ const Checkout = () => {
                                     padding={"30px"}
                                     sx={{
                                         gridArea: "dados-cartao",
-                                        display: "flex",
-                                        flexDirection: "column",
                                     }}
                                 >
                                     <Typography
@@ -271,7 +270,8 @@ const Checkout = () => {
                                             <Input
                                                 required
                                                 label="Nome impresso no cartão"
-                                                name={"nome"} defaultValue={""} />
+                                                name={"nome"}
+                                            />
                                         </Box>
 
                                         <Box sx={{ gridArea: "cpf" }}>
@@ -285,20 +285,26 @@ const Checkout = () => {
                                                     required
                                                     label="CPF"
                                                     name={"cpf"}
-                                                    defaultValue={""}
                                                 />}
                                             </InputMask>
 
                                         </Box>
 
                                         <Box sx={{ gridArea: "data-nasc" }}>
-                                            <Input
-                                                required
-                                                label="Data de nascimento"
-                                                inputProps={{ maxlength: "8" }}
-                                                name={"data-nasc"}
-                                                focused
-                                                type={"date"} defaultValue={""} />
+                                            <InputMask
+                                                mask="99/99"
+                                                value={birth}
+                                                placeholder="00/00"
+                                                onChange={(e) => setBirth(e.target.value)}
+                                            >
+                                                {() =>
+                                                    <Input
+                                                        required
+                                                        label="Data de Nascimento"
+                                                        name={"data-val"}
+                                                        type={"text"}
+                                                    />}
+                                            </InputMask>
                                         </Box>
                                     </Box>
                                 </Box>
@@ -314,7 +320,6 @@ const Checkout = () => {
                                     width={"100%"}
                                     padding={"30px"}
                                     sx={{
-                                        width: 550,
                                         display: "grid",
                                         flexDirection: "column",
                                     }}
@@ -352,7 +357,7 @@ const Checkout = () => {
                                                         label="Número do cartão"
                                                         name={"num-cartao"}
                                                         type={"text"}
-                                                        defaultValue={""} />}
+                                                    />}
                                             </InputMask>
                                         </Box>
 
@@ -369,18 +374,25 @@ const Checkout = () => {
                                                         label="Data de Validade"
                                                         name={"data-val"}
                                                         type={"text"}
-                                                        defaultValue={""} />}
+                                                    />}
                                             </InputMask>
                                         </Box>
 
                                         <Box sx={{ gridArea: "cvv" }}>
-                                            <Input
-                                                required
-                                                label="CVV"
-                                                name={"cvv"}
-                                                placeholder={"000"}
-                                                inputProps={{ maxlength: "3" }}
-                                                defaultValue={""} />
+                                            <InputMask
+                                                mask="999"
+                                                value={cvv}
+                                                placeholder="000"
+                                                onChange={(e) => setCvv(e.target.value)}
+                                            >
+                                                {() =>
+                                                    <Input
+                                                        required
+                                                        label="CVV"
+                                                        name={"cvv"}
+                                                        type={"text"}
+                                                    />}
+                                            </InputMask>
                                         </Box>
 
                                         <Box sx={{ gridArea: "forma-pagam" }}>
@@ -391,7 +403,7 @@ const Checkout = () => {
                                                 onChange={handleChange}
                                                 label="Forma de Pagamento"
                                                 name={"forma-pagam"}
-                                                defaultValue={""}>
+                                            >
                                                 {currencies.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
                                                         {option.label}

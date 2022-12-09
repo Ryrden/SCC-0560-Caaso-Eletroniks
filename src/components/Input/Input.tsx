@@ -8,7 +8,6 @@ interface InputType {
     type?: string
     required?: boolean
     name: string
-    defaultValue: string
     select?: boolean
     value?: string
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
