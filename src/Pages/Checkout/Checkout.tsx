@@ -171,11 +171,10 @@ const Checkout = () => {
                             <Box
                                 width={"100%"}
                             >
-                                {/* //TODO: Colocar efeito de clicado depois */}
                                 <ToggleButtonGroup
                                     orientation="vertical"
                                     sx={{
-                                        backgroundColor: `${theme.palette.success.main}`,
+                                        backgroundColor: `${theme.palette.primary.main}`,
                                         color: `${theme.palette.background.default}`,
                                         width: "90%",
                                         marginX: "5%",
@@ -189,7 +188,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
-                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            backgroundColor: "#8f5e00",
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -200,7 +199,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="pix"
                                         sx={{
-                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            backgroundColor: "#8f5e00",
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -210,7 +209,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
-                                            backgroundColor: `${theme.palette.primary.main}`,
+                                            backgroundColor: "#8f5e00",
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
