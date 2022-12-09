@@ -36,6 +36,39 @@ const SignIn = () => {
         navigate("/");
     };
 
+    const [currency, setCurrency] = React.useState("BRL");
+
+    const handleChange = (event: any) => {
+        setCurrency(event.target.value);
+    };
+
+    const [cpfValue, setCpfValue] = React.useState("");
+    const [cpfValid, setCpfValid] = React.useState(true);
+    const handleCpfValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
+        setCpfValid(regex.test(e.target.value));
+        setCpfValue(e.target.value);
+    };
+    
+
+    const [telValue, setTelValue] = React.useState("");
+    const [telValid, setTelValid] = React.useState(true);
+    const handleTelValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{11}");
+        setTelValid(regex.test(e.target.value));
+        setTelValue(e.target.value);
+    };
+
+
+    const [cepValue, setCepValue] = React.useState("");
+    const [cepValid, setCepValid] = React.useState(true);
+    const handleCepValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{5}-[0-9]{3}");
+        setCepValid(regex.test(e.target.value));
+        setCepValue(e.target.value);
+    };
+
+
     return (
         <>
             <SimpleNavbar />
@@ -78,17 +111,25 @@ const SignIn = () => {
                             <Grid container spacing={3} marginBottom={"20px"}>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
+                                        required
                                         label="CPF"
                                         name={"cpf"}
-                                        type={"number"}
-                                        required
+                                        inputProps={{maxlength: "14"}}
+                                        value={cpfValue}
+                                        error={!cpfValid}
+                                        placeholder={"000.000.000-00"}
+                                        onChange={(e) => handleCpfValidation(e)}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
                                         label="Telefone Celular"
                                         name={"telefone"}
-                                        type={"telefone"}
+                                        inputProps={{maxlength: "11"}}
+                                        value={telValue}
+                                        error={!telValid}
+                                        placeholder={"Apenas números"}
+                                        onChange={(e) => handleTelValidation(e)}
                                         required
                                     />
                                 </Grid>
@@ -135,8 +176,12 @@ const SignIn = () => {
                                 <Grid item xs={12} md={12}>
                                     <TextField
                                         label="CEP"
-                                        type="number"
                                         name={"cep"}
+                                        inputProps={{maxlength: "9"}}
+                                        value={cepValue}
+                                        error={!cepValid}
+                                        placeholder={"00000-000"}
+                                        onChange={(e) => handleCepValidation(e)}
                                         required
                                     />
                                 </Grid>
