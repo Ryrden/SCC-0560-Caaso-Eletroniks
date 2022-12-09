@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import Input from "@/components/Input/Input";
+import InputMask from "@/components/Input/InputMask";
 import Button from "@/components/Button/Button";
 import Divider from "@mui/material/Divider";
 import { Box, CssBaseline, FormControl, Grid, MenuItem, Typography, useTheme } from "@mui/material";
@@ -14,8 +15,6 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Success from "../Success/Success";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { useNavigate, useParams } from "react-router";
-
-
 
 const currencies = [
     {
@@ -105,9 +104,25 @@ const Checkout = () => {
     const [cpfValue, setCpfValue] = React.useState("");
     const [cpfValid, setCpfValid] = React.useState(true);
     const handleCpfValidation = (e: any) => {
-        const regex = new RegExp("^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$");
+        const regex = new RegExp("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}");
         setCpfValid(regex.test(e.target.value));
         setCpfValue(e.target.value);
+    };
+
+    const [creditCardValue, setCreditCardValue] = React.useState("");
+    const [creditCardValid, setCreditCardValid] = React.useState(true);
+    const handleCreditCardValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{16}");
+        setCreditCardValid(regex.test(e.target.value));
+        setCreditCardValue(e.target.value);
+    };
+
+    const [cvvValue, setCvvValue] = React.useState("");
+    const [cvvValid, setCvvValid] = React.useState(true);
+    const handleCvvValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{3}");
+        setCvvValid(regex.test(e.target.value));
+        setCvvValue(e.target.value);
     };
 
     const breadcrumbs = [
@@ -145,9 +160,13 @@ const Checkout = () => {
                     paddingTop={"46px"}
                     paddingBottom={"90px"}
                     sx={{
-                        display: "grid",
-                        gridAutoFlow: { xs: "row", md: "column" },
+                        display: {sm: "flex", md: "grid"},
+                        flexDirection: "row",
+                        alignItems:"center",
+                        flexWrap: "wrap",
                         gridTemplateColumns: { md: "1fr 2fr" },
+                        gap: 1,
+                        gridTemplateRows: "auto",
                         gridTemplateAreas: `"breadcrumb breadcrumb"
                         "pagamento dados-cartao"`,
                     }}
@@ -158,11 +177,11 @@ const Checkout = () => {
                         />
                     </Box>
                     <Grid container
-                        gap={"33px"}
+                        paddingTop={"46px"}
+                        gap={"30px"}
                         width={"100%"}
                         height={"50%"}
-                        sx={{ justifyContent: "center" }}
-                        marginTop={"50%"}
+                        sx={{display:"flex", flexDirection: "row", justifyContent: { xs: "center"}}}
                     >
                         <Box id="box-FormaPagamento"
                             style={{ backgroundColor: "#292929" }}
@@ -242,23 +261,25 @@ const Checkout = () => {
                     </Grid >
 
                     <Grid container
-                        gap={"33px"}
+                        gap={"30px"}
                         width={"100%"}
                         height={"100%"}
-                        sx={{ justifyContent: "center" }}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: {xs: "center"} }}
                         marginTop={"48px"}
                     >
                         <GenericCard>
                             <FormControl
                                 component="form"
                                 onSubmit={handleSubmit}>
+                                
                                 <Box id="box-DadosCartão"
-                                    width={"100%"}
                                     padding={"30px"}
                                     sx={{
                                         gridArea: "dados-cartao",
-                                        width: 550,
-                                        display: "grid",
+                                        display: "flex",
                                         flexDirection: "column",
                                     }}
                                 >
@@ -274,11 +295,12 @@ const Checkout = () => {
                                     <Box
                                         sx={{
                                             display: "grid",
+                                            flexDirection: "row",
                                             gridTemplateColumns: "repeat(2, 1fr)",
                                             gap: 2,
                                             gridTemplateRows: "auto",
                                             gridTemplateAreas: `"nome nome"
-                                        "cpf data-nasc"`,
+                                                                "cpf data-nasc"`,
                                         }}
                                     >
                                         <Box sx={{ gridArea: "nome" }}>
@@ -294,9 +316,11 @@ const Checkout = () => {
                                                 required
                                                 label="CPF"
                                                 name={"cpf"}
+                                                inputProps={{maxlength: "14"}}
                                                 value={cpfValue}
                                                 error={!cpfValid}
-                                                onChange={(e) => handleCpfValidation(e)}
+                                                placeholder={"000.000.000-00"}
+                                                onChange={(e) => handleCpfValidation(e)}   
                                             />
                                         </Box>
 
@@ -304,10 +328,10 @@ const Checkout = () => {
                                             <Input
                                                 required
                                                 label="Data de nascimento"
+                                                inputProps={{maxlength: "8"}}
                                                 name={"data-nasc"}
-                                                value={dataValue}
-                                                error={!dataValid}
-                                                onChange={(e) => handleDataValidation(e)}
+                                                focused
+                                                type={"date"}
                                             />
                                         </Box>
                                     </Box>
@@ -320,7 +344,7 @@ const Checkout = () => {
                                     <Divider></Divider>
                                 </Box>
 
-                                <Box id="box-DadosCartão"
+                                <Box id="box-DadosPagamento"
                                     width={"100%"}
                                     padding={"30px"}
                                     sx={{
@@ -354,7 +378,12 @@ const Checkout = () => {
                                                 required
                                                 label="Número do cartão"
                                                 name={"num-cartao"}
-                                            //onChange={(e) => handleCreditCardValidation(e)}
+                                                inputProps={{maxlength: "18"}}
+                                                value={creditCardValue}
+                                                error={!creditCardValid}
+                                                placeholder={"Apenas números"}
+                                                type={"text"}                                                                                                  inputProps={{maxlength: "14"}}
+                                                onChange={(e) => handleCreditCardValidation(e)}
                                             />
                                         </Box>
 
@@ -363,9 +392,9 @@ const Checkout = () => {
                                                 required
                                                 label="Data de Validade"
                                                 name={"data-val"}
-                                                value={dataValidadeValue}
-                                                error={!dataValidadeValid}
-                                                onChange={(e) => handleDataValidadeValidation(e)}
+                                                inputProps={{maxlength: "8"}}
+                                                focused
+                                                type={"date"}
                                             />
                                         </Box>
 
@@ -374,6 +403,11 @@ const Checkout = () => {
                                                 required
                                                 label="CVV"
                                                 name={"cvv"}
+                                                value={cvvValue}
+                                                error={!cvvValid}
+                                                placeholder={"000"}                                                                                                  
+                                                inputProps={{maxlength: "3"}}
+                                                onChange={(e) => handleCvvValidation(e)}                                          
                                             />
                                         </Box>
 
@@ -384,8 +418,7 @@ const Checkout = () => {
                                                 value={currency}
                                                 onChange={handleChange}
                                                 label="Forma de Pagamento"
-                                                name={"forma-pagam"}
-                                            >
+                                                name={"forma-pagam"}                                           >
                                                 {currencies.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
                                                         {option.label}
