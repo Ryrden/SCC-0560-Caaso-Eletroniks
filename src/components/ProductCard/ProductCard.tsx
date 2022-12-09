@@ -42,12 +42,12 @@ const ProductCard = (props: ProductCardTypes) => {
                 <Box paddingY={"18px"} paddingX={"10px"}>
                     <Typography
                         variant="body1"
-                        color={"#FFFFFF"}>
+                        color={"#FFFFFF"}
+                        marginBottom={"8px"}
+                        height={"3em"}
+                    >
                         {props.title}
                     </Typography>
-
-                    <Box paddingY={"8px"} />
-
                     <Box>
                         <Typography
                             variant="body1"
@@ -87,7 +87,7 @@ const ProductCard = (props: ProductCardTypes) => {
 
                         <Box display="flex" alignItems="center">
                             <Box width="100%">
-                                <Link to={"/product/" + (props.id-1)} style={{ textDecoration: "none" }}>
+                                <Link to={"/product/" + (props.id - 1)} style={{ textDecoration: "none" }}>
                                     <Button endIcon={<ArrowForward />}>
                                         Ver detalhes
                                     </Button>

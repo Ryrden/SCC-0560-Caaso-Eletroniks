@@ -106,10 +106,10 @@ const Checkout = () => {
         },
     ];
 
-    const [cpf, setCpf] = React.useState("000.000.000-00");
-    const [creditCard, setCreditCard] = React.useState("0000 0000 0000 0000");
-    const [cvv, setCvv] = React.useState("000");
-    const [validity, setValidity] = React.useState("00/00");
+    const [cpf, setCpf] = React.useState("");
+    const [creditCard, setCreditCard] = React.useState("");
+    const [cvv, setCvv] = React.useState("");
+    const [validity, setValidity] = React.useState("");
 
     return (
         <div>
@@ -278,13 +278,12 @@ const Checkout = () => {
                                             <InputMask
                                                 mask="999\.999\.999\-99"
                                                 value={cpf}
-                                                disabled={false}
-                                                maskChar=" "
+                                                placeholder="000.000.000-00"
                                                 onChange={(e) => setCpf(e.target.value)}
                                             >
                                                 {() => <Input
+                                                    required
                                                     label="CPF"
-                                                    placeholder="000.000.000-00"
                                                     name={"cpf"}
                                                     defaultValue={""}
                                                 />}
@@ -344,8 +343,7 @@ const Checkout = () => {
                                             <InputMask
                                                 mask="9999 9999 9999 9999"
                                                 value={creditCard}
-                                                disabled={false}
-                                                maskChar=" "
+                                                placeholder="0000 0000 0000 0000"
                                                 onChange={(e) => setCreditCard(e.target.value)}
                                             >
                                                 {() =>
@@ -353,7 +351,6 @@ const Checkout = () => {
                                                         required
                                                         label="Número do cartão"
                                                         name={"num-cartao"}
-                                                        placeholder={"Apenas números"}
                                                         type={"text"}
                                                         defaultValue={""} />}
                                             </InputMask>
@@ -363,8 +360,7 @@ const Checkout = () => {
                                             <InputMask
                                                 mask="99/99"
                                                 value={validity}
-                                                disabled={false}
-                                                maskChar=" "
+                                                placeholder="00/00"
                                                 onChange={(e) => setValidity(e.target.value)}
                                             >
                                                 {() =>

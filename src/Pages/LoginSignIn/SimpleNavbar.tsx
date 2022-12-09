@@ -8,7 +8,7 @@ const SimpleNavbar = () => {
     return (
         <>
             <AccessibilityBar />
-            <AppBar position="static" color="secondary" sx={{
+            <AppBar id="simple-navbar-container" position="static" color="secondary" sx={{
                 marginBottom: "2rem"
             }}>
                 <Link to="/" style={{ textDecoration: "none" }}>

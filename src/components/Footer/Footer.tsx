@@ -253,7 +253,8 @@ export default function Footer() {
                 }} />
             <Container sx={{
                 minWidth: "100%",
-                backgroundColor: "#131313", //Preto não completamente preto
+                //degrade do cinza para preto
+                background: "linear-gradient(180deg, rgba(90,90,90,1) 0%, rgba(45,45,45,1) 50%, rgba(0,0,0,1) 100%)",
                 color: "white",
                 padding: 3,
                 boxSizing: "border-box",
@@ -274,23 +275,23 @@ export default function Footer() {
                         display: "flex",
                         flexDirection: { xs: "column", md: "row" },
                         justifyContent: { xs: "center", md: "flex-start" },
-                        marginBottom: { xs: 4, md: 0 }
+                        marginBottom: { xs: 4, md: 0 },
                     }}>
                         <Box display="flex" justifyContent="center">
                             <Box display="flex" alignItems="center">
-                                <img src={pix} alt="" />
+                                <img src={pix} alt="Logo do método de pagamento Pix" />
                             </Box>
                             <Box display="flex" alignItems="center">
-                                <img src={boleto} alt="" />
+                                <img src={boleto} alt="Logo do método de pagamento Boleto" />
                             </Box>
                         </Box>
                         <Box display="flex" alignItems="center">
-                            <img src={cartoes} alt="" />
+                            <img src={cartoes} height="45em" alt="Logo das marcas de cartão: MasterCard, Visa, American Express, Elo,Hipercard e Dinners Club Internacional" />
                         </Box>
                     </Box>
                     <Box>
-                        <img src={siteSeguro} alt="" />
-                        <img src={googleSiteSeguro} alt="" />
+                        <img src={siteSeguro} alt="Logo Site Seguro, Possui Site Seguro SSL" />
+                        <img src={googleSiteSeguro} alt="Logo Google Site Seguro" />
                     </Box>
                 </Container>
             </Container>
@@ -301,15 +302,16 @@ export default function Footer() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    background: "black"
+                    background: "rgba(0,0,0,1)"
                 }} >
-                <Box sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}>
-                    <img src={cc} height="20px" alt="" />
-                    <Typography textAlign="center" variant="h6" fontWeight="bold" color="white" my={2} ml={1}>
+                <Box
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}>
+                    <img src={cc} height="20px" alt="Licença Creative Commons, Todo o site é de uso livre desde que citado a fonte" />
+                    <Typography textAlign="center" variant="body1" fontWeight="bold" color="white" bgcolor="black" ml={1}>
                         2022 CAASO Eletroniks. Alguns direitos reservados.
                     </Typography>
                 </Box>
