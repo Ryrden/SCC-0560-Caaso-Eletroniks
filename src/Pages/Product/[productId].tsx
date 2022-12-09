@@ -51,13 +51,6 @@ function createData(Description: string, Value: string,) {
     return { Description, Value };
 }
 
-const rows = [
-    createData("Arquitetura", "AMD Ryzen"),
-    createData("Velocidade", "3,6Ghz"),
-    createData("Socket", "AM4"),
-    createData("Núcleos", "58"),
-    createData("Threads", "116"),
-];
 
 interface tableSpecification {
     Description: string,
@@ -92,20 +85,33 @@ const ProductPage = () => {
 
     const { id = "0" } = useParams();
     const [products, setProducts] = useState<ProductModel>();
+    const [specification, setSpecification] = useState<tableSpecification[]>([]);
 
     useEffect(() => {
         setProducts(productsList[+id]);
         console.log(products);
+
+        setSpecification(oldSpecification => {
+            return [
+                createData("Processador", productsList[+id].specifications.processor),
+                createData("Sistema Operacional", productsList[+id].specifications.operatingSystem),
+                createData("Memória", productsList[+id].specifications.ramMemory),
+                createData("Capacidade", productsList[+id].specifications.storage),
+                createData("Placa de Video", productsList[+id].specifications.videoCard),
+            ];
+        });
     }, [id]);
 
-    const speceficationList: string[] = ["Processador", "Sistema Operacional", "Memória", "Capacidade", "GPU"];
+    const rows = specification;
+
+    /* const speceficationList: string[] = ["Processador", "Sistema Operacional", "Memória", "Capacidade", "GPU"];
     const speceficationValue: string[] = [
-        products?.specifications.processor || "aa",
-        products?.specifications.operatingSystem || "bb",
-        products?.specifications.ramMemory || "cc",
-        products?.specifications.storage || "dd",
-        products?.specifications.videoCard || "ee"
-    ];
+        products?.specifications.processor,
+        products?.specifications.operatingSystem,
+        products?.specifications.ramMemory,
+        products?.specifications.storage,
+        products?.specifications.videoCard
+    ]; */
 
     return <div>
         <Box>
@@ -194,7 +200,7 @@ const ProductPage = () => {
 
                                 <Box>
                                     {/* TODO: checkout ir por ID */}
-                                    <Link to={"/cart/"} style={{ textDecoration: "none" }}>
+                                    <Link to={"/checkout/"} style={{ textDecoration: "none" }}>
                                         <CButton size={"large"} startIcon={<AddShoppingCartIcon />}>Comprar</CButton>
                                     </Link>
                                     <Box display={"flex"} gap={"5px"} alignItems={"center"} marginTop={"20px"}>
