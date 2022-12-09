@@ -8,6 +8,7 @@ interface InputType {
     type?: string
     required?: boolean
     name: string
+    defaultValue: string
     select?: boolean
     value?: string
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -15,9 +16,10 @@ interface InputType {
     focused?: boolean
     sx?: { [key: string]: any }
     size?: "small" | "medium"
-}
+};
 
 const Input = ({ size = "small", required = false, type = "text", select = false, ...props }: InputType) => {
+
     return (
         <div>
             <TextField
@@ -27,7 +29,7 @@ const Input = ({ size = "small", required = false, type = "text", select = false
                 variant= "filled"
                 color="secondary"
                 size={size}
-                InputProps={{ disableUnderline: true }}
+                InputProps={{ disableUnderline: true}}
                 select={select}
                 error={props.error}
                 sx={props.sx}

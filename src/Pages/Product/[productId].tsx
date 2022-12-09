@@ -73,6 +73,16 @@ const ProductPage = () => {
         },
     ];
 
+    
+
+    const [cepValue, setCepValue] = React.useState("");
+    const [cepValid, setCepValid] = React.useState(true);
+    const handleCepValidation = (e: any) => {
+        const regex = new RegExp("[0-9]{5}-[0-9]{3}");
+        setCepValid(regex.test(e.target.value));
+        setCepValue(e.target.value);
+    };
+
     const { id = "0" } = useParams();
     const [products, setProducts] = useState<ProductModel>();
     const [specification, setSpecification] = useState<tableSpecification[]>([]);
@@ -193,7 +203,16 @@ const ProductPage = () => {
                                     </Link>
                                     <Box display={"flex"} gap={"5px"} alignItems={"center"} marginTop={"20px"}>
                                         <Box width={"100%"}>
-                                            <Input label={"Calcule o frete (CEP)"} name={"cep"} size={"small"}
+                                            <Input
+                                                label={"Calcule o frete (CEP)"}
+                                                name={"cep"}
+                                                size={"small"}
+                                                inputProps={{maxlength: "9"}}
+                                                placeholder={"00000-000"}
+                                                value={cepValue}
+                                                error={!cepValid}
+                                                onChange={(e) => handleCepValidation(e)}
+
                                                 sx={{ borderRadius: "5px" }} />
                                         </Box>
                                         <Box
