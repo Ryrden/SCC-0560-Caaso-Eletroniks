@@ -291,7 +291,7 @@ const Checkout = () => {
 
                                         <Box sx={{ gridArea: "data-nasc" }}>
                                             <InputMask
-                                                mask="99/99"
+                                                mask="99/99/9999"
                                                 value={birth}
                                                 placeholder="00/00"
                                                 onChange={(e) => setBirth(e.target.value)}
