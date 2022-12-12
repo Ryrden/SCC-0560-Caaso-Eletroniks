@@ -10,7 +10,7 @@ import { useTheme } from "@mui/material";
 
 const AccessibilityBar = () => {
     const theme = useTheme();
-    
+
     const maxFontSize = 20;
     const minFontSize = 12;
 
@@ -26,10 +26,9 @@ const AccessibilityBar = () => {
     return (
         <div id="acessibility-container">
             <div id="box">
-                <img src={iconeDislexia} alt="" />
-                <img src={iconeAumentarFonte} alt="" onClick={increaseFont} />
-                <img src={iconeDiminuirFonte} alt="" onClick={decreaseFont} />
-                <img src={iconeContraste} alt="" onClick={() => setTheme()} />
+                <img src={iconeAumentarFonte} alt="ícone de aumento de fonte" onClick={increaseFont} />
+                <img src={iconeDiminuirFonte} alt="ícone de diminuição de fonte" onClick={decreaseFont} />
+                <img src={iconeContraste} alt="ícone de alteração de tema com alto contraste" onClick={() => setTheme()} />
             </div>
         </div>
     );
