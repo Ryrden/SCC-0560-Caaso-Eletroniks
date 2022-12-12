@@ -95,7 +95,7 @@ const SignIn = () => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <InputMask
-                                        mask="99/99"
+                                        mask="99/99/9999"
                                         value={birth}
                                         placeholder="00/00"
                                         onChange={(e) => setBirth(e.target.value)}
