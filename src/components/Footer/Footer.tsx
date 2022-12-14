@@ -64,12 +64,12 @@ export default function Footer() {
                                 </Link>
                             </Box>
                             <Box mb={4}>
-                                <Link href="/" color="inherit">
+                                <Link href="https://www.youtube.com/watch?v=Sn8QTjWw1o8&ab_channel=nscream" color="inherit">
                                     Hardware
                                 </Link>
                             </Box>
                             <Box mb={4}>
-                                <Link href="/" color="inherit">
+                                <Link href="https://www.youtube.com/watch?v=Sn8QTjWw1o8&ab_channel=nscream" color="inherit">
                                     Eletrônicos
                                 </Link>
                             </Box>
@@ -101,7 +101,7 @@ export default function Footer() {
                                 </Link>
                             </Box>
                             <Box mb={4}>
-                                <Link href="/" color="inherit">
+                                <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" color="inherit">
                                     Ajuda
                                 </Link>
                             </Box>
