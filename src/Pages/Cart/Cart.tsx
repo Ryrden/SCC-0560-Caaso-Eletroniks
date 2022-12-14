@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Breadcrumbs, colors, CssBaseline, Divider, Grid, Typography, useTheme } from "@mui/material";
 import CartItem from "@/components/CartItem/CartItem";
 import GenericCard from "@/components/GenericCard/GenericCard";
@@ -10,23 +10,15 @@ import { useNavigate } from "react-router-dom";
 import { getAsCurrency } from "@/utils/getAsCurrency";
 import { cartItemsFromApi } from "./cartItems";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-
-interface CartItemFromApi {
-    productName: string
-    productId: string
-    unitPrice: number
-    limit: number
-    lowerLimit: number
-    productImage: string
-    quantity: number
-}
+import { CartItemModel } from "@/models/CartModel";
+import { CartContext } from "@/App";
 
 function Cart() {
     const navigate = useNavigate();
 
-    const [cartItems, setCartItems] = useState<CartItemFromApi[]>(cartItemsFromApi);
+    const [cartItems, setCartItems] = React.useContext(CartContext);
 
-    function handleValueChange(cartProductId: string, quantity: number) {
+    function handleValueChange(cartProductId: number, quantity: number) {
         let copy = [...cartItems];
 
         if (quantity <= 0) {
@@ -38,10 +30,12 @@ function Cart() {
         setCartItems(copy);
     }
 
+    // TODO: REFATORAR ISSO
     function getTotal(): number {
-        return cartItems.reduce((accumulator, { quantity, unitPrice }) => {
+        return 10;
+        /* return cartItems.reduce((accumulator, { quantity, unitPrice }) => {
             return accumulator + (quantity * unitPrice);
-        }, 0);
+        }, 0); */
     }
 
     const missingCartItems = () => cartItems.length == 0;

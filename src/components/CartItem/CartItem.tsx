@@ -3,13 +3,13 @@ import { Box, Divider, IconButton, Typography } from "@mui/material";
 import GenericCard from "../GenericCard/GenericCard";
 import AddIcon from "@mui/icons-material/AddCircle";
 import SubtractIcon from "@mui/icons-material/RemoveCircle";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { getAsCurrency } from "@/utils/getAsCurrency";
 
 interface CartItemProps {
     productName: string
-    productId: string
-    unitPrice: number
+    productId: number
+    unitPrice: string
     limit: number
     lowerLimit: number
     productImage: string
@@ -21,10 +21,10 @@ interface CartItemProps {
 function CartItem({
     onQuantityChanged = () => undefined,
     removable = true,
-    ...props}: CartItemProps) {
+    ...props }: CartItemProps) {
 
     function incrementQuantity() {
-        if ((props.quantity + 1) < props.limit+1) {
+        if ((props.quantity + 1) < props.limit + 1) {
             onQuantityChanged(props.quantity + 1);
         }
     }
@@ -36,7 +36,7 @@ function CartItem({
     }
 
     function isIncrementEnabled(): boolean {
-        return !((props.quantity + 1) >= props.limit+1);
+        return !((props.quantity + 1) >= props.limit + 1);
     }
 
     function isDecrementEnabled(): boolean {
@@ -53,7 +53,7 @@ function CartItem({
                 <Box width={"100%"} display={"flex"} gap={"10px"} >
                     <Box
                         width={"39%"}
-                        style={{ backgroundPosition: "center", backgroundImage: `url(${props.productImage})`}} />
+                        style={{ backgroundPosition: "center", backgroundImage: `url(${props.productImage})` }} />
 
                     <Box width={"100%"} paddingX={"9px"}
                         paddingY={"18px"}>
@@ -79,7 +79,8 @@ function CartItem({
                                 <Typography
                                     variant="body1"
                                     color={"#FFFFFF"}>
-                                    {getAsCurrency(props.unitPrice * props.quantity)}
+                                    {props.unitPrice}
+                                    {/* {getAsCurrency(props.unitPrice * props.quantity)} */}
                                 </Typography>
                             </Box>
 

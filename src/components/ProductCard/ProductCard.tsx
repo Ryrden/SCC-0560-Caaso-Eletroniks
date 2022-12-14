@@ -8,6 +8,7 @@ import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutl
 import { grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 import ArrowForward from "@mui/icons-material/ArrowForward";
+import { CartContext } from "@/App";
 
 interface Pricing {
     hasPromotion: boolean
@@ -25,9 +26,29 @@ export interface ProductCardTypes {
     alt: string
 }
 
+
+
 const ProductCard = (props: ProductCardTypes) => {
 
+    const [cartItems, setCartItems] = React.useContext(CartContext);
     const theme = useTheme();
+
+    const addItemToCart = (props: ProductCardTypes) => {
+        //Verify if Id already exists in cartItems, if so, increment quantity
+        //If not, add new item to cartItems
+        console.log(props);
+        console.log(cartItems);
+        setCartItems([...cartItems, {
+            productName: props.title,
+            productId: props.id + 1,
+            unitPrice: props.pricing.fullPrice,
+            productImage: props.productImgSource,
+            quantity: 1,
+            limit: 10,
+            lowerLimit: 0
+        }]);
+        console.log(cartItems);
+    };
 
     return (
         <Box className="product-card" boxShadow={3}>
@@ -104,7 +125,8 @@ const ProductCard = (props: ProductCardTypes) => {
                                 }}
                                 display="flex"
                                 alignItems="center"
-                                padding="0.1em"                            >
+                                padding="0.1em"
+                                onClick={() => addItemToCart(props)}>
                                 <IconButton size="small" color="primary">
                                     <AddShoppingCartOutlinedIcon fontSize="small" />
                                 </IconButton>
