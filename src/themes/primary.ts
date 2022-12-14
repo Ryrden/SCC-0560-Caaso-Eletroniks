@@ -8,7 +8,7 @@ const primaryTheme = (fontSize: number | undefined = 15) => createTheme({
         secondary: {
             main: "#270039", //Roxo Chique
         },
-        terciary: {
+        error: {
             main: "#8f5e00", //Amarelo Secundário
         },
         success: {

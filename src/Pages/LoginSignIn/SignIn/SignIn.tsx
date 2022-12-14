@@ -100,6 +100,8 @@ const SignIn = () => {
                                         placeholder="00/00"
                                         onChange={(e) => setBirth(e.target.value)}
                                     >
+                                        {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                         {() =>
                                             <TextField
                                                 required
@@ -119,6 +121,8 @@ const SignIn = () => {
                                         placeholder="000.000.000-00"
                                         onChange={(e) => setCpf(e.target.value)}
                                     >
+                                        {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                         {() => <TextField
                                             required
                                             label="CPF"
@@ -133,6 +137,8 @@ const SignIn = () => {
                                         placeholder="(99) 99999-9999"
                                         onChange={(e) => setTel(e.target.value)}
                                     >
+                                        {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                         {() => <TextField
                                             required
                                             label="Telefone"
@@ -187,6 +193,8 @@ const SignIn = () => {
                                         placeholder="00000-00"
                                         onChange={(e) => setCep(e.target.value)}
                                     >
+                                        {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                         {() => <TextField
                                             required
                                             label="CEP"

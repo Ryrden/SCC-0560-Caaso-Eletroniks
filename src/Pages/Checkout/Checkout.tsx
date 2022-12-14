@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import Input from "@/components/Input/Input";
@@ -112,6 +112,14 @@ const Checkout = () => {
     const [validity, setValidity] = React.useState("");
     const [birth, setBirth] = React.useState("");
 
+    const InputAAAA = (label: string, name: string): ReactNode => {
+        return (<Input
+            required
+            label={label}
+            name={name}
+        />);
+    };
+
     return (
         <div>
             <Box>
@@ -188,7 +196,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="cartao"
                                         sx={{
-                                            backgroundColor: `${theme.palette.terciary.main}`,
+                                            backgroundColor: `${theme.palette.error.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -199,7 +207,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="pix"
                                         sx={{
-                                            backgroundColor: `${theme.palette.terciary.main}`,
+                                            backgroundColor: `${theme.palette.error.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -209,7 +217,7 @@ const Checkout = () => {
                                     <ToggleButton
                                         value="boleto"
                                         sx={{
-                                            backgroundColor: `${theme.palette.terciary.main}`,
+                                            backgroundColor: `${theme.palette.error.main}`,
                                             color: `${theme.palette.background.default}`,
                                         }}
                                     >
@@ -280,6 +288,8 @@ const Checkout = () => {
                                                 placeholder="000.000.000-00"
                                                 onChange={(e) => setCpf(e.target.value)}
                                             >
+                                                {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                                 {() => <Input
                                                     required
                                                     label="CPF"
@@ -296,12 +306,13 @@ const Checkout = () => {
                                                 placeholder="00/00"
                                                 onChange={(e) => setBirth(e.target.value)}
                                             >
+                                                {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                                 {() =>
                                                     <Input
                                                         required
                                                         label="Data de Nascimento"
                                                         name={"data-val"}
-                                                        type={"text"}
                                                     />}
                                             </InputMask>
                                         </Box>
@@ -350,6 +361,8 @@ const Checkout = () => {
                                                 placeholder="0000 0000 0000 0000"
                                                 onChange={(e) => setCreditCard(e.target.value)}
                                             >
+                                                {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                                 {() =>
                                                     <Input
                                                         required
@@ -367,6 +380,8 @@ const Checkout = () => {
                                                 placeholder="00/00"
                                                 onChange={(e) => setValidity(e.target.value)}
                                             >
+                                                {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                                 {() =>
                                                     <Input
                                                         required
@@ -384,6 +399,8 @@ const Checkout = () => {
                                                 placeholder="000"
                                                 onChange={(e) => setCvv(e.target.value)}
                                             >
+                                                {/* //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                //@ts-ignore */}
                                                 {() =>
                                                     <Input
                                                         required

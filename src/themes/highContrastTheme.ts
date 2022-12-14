@@ -8,7 +8,7 @@ const highContrastTheme = (fontSize: number | undefined = 15) => createTheme({
         secondary: {
             main: "#0C0C0C",
         },
-        terciary: {
+        error: {
             main: "#5b5b5b",
         },
         success: {
